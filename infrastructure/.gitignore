@@ -1,0 +1,6 @@
+.env
+
+/api/data
+/db/data
+/nginx/data
+/web/data

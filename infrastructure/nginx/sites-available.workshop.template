@@ -1,0 +1,47 @@
+# www to non-www redirect -- duplicate content is BAD:
+# https://github.com/h5bp/html5-boilerplate/blob/5370479476dceae7cc3ea105946536d6bc0ee468/.htaccess#L362
+# Choose between www and non-www, listen on the *wrong* one and redirect to
+# the right one -- http://wiki.nginx.org/Pitfalls#Server_Name
+
+server {
+  # listen [::]:80 accept_filter=httpready; # for FreeBSD
+  # listen 80 accept_filter=httpready; # for FreeBSD
+  # listen [::]:80 deferred; # for Linux
+  # listen 80 deferred; # for Linux
+
+  listen [::]:80;
+  listen 80;
+
+  # logging
+  access_log /data/access.log;
+  error_log /data/error.log debug;
+
+  # The host name to respond to
+  server_name localhost;
+
+  # The root directory for static files
+  root /www;
+
+  location /api {
+    proxy_pass http://${API_HOST}:${API_PORT};
+    proxy_set_header Host ${DOLLAR}http_host;
+    proxy_set_header X-Real-IP ${DOLLAR}remote_addr;
+    proxy_set_header X-Forwarded-For ${DOLLAR}proxy_add_x_forwarded_for;
+    proxy_connect_timeout 300s;
+    proxy_read_timeout 300s;
+    sendfile on;
+  }
+
+  location / {
+    proxy_pass http://${WEB_HOST}:${WEB_PORT};
+    proxy_set_header Host ${DOLLAR}http_host;
+    proxy_set_header X-Real-IP ${DOLLAR}remote_addr;
+    proxy_set_header X-Forwarded-For ${DOLLAR}proxy_add_x_forwarded_for;
+    proxy_connect_timeout 300s;
+    proxy_read_timeout 300s;
+    sendfile on;
+  }
+
+  #Specify a charset
+  charset utf-8;
+}

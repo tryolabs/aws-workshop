@@ -1,0 +1,9 @@
+#!/bin/bash
+
+export DOLLAR='$'
+mkdir -p /etc/nginx/sites-enabled
+mkdir -p /etc/nginx/sites-available
+envsubst < /conf/sites-available/workshop.template > /etc/nginx/sites-available/workshop
+envsubst < /conf/sites-enabled/workshop.template > /etc/nginx/sites-enabled/workshop
+envsubst < /conf/nginx.conf.template > /etc/nginx/nginx.conf
+nginx

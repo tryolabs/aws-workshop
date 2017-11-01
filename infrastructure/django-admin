@@ -1,0 +1,36 @@
+#!/bin/bash
+# get_absolute path function
+get_abs_path() {
+    local PARENT_DIR
+    local ABS_PATH
+    PARENT_DIR=$(dirname "$1")
+    cd "$PARENT_DIR" || exit
+    ABS_PATH="$(pwd)"/"$(basename "$1")"
+    cd - > /dev/null || exit
+    echo "$ABS_PATH"
+}
+
+INFRA_DIR="$(dirname "$(get_abs_path "$0")")"
+
+pushd "$INFRA_DIR" > /dev/null 2>&1
+
+if [[ $(docker-compose ps | wc -l) -lt 3 ]]; then
+    ALREADY_RUNNING=0
+    docker-compose up --build -d > /dev/null 2>&1
+else
+    ALREADY_RUNNING=1
+fi
+
+# wait some seconds for the db to be up an ready
+until docker-compose exec db pg_isready > /dev/null 2>&1
+do
+    sleep 1
+done
+
+docker-compose run api pipenv run python manage.py "$@"
+
+if [[ $ALREADY_RUNNING == 0 ]]; then
+    docker-compose down > /dev/null 2>&1
+fi
+
+popd > /dev/null

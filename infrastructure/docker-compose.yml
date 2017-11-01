@@ -1,0 +1,44 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./db/data:/pgdata
+    env_file: ./db/.env
+  api:
+    build:
+      # Set parent dir as context so as to allow "COPY pegaces /app" in Dockerfile
+      context: ../
+      dockerfile: infrastructure/api/Dockerfile
+    volumes:
+      - ./api/data:/data
+    links:
+      - db:db
+    env_file: ./api/.env
+    depends_on:
+      - db
+  web:
+    build:
+      context: ../
+      dockerfile: infrastructure/web/Dockerfile
+    volumes:
+      - ./web/data/:/data
+    env_file: ./web/.env
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx/nginx.conf.template:/conf/nginx.conf.template:ro
+      - ./nginx/sites-available.workshop.template:/conf/sites-available/workshop.template:ro
+      - ./nginx/sites-enabled.workshop.template:/conf/sites-enabled/workshop.template:ro
+      - ./nginx/entrypoint:/conf/entrypoint
+      - ./nginx/data/:/data
+    ports:
+      - 80:80
+    entrypoint: /conf/entrypoint
+    links:
+      - api:api
+      - web:web
+    env_file: ./nginx/.env
+    depends_on:
+      - api
+      - web
