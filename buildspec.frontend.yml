@@ -3,6 +3,7 @@ version: 0.2
 env:
   variables:
     BUCKET: "s3://diego-aws-workshop"
+    FRONTEND_DIR: "frontend"
     BUILD_DIR: "build"
     REACT_APP_USE_OWN_API: "true"
     REACT_APP_API_DOMAIN: "http://api_url.com"
@@ -11,6 +12,7 @@ phases:
   pre_build:
     commands:
       - echo "Installing npm dependencies ..."
+      - cd "$FRONTEND_DIR"
       - npm install
   build:
     commands:
