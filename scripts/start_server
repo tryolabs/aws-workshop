@@ -1,3 +1,4 @@
 #!/bin/bash
+cd /deploy
 pipenv run gunicorn --config ./infrastructure/api/gunicorn.conf conduit.wsgi
 
