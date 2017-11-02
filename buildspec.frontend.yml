@@ -13,17 +13,14 @@ phases:
     commands:
       - echo "Installing npm dependencies ..."
       - cd "$FRONTEND_DIR"
-      - echo "cwd `pwd`"
       - npm install
   build:
     commands:
-      - echo "cwd `pwd`"
       - echo "Build started on `date`"
       - echo "Building ..."
       - npm run build
   post_build:
     commands:
-      - echo "cwd `pwd`"
       - echo "Uploading build to $BUCKET ..."
       - aws s3 sync --delete "$BUILD_DIR" "$BUCKET"
       - echo "Build completed on `date`"
