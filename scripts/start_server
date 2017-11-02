@@ -1,0 +1,3 @@
+#!/bin/bash
+pipenv run gunicorn --config ./infrastructure/api/gunicorn.conf conduit.wsgi
+
