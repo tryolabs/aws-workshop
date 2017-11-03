@@ -1,3 +1,5 @@
 #!/bin/bash
-cd /deploy
+mkdir /data
+cd /deploy/backend
 pipenv install
+pipenv run python manage.py migrate
