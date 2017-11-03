@@ -1,6 +1,6 @@
 #!/bin/bash
 mkdir /deploy
 
-sudo apt install python3-pip
+apt-get -y install python3-pip
 
 pip3 install pipenv
