@@ -2,6 +2,3 @@
 mkdir /data
 apt-get -y install python3-pip
 pip3 install pipenv
-cd /deploy/backend
-pipenv install
-pipenv run python manage.py migrate
