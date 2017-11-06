@@ -15,9 +15,11 @@ COPY backend/Pipfile.lock /app
 
 RUN pipenv install
 
-COPY infrastructure/api/gunicorn.conf /conf
+COPY infrastructure/api/gunicorn.docker.conf /conf/gunicorn.conf
 
 COPY backend /app
+
+ENV DJANGO_SETTINGS_MODULE 'conduit.settings.docker'
 
 EXPOSE 9000
 CMD [ \
