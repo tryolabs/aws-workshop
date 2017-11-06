@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    BUCKET: "s3://diego-aws-workshop"
+    BUCKET_PARAMETER_NAME: "/prod/codebuild/WEBSITE_BUCKET_NAME"
     FRONTEND_DIR: "frontend"
     BUILD_DIR: "build"
     REACT_APP_USE_OWN_API: "true"
@@ -14,6 +14,7 @@ phases:
       - echo "Installing npm dependencies ..."
       - cd "$FRONTEND_DIR"
       - npm install
+      - apt install jq
   build:
     commands:
       - echo "Build started on `date`"
@@ -22,5 +23,6 @@ phases:
   post_build:
     commands:
       - echo "Uploading build to $BUCKET ..."
+      - export BUCKET=`aws ssm get-parameter --name "/prod/codebuild/WEBSITE_BUCKET_NAME" --region us-east-1 | jq .Parameter.Value`
       - aws s3 sync --delete "$BUILD_DIR" "$BUCKET"
       - echo "Build completed on `date`"
