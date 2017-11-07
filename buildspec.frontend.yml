@@ -30,5 +30,5 @@ phases:
       - echo "check variables..."
       - echo $BUILD_DIR
       - echo $BUCKET
-      - aws s3 sync --delete "$BUILD_DIR" "$BUCKET"
+      - aws s3 sync "$BUILD_DIR" "$BUCKET" --delete
       - echo "Build completed on `date`"
