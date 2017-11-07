@@ -19,8 +19,9 @@ pyjwt = "==1.4.2"
 gunicorn = "*"
 gevent = "*"
 "psycopg2" = "*"
+"boto3" = "*"
 
 
 [requires]
 
-python_version = "3.6"
+python_version = "3"
