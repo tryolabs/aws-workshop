@@ -2,13 +2,13 @@ version: 0.0
 os: linux
 hooks:
   BeforeInstall:
-    - location: infrastructure/codedeploy/install_dependencies
+    - location: infrastructure/aws/codedeploy/install_dependencies
       timeout: 300
       runas: root
-    - location: infrastructure/codedeploy/start_server
+    - location: infrastructure/aws/codedeploy/start_server
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: infrastructure/codedeploy/stop_server
+    - location: infrastructure/aws/codedeploy/stop_server
       timeout: 300
       runas: root
