@@ -23,6 +23,7 @@ phases:
       - npm run build
   post_build:
     commands:
+      - aws --version
       - echo "Uploading build to $BUCKET ..."
       - export BUCKET=`aws ssm get-parameter --name "$BUCKET_PARAMETER_NAME" --region us-east-1 | jq .Parameter.Value`
       - aws s3 sync --delete "$BUILD_DIR" "$BUCKET"
