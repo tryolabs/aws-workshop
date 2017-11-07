@@ -5,11 +5,12 @@ hooks:
     - location: infrastructure/aws/codedeploy/install_dependencies
       timeout: 300
       runas: root
-    - location: infrastructure/aws/codedeploy/start_server
-      timeout: 300
-      runas: root
   AfterInstall:
     - location: infrastructure/aws/codedeploy/after_install
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: infrastructure/aws/codedeploy/start_server
       timeout: 300
       runas: root
   ApplicationStop:
