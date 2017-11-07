@@ -3,7 +3,7 @@ import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-const API_DOMAIN = process.env.API_URL ? process.env.API_URL : global.location.origin;
+const API_DOMAIN = process.env.REACT_APP_API_DOMAIN ? process.env.REACT_APP_API_DOMAIN : global.location.origin;
 const API_ROOT = `${API_DOMAIN}/api`;
 
 const encode = encodeURIComponent;
