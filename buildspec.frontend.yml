@@ -14,7 +14,7 @@ phases:
       - echo "Installing npm dependencies and jq..."
       - cd "$FRONTEND_DIR"
       - npm install
-      - apt-get update
+      - apt update
       - apt install jq
       - pip install --upgrade awscli
   build:
@@ -24,7 +24,6 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws --version
       - export BUCKET=`aws ssm get-parameter --name "$BUCKET_PARAMETER_NAME" --region us-east-1 | jq -r .Parameter.Value`
       - echo "Uploading build to $BUCKET ..."
       - aws s3 sync "$BUILD_DIR" "$BUCKET" --delete
