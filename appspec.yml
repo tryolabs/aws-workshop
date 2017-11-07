@@ -1,5 +1,8 @@
 version: 0.0
 os: linux
+files:
+  - source: /
+    destination: /deploy
 hooks:
   BeforeInstall:
     - location: infrastructure/aws/codedeploy/install_dependencies
