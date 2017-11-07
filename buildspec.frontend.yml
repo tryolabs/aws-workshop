@@ -25,11 +25,7 @@ phases:
   post_build:
     commands:
       - aws --version
+      - export BUCKET=`aws ssm get-parameter --name "$BUCKET_PARAMETER_NAME" --region us-east-1 | jq -r .Parameter.Value`
       - echo "Uploading build to $BUCKET ..."
-      - export BUCKET=`aws ssm get-parameter --name "$BUCKET_PARAMETER_NAME" --region us-east-1 | jq .Parameter.Value`
-      - echo "check variables..."
-      - echo $BUILD_DIR
-      - echo $BUCKET
-      - ls
       - aws s3 sync "$BUILD_DIR" "$BUCKET" --delete
       - echo "Build completed on `date`"
