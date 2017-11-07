@@ -16,6 +16,7 @@ phases:
       - npm install
       - apt-get update
       - apt install jq
+      - pip install --upgrade awscli
   build:
     commands:
       - echo "Build started on `date`"
