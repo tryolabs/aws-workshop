@@ -11,9 +11,10 @@ env:
 phases:
   pre_build:
     commands:
-      - echo "Installing npm dependencies ..."
+      - echo "Installing npm dependencies and jq..."
       - cd "$FRONTEND_DIR"
       - npm install
+      - apt-get update
       - apt install jq
   build:
     commands:
