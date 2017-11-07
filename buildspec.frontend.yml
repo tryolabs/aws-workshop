@@ -3,10 +3,9 @@ version: 0.2
 env:
   variables:
     BUCKET_PARAMETER_NAME: "/prod/codebuild/WEBSITE_BUCKET_NAME"
+    API_URL_PARAMETER_NAME: "/prod/frontend/API_URL"
     FRONTEND_DIR: "frontend"
     BUILD_DIR: "build"
-    REACT_APP_USE_OWN_API: "true"
-    REACT_APP_API_DOMAIN: "http://api_url.com"
 
 phases:
   pre_build:
@@ -21,6 +20,7 @@ phases:
     commands:
       - echo "Build started on `date`"
       - echo "Building ..."
+      - export API_URL=`aws ssm get-parameter --name "$API_URL_PARAMETER_NAME" --region us-east-1 | jq -r .Parameter.Value`
       - npm run build
   post_build:
     commands:
