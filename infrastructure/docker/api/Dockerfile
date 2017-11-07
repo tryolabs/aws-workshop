@@ -15,7 +15,7 @@ COPY backend/Pipfile.lock /app
 
 RUN pipenv install
 
-COPY infrastructure/api/gunicorn.docker.conf /conf/gunicorn.conf
+COPY infrastructure/docker/api/gunicorn.docker.conf /conf/gunicorn.conf
 
 COPY backend /app
 

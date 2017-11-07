@@ -8,8 +8,8 @@ services:
   api:
     build:
       # Set parent dir as context so as to allow "COPY pegaces /app" in Dockerfile
-      context: ../
-      dockerfile: infrastructure/api/Dockerfile
+      context: ../../
+      dockerfile: infrastructure/docker/api/Dockerfile
     volumes:
       - ./api/data:/data
     links:
@@ -19,8 +19,8 @@ services:
       - db
   web:
     build:
-      context: ../
-      dockerfile: infrastructure/web/Dockerfile
+      context: ../../
+      dockerfile: infrastructure/docker/web/Dockerfile
     volumes:
       - ./web/data/:/data
     env_file: ./web/.env
