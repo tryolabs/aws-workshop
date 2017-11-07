@@ -1,3 +1,2 @@
 #!/bin/bash
-pipenv run gunicorn --config ./infrastructure/api/gunicorn.conf conduit.wsgi
-
+DJANGO_SETTINGS_MODULE='conduit.settings.ec2' pipenv run gunicorn --config ./gunicorn.ec2.conf conduit.wsgi
