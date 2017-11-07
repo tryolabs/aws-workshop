@@ -1,4 +1,6 @@
 #!/bin/bash
-cd /deploy/backend
+mkdir -p /var/log/gunicorn
+
+cd /deploy/backend || exit
 pipenv install
 pipenv run python manage.py migrate
