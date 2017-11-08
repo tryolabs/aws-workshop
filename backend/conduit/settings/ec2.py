@@ -1,6 +1,8 @@
 import boto3
 import json
 
+from botocore.errorfactory import ParameterNotFound
+
 from conduit.settings.defaults import *
 
 
@@ -9,15 +11,15 @@ PARAMETERS_PATH = '/prod/api/'
 
 
 def get_parameter(name, with_decryption=False, default=None):
-    response = client.get_parameter(
-        Name=PARAMETERS_PATH + name,
-        WithDecryption=with_decryption
-    )
+    try:
+        response = client.get_parameter(
+            Name=PARAMETERS_PATH + name,
+            WithDecryption=with_decryption
+        )
 
-    parameter = response.get('Parameter')
-    if parameter:
+        parameter = response.get('Parameter')
         return parameter.get('Value')
-    else:
+    except ParameterNotFound:
         return default
 
 
