@@ -56,3 +56,5 @@ CORS_ORIGIN_WHITELIST = tuple(json.loads(get_parameter(
     'CORS_ORIGIN_WHITELIST',
     default='[]'
 )))
+
+CORS_ORIGIN_ALLOW_ALL = True
