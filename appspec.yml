@@ -4,6 +4,10 @@ files:
   - source: /
     destination: /deploy
 hooks:
+  ApplicationStop:
+    - location: infrastructure/aws/codedeploy/stop_server
+      timeout: 300
+      runas: root
   BeforeInstall:
     - location: infrastructure/aws/codedeploy/install_dependencies
       timeout: 300
@@ -16,7 +20,7 @@ hooks:
     - location: infrastructure/aws/codedeploy/start_server
       timeout: 300
       runas: root
-  ApplicationStop:
-    - location: infrastructure/aws/codedeploy/stop_server
+  ValidateService:
+    - location: infrastructure/aws/codedeploy/validate_service
       timeout: 300
       runas: root
