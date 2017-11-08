@@ -51,6 +51,39 @@ DATABASES = {
     }
 }
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'django.file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/django/django.log',
+        },
+        'django.security.file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/django/django.security.log',
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['django.file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.security': {
+            'handlers': ['django.security.file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.db.backends': {
+            'handlers': [],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 
 CORS_ORIGIN_WHITELIST = tuple(json.loads(get_parameter(
     'CORS_ORIGIN_WHITELIST',
