@@ -4,7 +4,16 @@ mkdir -p /var/log/gunicorn
 cd /deploy/backend || exit
 pipenv install
 
-AWS_DEFAULT_REGION="$(curl http://169.254.169.254/latest/dynamic/instance-identity/document | jq .region)"
+AWS_DEFAULT_REGION="$(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | jq -r .region)"
 export AWS_DEFAULT_REGION
+
+DJANGO_SETTINGS_MODULE='conduit.settings.ec2'
+export DJANGO_SETTINGS_MODULE
+
+EC2_PUBLIC_HOSTNAME="$(curl -s http://169.254.169.254/latest/meta-data/public-hostname)"
+export EC2_PUBLIC_HOSTNAME
+
+EC2_PUBLIC_IP="$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)"
+export EC2_PUBLIC_IP
 
 pipenv run python manage.py migrate
