@@ -9,7 +9,10 @@ PARAMETERS_PATH = '/prod/api/'
 
 
 def get_parameter(name, with_decryption=False, default=None):
-    response = client.get_parameter(PARAMETERS_PATH + name, with_decryption)
+    response = client.get_parameter(
+        Name=PARAMETERS_PATH + name,
+        WithDecryption=with_decryption
+    )
 
     parameter = response.get('Parameter')
     if parameter:
