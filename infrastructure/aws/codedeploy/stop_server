@@ -1,4 +1,4 @@
 #!/bin/bash
 if [[ -f /var/run/gunicorn.pid ]]; then
- kill -s TERM "$(cat /var/run/gunicorn.pid)"
+  kill -s TERM "$(cat /var/run/gunicorn.pid)"
 fi

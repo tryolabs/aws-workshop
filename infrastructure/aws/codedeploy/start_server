@@ -1,3 +1,10 @@
 #!/bin/bash
 cd /deploy/backend || exit
-DJANGO_SETTINGS_MODULE='conduit.settings.ec2' pipenv run gunicorn --config ../infrastructure/aws/codedeploy/gunicorn.ec2.conf conduit.wsgi
+
+AWS_DEFAULT_REGION="$(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | jq -r .region)"
+export AWS_DEFAULT_REGION
+
+DJANGO_SETTINGS_MODULE='conduit.settings.ec2'
+export DJANGO_SETTINGS_MODULE
+
+pipenv run gunicorn --config ../infrastructure/aws/codedeploy/gunicorn.ec2.conf conduit.wsgi

@@ -1,9 +1,10 @@
 #!/bin/bash
 mkdir -p /var/log/gunicorn
 
+cd /deploy/backend || exit
+pipenv install
+
 AWS_DEFAULT_REGION="$(curl http://169.254.169.254/latest/dynamic/instance-identity/document | jq .region)"
 export AWS_DEFAULT_REGION
 
-cd /deploy/backend || exit
-pipenv install
 pipenv run python manage.py migrate
