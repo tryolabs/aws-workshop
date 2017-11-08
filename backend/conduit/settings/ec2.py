@@ -1,7 +1,7 @@
 import boto3
 import json
 
-from botocore.errorfactory import ParameterNotFound
+from botocore.exceptions import ClientError
 
 from conduit.settings.defaults import *
 
@@ -19,8 +19,11 @@ def get_parameter(name, with_decryption=False, default=None):
 
         parameter = response.get('Parameter')
         return parameter.get('Value')
-    except ParameterNotFound:
-        return default
+    except ClientError as e:
+        if e.response['Error']['Code'] == 'ParameterNotFound':
+            return default
+        else:
+            raise e
 
 
 DEBUG = get_parameter('DEBUG', default='False') == 'True'
