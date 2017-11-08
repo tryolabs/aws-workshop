@@ -6,6 +6,7 @@ if [[ -f "$PID_FILE" ]]; then
   if [[ ! -f "$PROC_FILE" ]]; then
     echo "gunicorn is not running"
     rm -f "$PID_FILE"
+    exit 2
   fi
 else
   echo "gunicorn is not running"
