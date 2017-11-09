@@ -12,6 +12,7 @@ PARAMETERS_PATH = '/prod/api/'
 
 EC2_HOSTNAME = os.environ['EC2_PUBLIC_HOSTNAME']
 EC2_IP = os.environ['EC2_PUBLIC_IP']
+EC2_LOCAL_IP = os.environ['EC2_LOCAL_IP']
 
 
 def get_parameter(name, with_decryption=False, default=None):
@@ -34,7 +35,7 @@ DEBUG = get_parameter('DEBUG', default='False') == 'True'
 
 ALLOWED_HOSTS = json.loads(get_parameter(
     'ALLOWED_HOSTS',
-    default='["{}", "{}"]'.format(EC2_HOSTNAME, EC2_IP)
+    default='["{}", "{}", "{}"]'.format(EC2_HOSTNAME, EC2_IP, EC2_LOCAL_IP)
 ))
 
 
