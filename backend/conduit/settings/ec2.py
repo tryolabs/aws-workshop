@@ -39,6 +39,9 @@ ALLOWED_HOSTS = json.loads(get_parameter(
 ))
 
 
+STATIC_ROOT = '/var/www/conduit/static/'
+
+
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 DATABASES = {

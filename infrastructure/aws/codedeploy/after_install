@@ -1,6 +1,7 @@
 #!/bin/bash
 mkdir -p /var/log/gunicorn
 mkdir -p /var/log/django
+mkdir -p /var/www/conduit/static/
 
 cd /deploy/backend || exit 2
 pipenv install

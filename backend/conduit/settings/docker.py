@@ -11,6 +11,8 @@ ALLOWED_HOSTS = json.loads(os.environ.get(
     '["localhost", "127.0.0.1"]'
 ))
 
+STATIC_ROOT = '/data/static/'
+
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
@@ -24,6 +26,41 @@ DATABASES = {
         'HOST': os.environ['DATABASE_HOST'],
         'PORT': os.environ.get('DATABASE_PORT', '5432'),
     }
+}
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'django.file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/data/django.log',
+        },
+        'django.security.file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/data/django.security.log',
+        },
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['django.file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.security': {
+            'handlers': ['django.security.file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.db.backends': {
+            'handlers': [],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
 }
 
 
