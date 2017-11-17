@@ -43,4 +43,4 @@ Now we have our database parameters set, and the password encrypted. Only our EC
 
 ---
 
-Next: [Create a CodeDeploy project to deploy your API]((/workshop/s3-web-ec2-api-rds/04-code-deploy.md)
+Next: [Create a CodeDeploy project to deploy your API](/workshop/s3-web-ec2-api-rds/04-code-deploy.md)

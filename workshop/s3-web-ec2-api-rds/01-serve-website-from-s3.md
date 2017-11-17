@@ -1,19 +1,14 @@
 # Serve a static website from S3
 
-We are ready to start the deployment of our website.
-The first step will be the frontend. Because it’s a static website, we can create an [S3 bucket](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), put all the code in it and serve it as a static website. Think of an S3 bucket as a folder on the cloud.
-To automate the build we will use [CodeBuild](https://aws.amazon.com/codebuild/), AWS option to build projects on the go.
-CodeBuild will pull our repository, build the webpage and copy the build directory to S3. The configuration is specified on `buildspec.frontend.yml` on the root folder of our repo.
-
 ## Creating the bucket
 
 First we need to create a bucket from where we are going to serve the website.
 
-1. On your AWS Console, go to **S****3** under **Storage section** ****and click on Create bucket
+1. On your AWS Console, go to **S3** under **Storage section** and click on Create bucket
 2. Enter the name of the bucket and click next. Remember, bucket names must be unique across all existing regions in AWS.
 3. Click Create. We will configure the properties later.
 4. Once created, click on the name of your bucket
-5. Go to properties, click **Static website hosting** ****check the option **Use this bucket to host a website**
+5. Go to properties, click **Static website hosting** check the option **Use this bucket to host a website**
 6. As index and error document put: `index.html`
 7. Later, we will go to the **endpoint url** specified at the top to access our website
 8. Click Save
@@ -38,7 +33,7 @@ First we need to create a bucket from where we are going to serve the website.
 From now on we will use [AWS Parameters Store](http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-paramstore.html) to keep variables of our system. This will enable us to store constants and later use them during other steps of the deployment. This time we will store the bucket name
 
 
-1. Go to **S****3** under **Storage** **section**
+1. Go to **S3** under **Storage** **section**
 2. See details of the bucket you just created and copy its name
 3. Go to **EC2** under **Compute section**
 4. On the left menu select **Parameter Store**
