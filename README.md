@@ -9,7 +9,6 @@ We created a custom repo based on that one with modified settings to fit our fut
 You must have an AWS account. Don’t worry, you won’t go over the free tier limit.
 If you want you can [set up a billing alarm](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-alarms.html), just in case.
 
-
-Assuming you already have a AWS account you can proceed to [Set up users on AWS](/workshop/set-up-users.md) to get started.
-
 ---
+
+Next: Assuming you already have a AWS account you can proceed to [Set up users on AWS](/workshop/set-up-users.md) to get started.
