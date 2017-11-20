@@ -16,7 +16,7 @@ Finally we need to re-run codebuild so the new bundle on s3 has the dns of the l
 7. click Save Parameter
 8. click Create Parameter
 9. as name put `/prod/api/ALLOWED_HOSTS`
-10. as value put just the DNS you copy 7 steps ago inside a list between “ `[``"``<dns-of-your-load-balancer>``"``]`
+10. as value put just the DNS you copy 7 steps ago inside a list between “ `["<dns-of-your-load-balancer>"]`
 11. click Create Parameter
 
 
