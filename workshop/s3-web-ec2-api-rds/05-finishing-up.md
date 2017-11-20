@@ -8,7 +8,7 @@ We are almost done. We have to add some more parameters and we are ready to depl
 3. Copy the Public DNS under Description
 4. On the left menu select Parameter Store
 5. Click get started now
-6. Enter  `/prod/frontend/API_URL` as name and `http://``<public dns you copied>``:900``0` 
+6. Enter  `/prod/frontend/API_URL` as name and `http://<public dns you copied>:9000`
 7. Click create parameter and close
 
 This will be used by CodeBuild, so the frontend knows where the API is
