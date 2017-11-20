@@ -10,14 +10,14 @@
 7. Enter a name on DB Instance identifier (we will need it later so don’t forget it)
 8. Enter a username and password and click Next (again, we will need them later)
 9. Select No on **Publicly Accessible**
-10. Pick a db name and click Launch Instance
+10. Pick a db name and click Launch Instance (again, we will need them later)
 11. Click View Your DB Instances
 
 Now our instance is created. We will configure its access, allowing every instance under the security group that was created in the previous section.
 
 1. Click on the name of the **Security Groups** under **Configuration Details** of your RDS instance
 2. Go to Inbound and click edit
-3. On source you have to put the group-id that you copy on last step of [Create EC2 instance](/doc/AWS-step-by-step-QGz9JlByckihA5wECLa0t#:uid=594213896963032418126114&h2=Create-EC2-instance)
+3. On source you have to put the group-id that you copy on last step of Create EC2 instance
 
 Now only our instance will have access to our database.
 
@@ -32,7 +32,7 @@ As before, we will need some variables stored in the parameter store, including 
 5. On the left menu select Parameter Store
 6. Click Create Parameter
 7. Enter  `/prod/api/DATABASE_NAME` as the name and `name of the postgres database` as description
-8. Enter the db name the db name that was picked on step 10 of the previous [section](/doc/AWS-step-by-step-QGz9JlByckihA5wECLa0t#:uid=067288080358595842315043&h2=Create-Postgres-in-RDS) on the value attribute
+8. Enter the db name, the db name that was picked on step 10 of the previous section on the value attribute
 9. Click create parameter and close
 10. Now we will need to do the same thing for the username and host
   1. For the username enter `/prod/api/DATABASE_USER` as the name and your database username  and as the value

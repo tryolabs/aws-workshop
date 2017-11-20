@@ -27,10 +27,10 @@ A Bastion is basically a instance located in one of our public subnets, will be 
 Now you have a public instance that can be access via ssh, but what you want is to be able to access to your private instances.
 
 1. Open your keypair (.pem file you downloaded) on your machine and copy the content of it.
-2. ssh to your bastion `ssh ubuntu@<public-ip-of-the-bastion> -i <pem-file-name>`
+2. Ssh to your bastion `ssh ubuntu@<public-ip-of-the-bastion> -i <pem-file-name>`
 3. Create a new file with the same name of your pem file and paste the content of it inside.
-4. now run `chmod 400 <pem-file-name>`
-5. now you can ssh to any of your 2 instances from your bastion: `ssh <private-ip-of-webserver-instance> -i <pem-file-name>`
+4. Now run `chmod 400 <pem-file-name>`
+5. Now you can ssh to any of your 2 instances from your bastion: `ssh <private-ip-of-webserver-instance> -i <pem-file-name>`
 
 ---
 Next: [Finishing our deploy with VPC, junt need to modify our CodeDeploy project and re-build](/workshop/vpc-subnets-bastion/08-finishing-up.md)
