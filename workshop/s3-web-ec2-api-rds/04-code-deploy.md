@@ -19,7 +19,7 @@ Now we are ready to start using it.
 4. Enter an Application name and Deployment group name
 5. Select In-place deployment on Deployment Type section
 6. Select Amazon EC2 instances tab on Environment configuration
-7. On the frist tag group select `environment` as Key and as Value `prod`, on the second line select `service` as Key and as Value `api`. This means that CodeDeploy will deploy our application to all the EC2 instances with those tags
+7. On the first tag group select `environment` as Key and as Value `prod`, on the second line select `service` as Key and as Value `api`. This means that CodeDeploy will deploy our application to all the EC2 instances with those tags
 8. On Deployment configuration select OneAtATime
 9. On Service role select the role created to grant CodeDeploy access to the instances
 10. Click Create application

@@ -1,6 +1,6 @@
 # Finishing up
 
-We are almost done. We have to add some more parameters and we are ready to deploy the hole project.
+We are almost done. We have to add some more parameters and we are ready to deploy the whole project.
 
 ## Create API_URL on Parameter Store
 1. Go to EC2 under Compute section
@@ -11,7 +11,7 @@ We are almost done. We have to add some more parameters and we are ready to depl
 6. Enter  `/prod/frontend/API_URL` as name and `http://<public dns you copied>:9000`
 7. Click create parameter and close
 
-This will be used by CodeBuild, so the frontend knows where the API is
+This will be used by CodeBuild, so the frontend knows where the API is. You can check how [here](/buildspec.frontend.yml)
 
 
 ## Run CodeBuild project

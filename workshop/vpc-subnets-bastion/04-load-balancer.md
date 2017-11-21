@@ -1,6 +1,6 @@
 # Load Balancer
 
-At this point we need to create a Load Balancer to be able to route inbound request from web to our instances thru the Load Balancer.
+At this point we need to create a Load Balancer to be able to route  request from the web to our instances.
  
 ## Create a new Load Balancer
 1. Go to EC2 under Computer section

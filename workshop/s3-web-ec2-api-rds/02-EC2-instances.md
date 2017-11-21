@@ -52,8 +52,8 @@ We are ready to launch our first EC2 instance. We will create a standard EC2 ins
 16. In port range put 9000 and in Source 0.0.0.0/0. This will enable the port 9000 from and out every IP. Security groups are stateful, so if we enable port 9000 it will be available for inbound and outbound traffic
 17. Click Review and Launch
 18. Click Launch
-19. When asked to select an existing key pair, choose `create a new key pair`, give it a name and click download. Store it in a secure place, we will use it to ssh into the instances latter.
-20. Click Launch Instances.
+19. When asked to select an existing key pair, choose `create a new key pair`, give it as name `aws_workshop` and click download. Store it in a secure place, we will use it to ssh into the instances during the whole workshop
+20. Click Launch Instances
 21. Wait until it starts
 22. Click on the security group and copy the group-id to use it latter
 
