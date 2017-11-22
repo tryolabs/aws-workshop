@@ -1,8 +1,9 @@
 # Nat Instance
 
-Until now we have 2 public subnets and 2 private subnets, in our private subnets we will deploy the Webserver instances that will be accesible via a Load Balancer, even if this instances doesn't need to be reachable from outiside of the VPC they need to have internet access to download and update packages, for this reason we need a Nat to route all external outbound traffic thru it.
+Until now we have 2 public subnets and 2 private subnets, in our private subnets we will deploy the Webserver instances that will be accesible via a Load Balancer.
+Even if this instances doesn't need to be reachable from outiside of the VPC, they need to have internet access to download and update packages. For this reason we need a Nat to route all external outbound traffic thru it.
 
-About Nat options, AWS offer us two options Nat Instance and Nat Gateway.
+About Nat options, AWS offer us two options [Nat Instance](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html) and [Nat Gateway](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html).
 Nat Gateway is newer and easier than Nat Instance and automatically scales, but for a pricing reason we will select Nat Instance (we can create a Nat Instance for free).
 
 ## Create Nat Instance

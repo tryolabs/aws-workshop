@@ -1,6 +1,7 @@
 # Internet Gateway
 
-We already have our VPC with 4 subnets, until now the four subnets are privates, to turn public 2 of them, we need a Internet Gateway for our VPC and create a Route Table to route all eternat traffic thru the Internet Gateway, and finally associate 2 of our VPC to this route table and assign them a public IP so they turn into public subnets (accept traffic from outside the VPC).
+We already have our VPC with 4 subnets, until now the four subnets are privates. To turn public 2 of them, we need a Internet Gateway for our VPC and create a Route Table to route all external traffic thru the Internet Gateway.
+Finally associate 2 of our subnets to this route table and assign them a public IP, so they turn into public subnets (accept traffic from outside the VPC).
 
 ## Create a Internet Gateway
 1. Go to Internet Gateways on the left section
