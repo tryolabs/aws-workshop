@@ -23,8 +23,13 @@ So that is what we are going to do next.
 9. Be careful that there are NO SPACES before every line in the script.
 10. Click Next: Add Storage
 11. Click Next: Configure Security Group
-12. Click : Select an existing security group and pick up the same one you have on the old EC2 instance then click Review.
-13. Click Create launch configuration
+12. Click : Create new security group
+13. Security Group Name: api-security-group
+14. Click: Add Rule
+15. Type: All TCP
+16. Source: load-balancer-security-group and select the one suggested.
+17. Click Review
+17. Click Create launch configuration
 
 Now that we have our **Launch configuration group** we can create our **Auto Scaling Group**.
 
