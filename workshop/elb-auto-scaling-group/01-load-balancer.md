@@ -19,4 +19,4 @@
 17. click: Close
 
 ---
-Next: [Create Auto Scaling Group](/workshop/elb-auto-scaling-group/02-auto-scaling-group.md)
+**Next:** [Create Auto Scaling Group](/workshop/elb-auto-scaling-group/02-auto-scaling-group.md)

@@ -23,5 +23,5 @@ Here we are going to create our VPC with 4 subnets.
 9. repeat steps 2-6 using as **Name tag**: 10.0.4.0-us-east-1b, **Availability Zone**: us-east-1b and **IPv4 CIDR block**: 10.0.4.0/24
 
 ---
-Next: [Create Internet Gateway and Public Routes Table](/workshop/vpc-subnets-bastion/02-internet-gateway.md)
+**Next:** [Create Internet Gateway and Public Routes Table](/workshop/vpc-subnets-bastion/02-internet-gateway.md)
 

@@ -33,4 +33,4 @@ At this point we need to create a Load Balancer to be able to route  request fro
 1. Repeat the steps of [this section](/workshop/elb-auto-scaling-group/03-finishing-up.md).
 
 ---
-Next: [Move RDS into your VPC](/workshop/vpc-subnets-bastion/05-RDS.md)
+**Next:** [Move RDS into your VPC](/workshop/vpc-subnets-bastion/05-RDS.md)

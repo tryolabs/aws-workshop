@@ -18,5 +18,5 @@ Finally some changes need to be made on our CodeDeploy project so it deploy on o
 So, let's get started.
 
 ---
-Next: [Create a VPC](/workshop/vpc-subnets-bastion/01-create-vpc.md)
+**Next:** [Create a VPC](/workshop/vpc-subnets-bastion/01-create-vpc.md)
 

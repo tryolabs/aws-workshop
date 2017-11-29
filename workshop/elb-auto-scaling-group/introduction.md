@@ -9,4 +9,4 @@ This way we ensure that if we have 2 instances one on each availability zone, an
 Also we will create some rules to add more instances if our 2 instances are overloaded (example: using 80% of cpu for the last 5 minutes), you can add whatever rule you want.
 
 ---
-Next: [Create a Load Balancer](/workshop/elb-auto-scaling-group/01-load-balancer.md)
+**Next:** [Create a Load Balancer](/workshop/elb-auto-scaling-group/01-load-balancer.md)

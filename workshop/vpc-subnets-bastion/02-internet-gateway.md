@@ -39,4 +39,4 @@ Finally associate 2 of our subnets to this route table and assign them a public 
 8. Repeat steps 2-7 with 10.0.3.0-us-east-1b
 
 ---
-Next: [Create a Nat Instance](/workshop/vpc-subnets-bastion/03-nat-instance.md)
+**Next:** [Create a Nat Instance](/workshop/vpc-subnets-bastion/03-nat-instance.md)

@@ -35,4 +35,4 @@ There you can find the access key id and the secret access key. You’ll need th
 
 ---
 
-Next: [Serve a static website from S3 with API in a EC2 instance and PostgresDB on RDS](/workshop/s3-web-ec2-api-rds/introduction.md)
+**Next:** [Serve a static website from S3 with API in a EC2 instance and PostgresDB on RDS](/workshop/s3-web-ec2-api-rds/introduction.md)

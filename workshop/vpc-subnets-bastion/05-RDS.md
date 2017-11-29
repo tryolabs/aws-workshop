@@ -18,4 +18,4 @@ Now we should move our RDS inside our VPC, choosing the private subnets only, th
 13. Click Modify DB Instance
 
 ---
-Next: [Auto Scaling Group](/workshop/vpc-subnets-bastion/06-auto-scaling-group.md)
+**Next:** [Auto Scaling Group](/workshop/vpc-subnets-bastion/06-auto-scaling-group.md)

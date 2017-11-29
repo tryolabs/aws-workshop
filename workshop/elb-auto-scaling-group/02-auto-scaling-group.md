@@ -55,5 +55,5 @@ Now that we have our **Launch configuration group** we can create our **Auto Sca
 19. click: close
 
 ---
-Next: [Finishing up, modify parameters and CodeDeploy project](/workshop/elb-auto-scaling-group/03-finishing-up.md)
+**Next:** [Finishing up, modify parameters and CodeDeploy project](/workshop/elb-auto-scaling-group/03-finishing-up.md)
 

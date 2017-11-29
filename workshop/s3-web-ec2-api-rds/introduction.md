@@ -11,4 +11,4 @@ Finally we will use [CodeDeploy](http://docs.aws.amazon.com/codedeploy/latest/us
 
 ---
 
-Next: [Serve a static website from S3](/workshop/s3-web-ec2-api-rds/01-serve-website-from-s3.md)
+**Next:** [Serve a static website from S3](/workshop/s3-web-ec2-api-rds/01-serve-website-from-s3.md)

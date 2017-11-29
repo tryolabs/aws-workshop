@@ -25,4 +25,4 @@ This will be used by CodeBuild, so the frontend knows where the API is. You can 
 Now, if you go to the public URL provided by S3 (under S3, your bucket, properties, static website hosting) you will find the endpoint. If everything went as planned, you should see the complete website.
 
 ---
-Next: [Add an extra EC2 instance with ELB and auto-scaling](/workshop/elb-auto-scaling-group/introduction.md)
+**Next:** [Add an extra EC2 instance with ELB and auto-scaling](/workshop/elb-auto-scaling-group/introduction.md)

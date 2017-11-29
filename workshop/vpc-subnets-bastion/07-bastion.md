@@ -33,4 +33,4 @@ Now you have a public instance that can be access via ssh, but what you want is 
 5. Now you can ssh to any of your 2 instances from your bastion: `ssh <private-ip-of-webserver-instance> -i <pem-file-name>`
 
 ---
-Next: [Finishing our deploy with VPC, junt need to modify our CodeDeploy project and re-build](/workshop/vpc-subnets-bastion/08-finishing-up.md)
+**Next:** [Finishing our deploy with VPC, junt need to modify our CodeDeploy project and re-build](/workshop/vpc-subnets-bastion/08-finishing-up.md)

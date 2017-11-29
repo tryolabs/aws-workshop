@@ -33,4 +33,4 @@ We are going to create a new Launch Configuration and Auto Scaling group so it s
 20. click: close
 
 ---
-Next: [Create a Bastion to access thru SSH to your private instances](/workshop/vpc-subnets-bastion/07-bastion.md)
+**Next:** [Create a Bastion to access thru SSH to your private instances](/workshop/vpc-subnets-bastion/07-bastion.md)

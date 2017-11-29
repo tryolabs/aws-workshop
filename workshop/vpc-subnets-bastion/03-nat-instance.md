@@ -47,4 +47,4 @@ Nat Gateway is newer and easier than Nat Instance and automatically scales, but 
 9. click Save
 
 ---
-Next: [Create new Load Balancer](/workshop/vpc-subnets-bastion/04-load-balancer.md)
+**Next:** [Create new Load Balancer](/workshop/vpc-subnets-bastion/04-load-balancer.md)

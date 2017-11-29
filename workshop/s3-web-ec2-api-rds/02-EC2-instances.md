@@ -58,4 +58,4 @@ We are ready to launch our first EC2 instance. We will create a standard EC2 ins
 22. Click on the security group and copy the group-id to use it latter
 
 ---
-Next: Create a [PostgresDB on RDS](/workshop/s3-web-ec2-api-rds/03-RDS.md)
+**Next:** Create a [PostgresDB on RDS](/workshop/s3-web-ec2-api-rds/03-RDS.md)

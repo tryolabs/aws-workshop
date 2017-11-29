@@ -109,4 +109,4 @@ Earlier we created a policy to allow access to our S3 bucket and a role assigned
 
 ---
 
-Next: [EC2 instances](/workshop/s3-web-ec2-api-rds/02-EC2-instances.md)
+**Next:** [EC2 instances](/workshop/s3-web-ec2-api-rds/02-EC2-instances.md)

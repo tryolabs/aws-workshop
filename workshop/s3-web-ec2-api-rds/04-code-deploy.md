@@ -36,4 +36,4 @@ Now our CodeDeploy application is ready. Let’s try our first deployment
 8. Click Deploy
 
 ---
-Next: [Finishing our first deploy, only some more extra parameters](/workshop/s3-web-ec2-api-rds/05-finishing-up.md)
+**Next:** [Finishing our first deploy, only some more extra parameters](/workshop/s3-web-ec2-api-rds/05-finishing-up.md)

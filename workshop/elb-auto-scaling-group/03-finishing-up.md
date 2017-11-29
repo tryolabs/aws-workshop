@@ -39,4 +39,4 @@ Finally we need to re-run codebuild so the new bundle on s3 has the dns of the l
 3. click Start build
 
 ---
-Next: [Create your own VPC with private and public subnets and a bastion to access thru SSH to your instances](/workshop/vpc-subnets-bastion/introduction.md)
+**Next:** [Create your own VPC with private and public subnets and a bastion to access thru SSH to your instances](/workshop/vpc-subnets-bastion/introduction.md)
