@@ -1,6 +1,5 @@
 import boto3
 import json
-import os
 
 from botocore.exceptions import ClientError
 
@@ -9,11 +8,6 @@ from conduit.settings.defaults import *
 
 client = boto3.client('ssm')
 PARAMETERS_PATH = '/prod/api/'
-
-EC2_HOSTNAME = os.environ['EC2_PUBLIC_HOSTNAME']
-EC2_IP = os.environ['EC2_PUBLIC_IP']
-EC2_LOCAL_IP = os.environ['EC2_LOCAL_IP']
-
 
 def get_parameter(name, with_decryption=False, default=None):
     try:
