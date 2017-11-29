@@ -29,8 +29,8 @@ At this point we need to create a Load Balancer to be able to route  request fro
 24. click Save
 25. Delete old Load Balancer
 
-## Modify ALLOWED_HOSTS and modify API_URL
-1. Repeat the steps of [this section](/workshop/elb-auto-scaling-group/03-finishing-up.md) but modifying ALLOWED_HOSTS instead of creating it again.
+## Modify API_URL
+1. Repeat the steps of [this section](/workshop/elb-auto-scaling-group/03-finishing-up.md).
 
 ---
 Next: [Move RDS into your VPC](/workshop/vpc-subnets-bastion/05-RDS.md)

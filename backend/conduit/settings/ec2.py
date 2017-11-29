@@ -33,13 +33,6 @@ def get_parameter(name, with_decryption=False, default=None):
 
 DEBUG = get_parameter('DEBUG', default='False') == 'True'
 
-ALLOWED_HOSTS = json.loads(get_parameter(
-    'ALLOWED_HOSTS',
-    default='["{}", "{}"]'.format(EC2_HOSTNAME, EC2_IP)
-))
-
-ALLOWED_HOSTS.append(EC2_LOCAL_IP)
-
 
 STATIC_ROOT = '/var/www/conduit/static/'
 

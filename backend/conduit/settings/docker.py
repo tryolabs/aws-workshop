@@ -6,10 +6,6 @@ from conduit.settings.defaults import *
 
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = json.loads(os.environ.get(
-    'DJANGO_ALLOWED_HOSTS',
-    '["localhost", "127.0.0.1"]'
-))
 
 STATIC_ROOT = '/data/static/'
 
