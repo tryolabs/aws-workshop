@@ -28,9 +28,9 @@ DEBUG = True
 # We put * on ALLOWED_HOSTS this implies that any request from any domain
 # will be handled.
 # Http Header Attacks should be prevented in another way.
-# Check this to read more: 
+# Check this to read more:
 # https://docs.djangoproject.com/en/1.11/topics/security/#host-headers-virtual-hosting
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
