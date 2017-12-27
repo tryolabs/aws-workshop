@@ -1,6 +1,6 @@
 # Create Auto Scaling Group
 
-To create an Auto Scaling Group first we need to create a [Launch Configuration Group](http://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html)
+To create an Auto Scaling Group first we need to create a [Launch Configuration Group](http://docs.aws.amazon.com/Auto Scaling/latest/userguide/LaunchConfiguration.html)
 So that is what we are going to do next.
 
 ## Create Launch Configuration group
@@ -37,7 +37,7 @@ Now that we have our **Launch configuration group** we can create our **Auto Sca
 1. Go to EC2 under Compute section
 2. On left menu select Auto Scaling Groups under AUTO SCALING
 3. click : Create Auto Scaling group
-4. select: aws-workshop-auto-scaling-group and then click Next Step 
+4. select: aws-workshop-auto-scaling-group and then click Next Step
 5. On Group name put the same as in Launch configuration
 6. Group size: 2
 7. select 2 subnets
