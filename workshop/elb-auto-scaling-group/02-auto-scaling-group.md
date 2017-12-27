@@ -1,6 +1,6 @@
 # Create Auto Scaling Group
 
-To create an Auto Scaling Group first we need to create a [Launch Configuration Group](http://docs.aws.amazon.com/Auto Scaling/latest/userguide/LaunchConfiguration.html)
+To create an Auto Scaling Group first we need to create a [Launch Configuration Group](http://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html)
 So that is what we are going to do next.
 
 ## Create Launch Configuration group
