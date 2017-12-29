@@ -24,14 +24,14 @@ In the future, if an EC2 instance with our new role wants to access an encrypted
 
 ## Launch your first EC2 instance
 
-We are ready to launch our first EC2 instance. We will create a standard EC2 instance, add a [startup script](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) and finally create a [security group](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) that will control the outbound and inbound in our EC2 instances.
+We are ready to launch our first EC2 instance. We will create a standard EC2 instance, add a [startup script](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html) (which will run automatically when the instance boots) and finally create a [security group](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) that will control the outbound and inbound in our EC2 instances.
 
-1. Go to the **EC2** under **Compute section**.
+1. Go to the **EC2** under **Compute section**, and in the top right corner, you can pick the region we are going to use. In this case, we will be using the same region that we used for the S3 bucket setup earlier, that is, `US East (N. Virginia)`.
 2. Click on Launch Instance.
 3. Look for Ubuntu Server (make sure it says Free tier eligible) and click Select.
 4. Select `t2.micro` and then click on Next: Configure Instance Details.
 5. Select our `ApiRole` on **IAM role**.
-6. On Advance Settings, there you have to select As text in User data and paste this bash script:
+6. On Advanced Details, select "As text" in User data and then paste the following bash script:
     ```
     #!/bin/bash
     export LC_ALL=C.UTF-8
@@ -44,6 +44,7 @@ We are ready to launch our first EC2 instance. We will create a standard EC2 ins
     ```
 
     Be careful, if you leave spaces at the beginning of the script it will not work. So NO SPACES!
+    If you had used another region, the bucket name in the `wget` line would be different (see [here](https://docs.aws.amazon.com/codedeploy/latest/userguide/resource-kit.html#resource-kit-bucket-names)).
 
 7. Click Next: Add Storage.
 8. Leave the default settings and click Next: Add Tags.
@@ -51,15 +52,15 @@ We are ready to launch our first EC2 instance. We will create a standard EC2 ins
 10. Fill Key with `service` and in Value with `api`.
 11. Add another tag with Key `environment` and Value `prod`. These keys will help us identify our EC2 instances running the API later.
 12. Click on Next: Configure Security Group.
-13. You can name the security group as you want.
+13. You can name the security group as you want. But make it descriptive, you cannot rename it later!
 14. Click Add Rule.
-15. In port range put `9000` and in Source `0.0.0.0/0`. This will enable the port 9000 from and out every IP. Security groups are stateful, so if we enable port 9000 it will be available for inbound and outbound traffic
-16. Click Review and Launch
-17. Click Launch
-18. When asked to select an existing key pair, choose `create a new key pair`, give it as name `aws_workshop` and click download. Store it in a secure place, we will use it to ssh into the instances during the whole workshop
-19. Click Launch Instances
-20. Wait until it starts
-21. Click on the security group and copy the group-id to use it latter
+15. In port range put `9000` and in Source `0.0.0.0/0`, and add a meaningful description. This will enable incoming traffic on port 9000 from every IP, so you can "contact" your instance from the outside. If you pay attention, by default we also get a rule allowing inbound traffic on port 22, which we will use for SSH'ing to the instance. Also by default, outbound traffic (that is, traffic originating from your instance) will be allowed to any destination and port, but you could restrict that later by editing the outbound rules for the security group.
+16. Click Review and Launch.
+17. Click Launch.
+18. When asked to select an existing key pair, choose `create a new key pair`, give it as name `aws_workshop` and click download. Store it in a secure place (`~/.ssh` is good, but make sure you `chmod 400` the PEM file so only your user can read it), we will use it to SSH into the instances during the whole workshop.
+19. Click Launch Instances.
+20. Wait until it starts.
+21. Click on the security group and copy the group-id to use it later.
 
 ---
 **Next:** create a [PostgresSQL database on RDS](/workshop/s3-web-ec2-api-rds/03-RDS.md).
