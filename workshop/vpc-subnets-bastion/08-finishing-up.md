@@ -9,7 +9,7 @@ Last steps are modifing our CodeDeploy project so it use our new Auto Scaling gr
 4. On Environment configuration select your Auto Scaling Group on Auto Scaling groups tag
 5. Go to Amazon EC2 instances tag and delete all tag groups
 6. check the Enable load balancing
-7. on Load balancer select your target group on the drop down
+7. on Load balancer select your target group on the dropdown
 8. click Save
 9. select your deployment group and on Actions click Deploy new version
 10. on Repository type select : My application is stored in github

@@ -10,7 +10,6 @@ Here we are going to create our VPC with 4 subnets.
 5. As **IPv4 CIDR** **block*** put : 10.0.0.0/16
 6. then click:  Yes, Create
 
-
 ## Create 4 subnets
 1. Go to Subnets on the left section
 2. Click Create Subnet
