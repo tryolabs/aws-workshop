@@ -2,7 +2,7 @@
 
 The aim of this section is to improve a bit our security and redundancy. For this we are going to create a [custom VPC](https://aws.amazon.com/documentation/vpc/).
 
-Once we have our VPC, we will create 2 private subnets (where our Auto Scaling Group will launch the web server instances) in different Availability Zones (for redundancy reasons). We will also setup 2 public subnets in the same availability zones, which are needed by the load balancer.
+Once we have our VPC, we will create 2 private subnets (where our Auto Scaling Group will launch the web server instances) in different Availability Zones (for redundancy reasons). We will also setup 2 public subnets in the same availability zones, which are needed by the load balancer. You can read more about VPC and subnets [here](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html).
 
 For our public subnets, we will need to setup an [Internet Gateway](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html) and create a new [Route Table](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html), so any instance in the subnet can access the Internet.
 
