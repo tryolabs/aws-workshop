@@ -2,7 +2,7 @@
 
 Now, we have two instances on EC2, an ELB to distribute the traffic across them, and an Auto Scaling Group to have redundancy and scale in an automatic way if throughput needs to increase.
 
-On [section 1](/workshop/s3-web-ec2-api-rds/05-finishing-up.md), the `API_URL` parameter was set to the DNS name of our only instance. Now, we need to tell the web that the request must be done through the load balancer, so we need to modify `API_URL`.
+In [the first section](/workshop/s3-web-ec2-api-rds/05-finishing-up.md), the `API_URL` parameter was set to the DNS name of our only instance. Now, we need to tell the web that the request must be done through the load balancer, so we need to modify `API_URL`.
 We also need to modify the CodeDeploy project so the tool knows that now we have an Auto Scaling Group and that it needs to run the deploy on each of the instances in the group.
 Finally, we need to re-run CodeBuild so the new bundle on S3 points to the DNS of the load balancer instead of the instance' DNS.
 
