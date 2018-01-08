@@ -1,42 +1,39 @@
 # Finishing up
 
-So now we have two instances of EC2, an ELB to distribute the traffic accross our instances, and a auto-scaling group to have redundancy and scale in an automatic way if performance need to increase.
+Now, we have two instances on EC2, an ELB to distribute the traffic across them, and an Auto Scaling Group to have redundancy and scale in an automatic way if throughput needs to increase.
 
-On [section 1](/workshop/s3-web-ec2-api-rds/05-finishing-up.md) we used as API_URL the dns of our only instance, now we need to tell the web that the request must be done thru the load balancer, so we need to modify API_URL.
-Also we need to modify the CodeDeploy project so he knows that now we have a auto-scaling group and that need to deploy on each of our instances.
-Finally we need to re-run codebuild so the new bundle on s3 has the dns of the load-balancer instead of the instance dns.
+In [the first section](/workshop/s3-web-ec2-api-rds/05-finishing-up.md), the `API_URL` parameter was set to the DNS name of our only instance. Now, we need to tell the web that the request must be done through the load balancer, so we need to modify `API_URL`.
+We also need to modify the CodeDeploy project so the tool knows that now we have an Auto Scaling Group and that it needs to run the deploy on each of the instances in the group.
+Finally, we need to re-run CodeBuild so the new bundle on S3 points to the DNS of the load balancer instead of the instance' DNS.
 
-## Modify API_URL
-1. Go to EC2 under Computer section
-2. On left menu select Load Balancer under LOAD BALANCING
-3. Copy the DNS name of your load balancer appear under Description
-4. On left menu select Parameter Store
-5. click on /prod/frontend/API_URL and on Actions select Edit Parameter
-6. as Value put: http:// + DNS that you copy 3 steps ago
-7. click Save Parameter
-
+## Modify `API_URL`
+1. Go to EC2 under Computer section.
+2. On left menu select Load Balancer under LOAD BALANCING.
+3. Copy the DNS name of your load balancer that appears under Description.
+4. On left menu, select Parameter Store.
+5. Click on `/prod/frontend/API_URL` and on Actions select Edit Parameter.
+6. As Value put: `http://` + the DNS that you copied 3 steps ago.
+7. Click Save Parameter.
 
 ## Modify the CodeDeploy project
-1. Go to CodeDeploy under Developer Tools
-2. click your application name
-3. select your deployment group and on Actions select Edit
-4. On Environment configuration select your Auto Scaling Group on Auto Scaling groups tag
-5. Go to Amazon EC2 instances tag and delete all tag groups
-6. check the Enable load balancing
-7. on Load balancer check Application Load Balancer or Network Load Balancer
-8. then select your target group on the drop down
-9. click Save
-10. select your deployment group and on Actions click Deploy new version
-11. on Repository type select : My application is stored in github
-12. Repository Name: tryolabs/aws-workshop
-13. select last commit id
-14. then click Deploy
-
+1. Go to CodeDeploy under Developer Tools.
+2. Click your application's name.
+3. Select your deployment group and on Actions select Edit.
+4. On Environment configuration select your Auto Scaling Group on Auto Scaling groups tab.
+5. Go to Amazon EC2 instances tab, and delete all existing Tag groups that we setup earlier.
+6. Check Enable load balancing.
+7. On Load balancer, check Application Load Balancer or Network Load Balancer.
+8. Select your target group in the dropdown.
+9. Click Save.
+10. Select your deployment group and on Actions click Deploy new version.
+11. On Repository type select: My application is stored in GitHub.
+12. Repository Name: `tryolabs/aws-workshop`.
+13. Select last commit id.
+14. Then click Deploy.
 
 ## Re-run CodeBuild
-1. Go to CodeBuild under Developer Tools
-2. click Start build
-3. click Start build
+1. Go to CodeBuild under Developer Tools.
+2. Click Start build, twice.
 
 ---
-**Next:** [Create your own VPC with private and public subnets and a bastion to access thru SSH to your instances](/workshop/vpc-subnets-bastion/introduction.md)
+**Next:** [VPC configuration and Bastion instance](/workshop/vpc-subnets-bastion/introduction.md).
