@@ -8,9 +8,11 @@ In this repo, you can find the backend and frontend components, both with modifi
 
 # Preconditions
 
-You must have an AWS account. Don’t worry, you won’t go over the free tier limit.
+You must have an AWS account. Even though you mostly will be in the free tier, some services like Elastic Load Balancers, Encryption Keys, and others **will be billed**. This means that you should be ready to spend a few dollars (5 U$S) to complete this workshop.
 
 If you want to, you can [set up a billing alarm](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-alarms.html) to avoid these situations, just in case.
+
+> **TryoTip:** if you are doing this workshop as part of Tryolabs training, feel free to ask for access to the **Tryolabs Playground AWS account**. This way, you will not have to put your own credit card.
 
 # Content
 

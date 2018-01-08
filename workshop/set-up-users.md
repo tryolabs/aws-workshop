@@ -1,5 +1,7 @@
 # Set up users on AWS
 
+> **TryoTip:** if you are using the **Tryolabs Playground AWS account**, this section does not apply. Please, read it anyway, so you have some context on what you would do with a bare new AWS account.
+
 Before continuing, you should know it’s [not recommended](http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users) to your root account to access AWS. Additionally, you should make sure you enable [Multi Factor Authentication (MFA)](http://docs.aws.amazon.com/console/iam/security-status-activate-mfa) on your root account, and use an app like [Authy](https://authy.com/) as a second factor on your phone (Android/iOS).
 
 Next, we are going to setup 2 AWS users.
