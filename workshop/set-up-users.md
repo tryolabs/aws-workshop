@@ -38,5 +38,8 @@ After this, we can create the user to access AWS programmatically:
 In the downloaded file, you can find the access key id and the secret access key. You’ll need them to [configure your AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) in your computer. If you don’t have AWS CLI installed yet, you can do it following [these steps](http://docs.aws.amazon.com/cli/latest/userguide/installing.html).
 
 ---
+**Extra mile**: set the `ViewOnlyAccess` permissions to the user with programmatic access. Double points if you do it with the CLI.
+
+---
 
 **Next:** [S3, RDS and EC2](/workshop/s3-web-ec2-api-rds/introduction.md).
