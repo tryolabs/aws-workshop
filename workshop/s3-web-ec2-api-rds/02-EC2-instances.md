@@ -64,4 +64,10 @@ We are ready to launch our first EC2 instance. We will create a standard EC2 ins
 21. Click on the security group and copy the group-id to use it later.
 
 ---
+**Extra mil:**
+
+- Try `pin`ging your EC2 instance. Extra points for make it work.
+- Loggin with `ssh` to the new instance, username: _ubuntu_ try the `-i` flag to use the .pem file.
+
+---
 **Next:** create a [PostgresSQL database on RDS](/workshop/s3-web-ec2-api-rds/03-RDS.md).
