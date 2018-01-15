@@ -2,12 +2,9 @@
 
 ## Create a PostgreSQL instance in RDS
 1. Go to **RDS** under **Database** section.
-2. Click on Get Started Now.
-3. Click on PostgreSQL logo and then click select.
-4. Check the option of Dev/Test section and click Next Step.
-5. On **DB Instance class** select : `db.t2.micro`. We are not going to need much more for this workshop.
-6. On **Multi-AZ Deployment** select: no.
-7. Enter a name on DB Instance identifier (we will need it later, so don’t forget it).
+2. Click on **Launch a DB Instance**.
+3. Click on PostgreSQL logo, tick the _"Only enable options eligible for RDS Free Usage Tier"_ checkbox at the bottom and click Next.
+7. Enter a name on _DB Instance identifier_ (we will need it later, so don’t forget it).
 8. Enter a username and password and click Next (again, we will need these later).
 9. Select No on **Publicly Accessible**.
 10. Availability Zone: `us-east-1a`.
@@ -28,12 +25,12 @@ As before, we will need some variables stored in the parameter store, including 
 
 1. Go to **RDS** under **Database** section.
 2. Click on Instances.
-3. See details of your db and copy the url of the **Endpoint** (until the `:` ). This will be the value for `DATABASE_HOST`.
+3. See details of your db and copy the **Endpoint**. This will be the value for `DATABASE_HOST`.
 4. Go to **EC2** under **Compute** section.
 5. On the left menu select Parameter Store.
 6. Click Create Parameter.
 7. Enter  `/prod/api/DATABASE_NAME` as the name and a meaningful description like "Name of the PostgreSQL database".
-8. Enter the DB name (which was selected on step 10 of the previous section) on the value attribute.
+8. Enter the DB name you select before on the value attribute.
 9. Click create parameter and close.
 10. Now we will need to do the same thing for the username and host
   1. For the username enter `/prod/api/DATABASE_USER` as the name and your database username and as the value
