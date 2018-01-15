@@ -45,7 +45,7 @@ Every application needs to have some configurations that inherently will vary be
 7. Enter `s3://<your-bucket-name>` as value.
 8. Click create parameter.
 
-Now, if we want to retrieve the bucket name programmatically, one option is using [AWS SSM Agent](http://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html). We will come back to this later.
+Now we can retrieve the bucket name with `aws ssm get-parameter` like we did [here](/buildspec.frontend.yml). Also, we can use [AWS SSM Agent](http://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) to manage our instances configuration from the AWS web console.
 
 
 ## Create a policy to get full access to the S3 website bucket
@@ -66,7 +66,7 @@ Now we have a policy that allows full access (list, write, update, delete, etc) 
 
 ## Create a project in CodeBuild to build and deploy the frontend
 
-As we mentioned earlier, [AWS CodeBuild](https://aws.amazon.com/codebuild/) is an AWS service to build projects. In order to instruct CodeBuild on what to do, we have created the `buildspec.frontend.yml`. CodeBuild will first pull the repository, and then run the commands specified on that file. If you see, we have specified what is needed for a fresh install of the project, which ends up in a build using `npm build` and another command for uploading the resulting files to S3.
+As we mentioned earlier, [AWS CodeBuild](https://aws.amazon.com/codebuild/) is an AWS service to build projects. In order to instruct CodeBuild on what to do, we have created the `buildspec.frontend.yml`. CodeBuild will first pull the repository, and then run the commands specified on [that file](/buildspec.frontend.yml). If you see, we have specified what is needed for a fresh install of the project, which ends up in a build using `npm build` and `aws s3 sync` for uploading the resulting files to S3.
 
 Follow these steps to get it ready:
 
@@ -82,7 +82,7 @@ Follow these steps to get it ready:
   1. Choose Ubuntu as the OS and Node.js as the Runtime.
   2. Select  `aws/codebuild/nodejs:7.0.0` as the Version.
   3. Change the BuildSpec name to `buildspec.frontend.yml` (our yaml file with the steps to follow).
-6. In the Artifacts section select No artifacts.
+6. In the Artifacts section select _No artifacts_.
 7. In the Service Role section:
   1. Select Create a service role in your account.
   2. Choose a name for the Role and name it `codebuild-aws-workshop-service-role`.
@@ -95,7 +95,7 @@ Now, we have created a CodeBuild application. We won’t be able to run it thoug
 
 A [Role](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) defines permissions inside AWS. Those permissions come in the form of policies, just like in the case of your AWS user. Things like certain EC2 services (and even instances) which need to execute some actions can run attached to a certain role, and will thus get whatever permissions the role has.
 
-Earlier, we created a policy to allow access to our S3 bucket and assigned a new role to our CodeBuild application. Now we will attach the policy to the role, effectively giving CodeBuild access to our S3 bucket. Moreover, we will need to attach another policy to give it access to SSM, so that it can query the values of the variables we setup in the Parameter Store.
+Earlier, we created a policy to allow full access to our S3 bucket and assigned a new role to our CodeBuild application. Now we will attach the policy to the role, effectively giving CodeBuild access to our S3 bucket. Moreover, we will need to attach another policy to give it access to SSM, so that it can query the values of the variables we setup in the Parameter Store.
 
 **Website full access**
 
@@ -109,6 +109,9 @@ Earlier, we created a policy to allow access to our S3 bucket and assigned a new
 
 1. Click Attach Policy again.
 2. Search for `AmazonSSMReadOnlyAccess` and click on Attach.
+
+---
+**Extra mile:** try get the value of `WEBSITE_BUCKET_NAME` from the command line.
 
 ---
 
