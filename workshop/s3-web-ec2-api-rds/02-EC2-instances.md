@@ -60,8 +60,6 @@ We are ready to launch our first EC2 instance. We will create a standard EC2 ins
 17. Click Launch.
 18. When asked to select an existing key pair, choose `create a new key pair`, give it as name `aws_workshop` and click download. Store it in a secure place (`~/.ssh` is good, but make sure you `chmod 400` the PEM file so only your user can read it), we will use it to SSH into the instances during the whole workshop.
 19. Click Launch Instances.
-20. Wait until it starts.
-21. Click on the security group and copy the group-id to use it later.
 
 ---
 **Extra mil:**

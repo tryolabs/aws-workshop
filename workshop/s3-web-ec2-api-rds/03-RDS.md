@@ -8,16 +8,11 @@
 8. Enter a username and password and click Next (again, we will need these later).
 9. Select No on **Publicly Accessible**.
 10. Availability Zone: `us-east-1a`.
+11. On **VPC security groups** choose _Select existing VPC security groups_ and select the security group you create when [launching the EC2 instance](/workshop/s3-web-ec2-api-rds/02-EC2-instances.md#launch-your-first-ec2-instance).
 11. Pick a db name and click Launch Instance (again, we will need the database name later).
 12. Click View Your DB Instances.
 
-Now our instance is created. We will configure its access, allowing every instance under the security group that was created in the previous section.
-
-1. Click on the name of the **Security Groups** under **Configuration Details** of your RDS instance
-2. Go to Inbound and click edit
-3. On source you have to put the group-id that you copied on the last step when [creating an EC2 instance](/workshop/s3-web-ec2-api-rds/02-EC2-instances.md).
-
-Now, only your instance will have access to the database, and nobody else.
+Now our instance is created. We configure its access, allowing every instance under the security group that was created in the previous section to connect.
 
 ## Add DB parameters on Parameters Store
 
