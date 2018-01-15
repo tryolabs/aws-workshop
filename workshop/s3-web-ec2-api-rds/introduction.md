@@ -5,11 +5,18 @@ We are ready to start the deployment of our website.
 The first step will be the frontend. Because it’s a static website, we can create an [S3 bucket](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), put all the code in it and serve it as a static website. Think of an S3 bucket as a folder in the cloud, which can be setup for access from the outside world via a URL (and even help a bit with your application's routes).
 
 To automate the build, we will use [CodeBuild](https://aws.amazon.com/codebuild/), AWS service to build projects on the go.
-CodeBuild will pull our repository, build the webpage and copy the build directory to S3. The configuration is specified on `buildspec.frontend.yml` on the root folder of our repo.
+CodeBuild will pull our repository, build the webpage and copy the build directory to S3. The configuration is specified on `buildspec.frontend.yml` on [the root folder of our repo](/buildspec.frontend.yml).
 
-In this section we will also create our Postgres database in [AWS RDS](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html).
+For the backend we will use [CodeDeploy](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) to automate the deployment of our API to the EC2 instances. It will pull our repo to the EC2 instances and start gunicorn. You should take a look at the configuration files [here](/infrastructure/aws/codedeploy).
 
-Finally we will use [CodeDeploy](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) to automate the deployment of our API to the EC2 instances. It will pull the repo from our EC2 instances and start gunicorn. You should take a look at the configuration files located in `infrastructure/aws/codedeploy`.
+Last but not least our database will be hosted with [AWS RDS](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html) as a Postgres instance.
+
+To sume up, in this section we will create:
+
+- an S3 bucket to host our static frontend.
+- a CodeBulid setup to build the frontend and copy the output to the S3 bucket.
+- a CodeDploy setup to deploy our API to the EC2 instances.
+- a RDS Postgres instance.
 
 > **Important:** after you are done with this workshop, you will ideally clean up your account, so you are not billed anymore. This means that you need to delete everything you have created.
 >
