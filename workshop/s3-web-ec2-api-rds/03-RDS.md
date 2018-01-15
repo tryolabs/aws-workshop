@@ -35,5 +35,11 @@ As before, we will need some variables stored in the parameter store, including 
 Now we have our database parameters set, and the password encrypted. Only our EC2 instances will be able to decrypt it.
 
 ---
+**Extra mile:**
+
+- Can you `ping` the Postrges instance?
+- Try to connect to the DB through your running EC2 instance.
+
+---
 
 **Next:** create a [CodeDeploy project to deploy your API](/workshop/s3-web-ec2-api-rds/04-code-deploy.md).
