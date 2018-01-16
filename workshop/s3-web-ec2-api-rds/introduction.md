@@ -7,16 +7,16 @@ The first step will be the frontend. Because it’s a static website, we can cre
 To automate the build, we will use [CodeBuild](https://aws.amazon.com/codebuild/), AWS service to build projects on the go.
 CodeBuild will pull our repository, build the webpage and copy the build directory to S3. The configuration is specified on `buildspec.frontend.yml` on [the root folder of our repo](/buildspec.frontend.yml).
 
-For the backend we will use [CodeDeploy](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) to automate the deployment of our API to the EC2 instances. It will pull our repo to the EC2 instances and start gunicorn. You should take a look at the configuration files [here](/infrastructure/aws/codedeploy).
+For the backend we will use [CodeDeploy](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) to automate the deployment of our API to the EC2 instances. It will pull our repo on the EC2 instances and start gunicorn. You should take a look at the configuration files [here](/infrastructure/aws/codedeploy).
 
-Last but not least our database will be hosted with [AWS RDS](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html) as a Postgres instance.
+Last but not least our database will be hosted using [AWS RDS](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html), as a PostgreSQL instance.
 
-To sume up, in this section we will create:
+To sum up, in this section we will create:
 
 - an S3 bucket to host our static frontend.
-- a CodeBulid setup to build the frontend and copy the output to the S3 bucket.
-- a CodeDploy setup to deploy our API to the EC2 instances.
-- a RDS Postgres instance.
+- a CodeBuild setup to build the frontend and copy the output to the S3 bucket.
+- a CodeDeploy setup to deploy our API to the EC2 instances.
+- a RDS PostgreSQL instance.
 
 > **Important:** after you are done with this workshop, you will ideally clean up your account, so you are not billed anymore. This means that you need to delete everything you have created.
 >

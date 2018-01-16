@@ -36,10 +36,10 @@ Now our CodeDeploy application is ready. Let’s try our first deployment.
 During the deploy try **View instances** and then **View events** to follow the progress and see what's happening.
 
 ---
-**Extra mile:** once the deploy is finish:
+**Extra mile:** once the deploy finished:
 
-- Try hitting the API with something like Postman
-- What effect the deploy has? Where end up all the Python code? is the API connected with the RDS already? `ssh` has all that answers, and more.
+- Try hitting the API with something like [Postman](https://www.getpostman.com/) or [httpie](https://httpie.org/).
+- What effect did the deploy have? Where did all the Python code end up? Is the API connected with the RDS already? `ssh` in to get all those answers, and more.
 
 ---
 **Next:** we are going to [finish our first deploy](/workshop/s3-web-ec2-api-rds/05-finishing-up.md), only some extra parameters are missing!

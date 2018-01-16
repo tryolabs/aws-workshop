@@ -25,7 +25,7 @@ As before, we will need some variables stored in the parameter store, including 
 5. On the left menu select Parameter Store.
 6. Click Create Parameter.
 7. Enter  `/prod/api/DATABASE_NAME` as the name and a meaningful description like "Name of the PostgreSQL database".
-8. Enter the DB name you select before on the value attribute.
+8. Enter the DB name you selected before on the value attribute.
 9. Click create parameter and close.
 10. Now we will need to do the same thing for the username and host
   1. For the username enter `/prod/api/DATABASE_USER` as the name and your database username and as the value

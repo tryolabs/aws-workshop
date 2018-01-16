@@ -45,7 +45,7 @@ Every application needs to have some configurations that inherently will vary be
 7. Enter `s3://<your-bucket-name>` as value.
 8. Click create parameter.
 
-Now we can retrieve the bucket name with `aws ssm get-parameter` like we did [here](/buildspec.frontend.yml). Also, we can use [AWS SSM Agent](http://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) to manage our instances configuration from the AWS web console.
+Now we can retrieve the bucket name with `aws ssm get-parameter` like we did [here](/buildspec.frontend.yml). Also, we can use [AWS SSM Agent](http://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) to manage our instances' configuration from the AWS web console.
 
 
 ## Create a policy to get full access to the S3 website bucket

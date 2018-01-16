@@ -53,7 +53,7 @@ We are ready to launch our first EC2 instance. We will create a standard EC2 ins
 10. Fill Key with `service` and in Value with `api`.
 11. Add another tag with Key `environment` and Value `prod`. These keys will help us identify our EC2 instances running the API later.
 12. Click on Next: Configure Security Group.
-13. Make sure the _Create a new security group_ option is selected and write a descritive name on the _Security group name:_ field. You cannot rename it later so choose the name wisely.
+13. Make sure the _Create a new security group_ option is selected and write a descriptive name on the _Security group name:_ field. You cannot rename it later so choose the name wisely.
 14. Click Add Rule.
 15. In port range put `9000` and in Source `0.0.0.0/0`, and add a meaningful description. This will enable incoming traffic on port 9000 from every IP, so you can "contact" your instance from the outside. If you pay attention, by default we also get a rule allowing inbound traffic on port 22, which we will use for SSH'ing to the instance. Also by default, outbound traffic (that is, traffic originating from your instance) will be allowed to any destination and port, but you could restrict that later by editing the outbound rules for the security group.
 16. Click Review and Launch.
@@ -62,10 +62,10 @@ We are ready to launch our first EC2 instance. We will create a standard EC2 ins
 19. Click Launch Instances.
 
 ---
-**Extra mil:**
+**Extra mile:**
 
-- Try `pin`ging your EC2 instance. Extra points for make it work.
-- Loggin with `ssh` to the new instance, username: _ubuntu_ try the `-i` flag to use the .pem file.
+- Try `pin`ging your EC2 instance. Extra points if you get it to work!
+- Connect to the new instance via SSH. The username is _ubuntu_, and try the `-i` flag to use the `.pem` file.
 
 ---
 **Next:** create a [PostgresSQL database on RDS](/workshop/s3-web-ec2-api-rds/03-RDS.md).

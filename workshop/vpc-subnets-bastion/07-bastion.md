@@ -14,7 +14,7 @@ A bastion is a regular EC2 instance located in one of the public subnets, which 
 10. Click Add Tag.
 11. Fill Key with `Name` and in Value with `bastion`.
 12. Click on Next: Configure Security Group.
-13. Write a meaningful name in **Security group name:**.
+13. Write a meaningful name in **Security group name**.
 14. Click Review and Launch.
 15. Click Launch.
 16. Select your key pair and click Launch Instances.

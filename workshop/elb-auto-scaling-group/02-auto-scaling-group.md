@@ -4,7 +4,7 @@ Production applications need to be ready to tolerate a growing number of users a
 
 Amazon provides [Auto Scaling Groups](https://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroup.html) as way to build a more robust application which can handle increasing loads. Using these, you can setup rules (scaling policies) so more instances serving your application
 
-To create an Auto Scaling Group, first we need to create a [Launch Configuration Group](http://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html), which is basically a template that specifies properties of the instances that will be launched.
+To create an Auto Scaling Group, first we need to create a [Launch Configuration](http://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html), which is basically a template that specifies properties of the instances that will be launched.
 
 ## Create Launch Configuration
 1. Go to **EC2** under **Compute** section.
