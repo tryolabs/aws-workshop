@@ -14,11 +14,12 @@ A bastion is a regular EC2 instance located in one of the public subnets, which 
 10. Click Add Tag.
 11. Fill Key with `Name` and in Value with `bastion`.
 12. Click on Next: Configure Security Group.
-13. Click Review and Launch.
-14. Click Launch.
-15. Select your key pair and click Launch Instances.
-16. Select the Bastion on the instances list and on Actions/Networking select Change Security Groups.
-17. Check the default security group of your VPC. Make sure that 2 security groups are checked, the one you just created and the one you created during the creation of the bastion.
+13. Write a meaningful name in **Security group name:**.
+14. Click Review and Launch.
+15. Click Launch.
+16. Select your key pair and click Launch Instances.
+17. Select the Bastion on the instances list and on Actions/Networking select Change Security Groups.
+18. Check the default security group of your VPC. Make sure that 2 security groups are checked, the default one and the one you created during the creation of the bastion.
 
 ## Accessing private instances through the bastion
 
