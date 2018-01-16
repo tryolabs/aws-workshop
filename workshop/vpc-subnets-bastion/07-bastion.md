@@ -41,5 +41,8 @@ Ideally, you would be using a different PEM file for the bastion and the instanc
 3. SSH into the instances (from the bastion) with `ssh <private-ip-of-webserver-instance> -i <pem-file-name>`.
 
 ---
+**Extra mile:** `ssh` to one of the instances in the private subnets and `tracepath` to an external host. Do the same for a instance in the public subnets. What's the difference?
+
+---
 
 **Next:** [finish the deploy](/workshop/vpc-subnets-bastion/08-finishing-up.md).
