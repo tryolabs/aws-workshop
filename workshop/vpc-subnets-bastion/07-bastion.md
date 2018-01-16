@@ -35,7 +35,7 @@ You can setup SSH so it's easier to access protected instances going transparent
 ### Option 2: copy the PEM file from your machine to the bastion instance
 Ideally, you would be using a different PEM file for the bastion and the instances (increased security).
 
-1. Copy the file with `scp ~/.ssh/<your-pem-file>.pem ubuntu@<public-ip-of-the-bastion>:/home/ubuntu/.ssh`.
+1. Copy the file with `scp ~/.ssh/<your-pem-file>.pem ubuntu@<public-ip-of-the-bastion>:/home/ubuntu/.ssh -i ~/.ssh/<your-pem-file>.pem`.
 2. SSH into the bastion.
 2. Make sure the file permissions are correct: `chmod 400 <pem-file-name>`.
 3. SSH into the instances (from the bastion) with `ssh <private-ip-of-webserver-instance> -i <pem-file-name>`.
