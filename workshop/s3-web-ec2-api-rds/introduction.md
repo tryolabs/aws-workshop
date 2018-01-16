@@ -7,7 +7,7 @@ The first step will be the frontend. Because it’s a static website, we can cre
 To automate the build, we will use [CodeBuild](https://aws.amazon.com/codebuild/), AWS service to build projects on the go.
 CodeBuild will pull our repository, build the webpage and copy the build directory to S3. The configuration is specified on `buildspec.frontend.yml` on [the root folder of our repo](/buildspec.frontend.yml).
 
-For the backend we will use [CodeDeploy](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) to automate the deployment of our API to the EC2 instances. It will pull our repo on the EC2 instances and start gunicorn. You should take a look at the configuration files [here](/infrastructure/aws/codedeploy).
+For the backend we will use [CodeDeploy](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) to automate the deployment of our API to the EC2 instances. It will pull our repo to the EC2 instances and start gunicorn. The deply process is described on `appspec.yml` [here](/appspec.yml).
 
 Last but not least our database will be hosted using [AWS RDS](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html), as a PostgreSQL instance.
 
