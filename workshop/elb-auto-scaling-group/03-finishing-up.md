@@ -7,29 +7,29 @@ We also need to modify the CodeDeploy project so the tool knows that now we have
 Finally, we need to re-run CodeBuild so the new bundle on S3 points to the DNS of the load balancer instead of the instance' DNS.
 
 ## Modify `API_URL`
-1. Go to EC2 under Computer section.
-2. On left menu select Load Balancer under LOAD BALANCING.
-3. Copy the DNS name of your load balancer that appears under Description.
-4. On left menu, select Parameter Store.
-5. Click on `/prod/frontend/API_URL` and on Actions select Edit Parameter.
+1. Go to **EC2** under **Computer** section.
+2. On left menu select **Load Balancer** under **LOAD BALANCING**.
+3. Copy the DNS name of your load balancer that appears under **Description**.
+4. On left menu, select **Parameter Store**.
+5. Click on `/prod/frontend/API_URL` and on **Actions** select **Edit Parameter**.
 6. As Value put: `http://` + the DNS that you copied 3 steps ago.
-7. Click Save Parameter.
+7. Click **Save Parameter**.
 
 ## Modify the CodeDeploy project
-1. Go to CodeDeploy under Developer Tools.
+1. Go to **CodeDeploy** under **Developer Tools**.
 2. Click your application's name.
-3. Select your deployment group and on Actions select Edit.
-4. On Environment configuration select your Auto Scaling Group on Auto Scaling groups tab.
-5. Go to Amazon EC2 instances tab, and delete all existing Tag groups that we setup earlier.
-6. Check Enable load balancing.
-7. On Load balancer, check Application Load Balancer or Network Load Balancer.
+3. Select your deployment group and on **Actions** select **Edit**.
+4. On **Environment configuration** select your Auto Scaling Group on **Auto Scaling groups** tab.
+5. Go to **Amazon EC2 instances** tab, and delete all existing Tag groups that we setup earlier.
+6. Check **Enable load balancing**.
+7. On **Load balancer** check **Application Load Balancer**.
 8. Select your target group in the dropdown.
-9. Click Save.
-10. Select your deployment group and on Actions click Deploy new version.
-11. On Repository type select: My application is stored in GitHub.
+9. Click **Save**.
+10. Select your deployment group and on **Actions** click **Deploy new version**.
+11. On **Repository** type select: `My application is stored in GitHub`.
 12. Repository Name: `tryolabs/aws-workshop`.
-13. Select last commit id.
-14. Then click Deploy.
+13. Get the last commit id and past it in the **Commit ID** field.
+14. Then click **Deploy**.
 
 ## Re-run CodeBuild
 1. Go to CodeBuild under Developer Tools.
