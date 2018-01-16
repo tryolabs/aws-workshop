@@ -43,7 +43,10 @@ Once you have this Security Group Id start the Launch Configuration creation wiz
 20. Click: close.
 
 ---
-**Extra mile:** why the ASG is only available on two subnets and not all of them?
+**Extra mile:**
+
+- Why the ASG is only available on two subnets and not all of them?
+- Why we need this subnets configuration anyway? (2 public and 2 privates)
 
 ---
 **Next:** [create a Bastion](/workshop/vpc-subnets-bastion/07-bastion.md) to be able to SSH into the private instances.
