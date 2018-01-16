@@ -48,4 +48,12 @@ To give access to the instances created by the auto scaling to the data base we 
 Now, terminate all your running instances and wait for the Auto Scaling group to start the new ones, this might take some minutes. You can follow the current state of the ASG by going to **EC2**, **Auto Scaling Groups**, select your group and check the **Activity History** and **Instances** tabs. Once the new instances were in place and `running` you should be able to get the full site working on the URL of the load balancer.
 
 ---
+**Extra mile:** once you have the site running:
+
+- Can you tell which instance is getting the requests?
+- Try changing the _Desired_ and _Min_ parameters of the ASG and see what happend.
+- Force the launch of new instances (without changing the _Desired_ value, of course). Tip: `yes > /dev/null &` run on the background consuming 99% of one CPU.
+- Try running [ab](http://httpd.apache.org/docs/2.2/programs/ab.html) (instaled by default on macOS) to stress test the API. Do you see any reaction on the AWS console?
+
+---
 **Next:** [VPC configuration and Bastion instance](/workshop/vpc-subnets-bastion/introduction.md).
