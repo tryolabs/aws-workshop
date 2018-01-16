@@ -45,7 +45,7 @@ Now that we have our **Launch configuration** we can create our **Auto Scaling G
 4. Select: `aws-workshop-auto-scaling-group` and then click **Next Step**.
 5. On **Group name** put the same as in Launch configuration.
 6. **Group size:** 2. At least we will have some redundancy form the start!
-7. On **Subnet** add all the available options
+7. On **Subnet** add all the available options.
 8. On **Advanced Details** click on: **Receive traffic from one or more load balancers**.
 9. On **Target Groups** click and select: `aws-workshop-target-group`.
 10. Click **Next: Configure scaling policies**.

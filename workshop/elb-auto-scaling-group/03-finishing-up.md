@@ -51,9 +51,11 @@ Now, terminate all your running instances and wait for the Auto Scaling group to
 **Extra mile:** once you have the site running:
 
 - Can you tell which instance is getting the requests?
-- Try changing the _Desired_ and _Min_ parameters of the ASG and see what happend.
-- Force the launch of new instances (without changing the _Desired_ value, of course). Tip: `yes > /dev/null &` run on the background consuming 99% of one CPU.
-- Try running [ab](http://httpd.apache.org/docs/2.2/programs/ab.html) (instaled by default on macOS) to stress test the API. Do you see any reaction on the AWS console?
+- Try changing the _Desired_ and _Min_ parameters of the ASG and see what happens.
+- Force the launch of new instances by triggering a condition that would make the scale up policy activate (that is, without changing the _Desired_ value).
+  > Tip: running `yes > /dev/null &` will max out one of the CPU cores.
+
+- Try running [ab](http://httpd.apache.org/docs/2.2/programs/ab.html) (installed by default on macOS) to stress test the API. Do you see any reaction in the AWS console?
 
 ---
 **Next:** [VPC configuration and Bastion instance](/workshop/vpc-subnets-bastion/introduction.md).
