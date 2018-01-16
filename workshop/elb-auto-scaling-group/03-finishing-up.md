@@ -3,7 +3,7 @@
 Now, we have two instances on EC2, an ELB to distribute the traffic across them, and an Auto Scaling Group to have redundancy and scale in an automatic way if throughput needs to increase.
 
 In [the first section](/workshop/s3-web-ec2-api-rds/05-finishing-up.md), the `API_URL` parameter was set to the DNS name of our only instance. Now, we need to tell the web that the request must be done through the load balancer, so we need to modify `API_URL`.
-We also need to modify the CodeDeploy project so the tool knows that now we have an Auto Scaling Group and that it needs to run the deploy on each of the instances in the group.
+We also need to modify the CodeDeploy project so the tool knows that now we have an Auto Scaling Group and that it needs to run the deploy each time a new instance is launched.
 Finally, we need to re-run CodeBuild so the new bundle on S3 points to the DNS of the load balancer instead of the instance' DNS.
 
 ## Modify `API_URL`
@@ -32,8 +32,20 @@ Finally, we need to re-run CodeBuild so the new bundle on S3 points to the DNS o
 14. Then click **Deploy**.
 
 ## Re-run CodeBuild
-1. Go to CodeBuild under Developer Tools.
-2. Click Start build, twice.
+1. Go to **CodeBuild** under **Developer Tools**.
+2. Click **Start build**.
+3. Click **Start build**.
+
+## Update RDS security group
+To give access to the instances created by the auto scaling to the data base we need to update our Postgres instance security group.
+
+1. Go to **RDS** under **Database**
+2. Click **Instances** on the left
+3. Select your instance and with the radio button on the left and click **Instance actions** and select **Modify**
+4. Scroll to **Security group** under **Network & Security** section
+5. Click on the security groups drop down and select `api-security-group`. This is the group we created with the Launch Configuration for our Auto Scaling Group in the [previous section](/workshop/elb-auto-scaling-group/02-auto-scaling-group.md#create-launch-configuration-group).
+
+Now, terminate all your running instances and wait for the Auto Scaling group to start the new ones, this might take some minutes. You can follow the current state of the ASG by going to **EC2**, **Auto Scaling Groups**, select your group and check the **Activity History** and **Instances** tabs. Once the new instances were in place and `running` you should be able to get the full site working on the URL of the load balancer.
 
 ---
 **Next:** [VPC configuration and Bastion instance](/workshop/vpc-subnets-bastion/introduction.md).
