@@ -35,6 +35,7 @@ The Gateway offering is newer and easier to setup than the NAT Instance, and als
 22. Select your NAT instance.
 23. Go to Actions - Networking and click on **Change Source/Dest. Check**.
 24. Click Yes, Disable.
+25. Go to Actions again - Networking and click **Change Security Groups** and add the default one for the VPC.
 
 ## Create a route for private subnets through the NAT instance
 1. Go to VPC under Networking & Content Delivery.
