@@ -1,8 +1,8 @@
 # CodeDeploy
 
-[CodeBuild](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) is a service to automate the deployment of any kind of applications to EC2 instances. The configuration is really simple and easy to addapt. The deployment process is described in a `appspec.yml` file like [this one](/appspec.yml). If you want to know what happend during the deploy check also the hooks implementaions [here](/infrastructure/aws/codedeploy).
+[CodeBuild](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) is a service to automate the deployment of any kind of applications to EC2 instances. The configuration is really simple and easy to adapt. The deployment process is described in an `appspec.yml` file like [this one](/appspec.yml). If you want to know what happens during the deploy, you can also check the implementation of the hooks [here](/infrastructure/aws/codedeploy).
 
-First we need to create a default role for CodeDeploy so it can have access to other AWS services (like S3).
+First, we need to create a default role for CodeDeploy so it can have access to other AWS services (like S3).
 
 ## Create CodeDeploy Role
 1. Go to **IAM** under **Security, Identity & Compliance**.

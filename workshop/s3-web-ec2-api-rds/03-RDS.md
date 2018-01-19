@@ -37,7 +37,7 @@ Now we have our database parameters set, and the password encrypted. Only our EC
 ---
 **Extra mile:**
 
-- Can you `ping` the Postrges instance?
+- Can you `ping` the Postgres instance?
 - Try to connect to the DB through your running EC2 instance.
 
 ---
