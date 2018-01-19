@@ -13,9 +13,9 @@ Now, we should move our RDS to the private subnets of our VPC. This way, we ensu
 8. Go to Instances, select your RDS instance and on Instance Actions select Modify.
 9. As Subnet Group select your `vpcsubnetgroup`.
 10. Security Group: `default`.
-11. Check Apply Immediately.
-12. Click Continue.
-13. Click Modify DB Instance.
+11. Click Modify DB Instance.
+12. Check Apply Immediately.
+13. Click Continue.
 
 ---
 **Next:** [Auto Scaling Group](/workshop/vpc-subnets-bastion/06-auto-scaling-group.md).

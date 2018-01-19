@@ -14,11 +14,12 @@ A bastion is a regular EC2 instance located in one of the public subnets, which 
 10. Click Add Tag.
 11. Fill Key with `Name` and in Value with `bastion`.
 12. Click on Next: Configure Security Group.
-13. Click Review and Launch.
-14. Click Launch.
-15. Select your key pair and click Launch Instances.
-16. Select the Bastion on the instances list and on Actions/Networking select Change Security Groups.
-17. Check the default security group of your VPC. Make sure that 2 security groups are checked, the one you just created and the one you created during the creation of the bastion.
+13. Write a meaningful name in **Security group name**.
+14. Click Review and Launch.
+15. Click Launch.
+16. Select your key pair and click Launch Instances.
+17. Select the Bastion on the instances list and on Actions/Networking select Change Security Groups.
+18. Check the default security group of your VPC. Make sure that 2 security groups are checked, the default one and the one you created during the creation of the bastion.
 
 ## Accessing private instances through the bastion
 
@@ -34,10 +35,13 @@ You can setup SSH so it's easier to access protected instances going transparent
 ### Option 2: copy the PEM file from your machine to the bastion instance
 Ideally, you would be using a different PEM file for the bastion and the instances (increased security).
 
-1. Copy the file with `scp ~/.ssh/<your-pem-file>.pem ubuntu@<public-ip-of-the-bastion>:/home/ubuntu/.ssh`.
+1. Copy the file with `scp ~/.ssh/<your-pem-file>.pem ubuntu@<public-ip-of-the-bastion>:/home/ubuntu/.ssh -i ~/.ssh/<your-pem-file>.pem`.
 2. SSH into the bastion.
 2. Make sure the file permissions are correct: `chmod 400 <pem-file-name>`.
 3. SSH into the instances (from the bastion) with `ssh <private-ip-of-webserver-instance> -i <pem-file-name>`.
+
+---
+**Extra mile:** `ssh` to one of the instances in the private subnets and `tracepath` to an external host. Do the same for a instance in the public subnets. What's the difference?
 
 ---
 
