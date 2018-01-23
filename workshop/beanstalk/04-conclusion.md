@@ -6,6 +6,11 @@ The more valuable feature of Beanstalk is the ability to setup and terminate env
 
 ---
 **Extra mil:**
-Thinking about the later our current app architecture (frontend in S3 and API in EC2) is not the ideal combination for taking the most out of multi-environment scenarios. There are many options on how to do this and there are all good and bad depending on the case. Try to think about this and come up with your idea of how can you make the environment management more simple and implement it.
+
+- Thinking about the later our current app architecture (frontend in S3 and API in EC2) is not the ideal combination for taking the most out of multi-environment scenarios. There are many options on how to do this and there are all good and bad depending on the case. Try to think about this and come up with your idea of how can you make the environment management more simple and implement it.
 
 What is the big pain point?
+
+- We mention [earlier](/workshop/beanstalk/introduction.md) that let Beanstalk manage your RDS instances is **not** recommended for production environments. This is because in order to handle your environment configuration Beanstalk need to handle the life time of your instances like if it were stateless entities. A database is the opposite of that.
+
+Try create a new environment with an internal RDS called **Conduit-staging**.
