@@ -1,6 +1,6 @@
 # Beanstalk
 
-[Elastic Benstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html) is an AWS service that allows us to deploy a web app without worry about what combination of AWS services might be needed. All we have to do is describe what we need and Beanstalk do the rest (create security groups, setup a load balancer, etc). 
+[Elastic Benstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html) is an AWS service that allows us to deploy a web app without having to worry about what combination of AWS services might be needed. All we have to do is describe what we need and let Beanstalk do the rest (create security groups, setup a load balancer, etc).
 
 Beanstalk also have some nice tools that aren't available in other AWS services that really add value other than the automatic setup, those are:
 
@@ -10,7 +10,7 @@ Beanstalk also have some nice tools that aren't available in other AWS services 
 - Detailed health status.
 - Really easy to setup new environments quickly.
 
-At the time of write this Beanstalk support apps developed in Java, PHP, .NET, Node.js, Python, Ruby our of the box and you can build your custom containers to other platforms all running on Amazon Linux.
+At the time of writing this, Beanstalk support apps developed in Java, PHP, .NET, Node.js, Python, Ruby out of the box and you can build your custom containers for other platforms all running on Amazon Linux.
 
 In this section we are going to use Beanstalk to setup a _production environment_ (this means with an [external RDS](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.RDS.html)) replacing our current Elastic Load Balancer (ELB) and Auto Scaling Group (ASG) setup with a Beanstalk-handled setup.
 

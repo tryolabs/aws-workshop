@@ -13,17 +13,17 @@ Now we need to paste the API URL in the Parameter Store read for the frontend.
 1. Go to **EC2** under **Compute**.
 2. Click on **Parameter Store** under **SYSTEMS MANAGER SHARED RESOURCES**.
 3. Select the parameter **/prod/frontend/API_URL**.
-4. Click **Actions**, **Edit Paramete**.
+4. Click **Actions**, **Edit Parameter**.
 5. In the value field past the URL for the API. You may need to remove the last `/` so the URL ends in `elasticbeanstalk.com`. If you left the last path separator all the API calls will fail.
 
-For this change to take effect we need to run CodeBuild because this value is read when the [frontend is deploy](buildspec.frontend.yml).
+For this change to take effect we need to run CodeBuild because this value is read when the [frontend is deployed](buildspec.frontend.yml).
 
 1. Go to **Code Build** under **Developer Tools**.
 2. Click your project name.
 3. In the **Build History** section, select the checkbox at the left for the most recent build.
 4. Click **Retry**.
 
-You can click the build name to follow the progress, it shouldn't take too long. When the build completes the frontend will be hitting or new production environment but it won't work yet. Because our API web app also use the Parameter Store we need to give permissions to our instances to access it, we did it in the past with our **ApiRole** but now we are using the role created by Beanstalk to provisioning our instances so we need to grant read access to the Parameter Store to that role.
+You can click the build name to follow the progress, it shouldn't take too long. When the build completes, the frontend will be hitting our new production environment. However, it won't work because we still need to give permissions to access the Parameter Store to our API web instances. This is the same we did in the past with our **ApiRole**, but as we are using the role created by Beanstalk for provisioning our instances now, we need to grant read access to the Parameter Store to that role.
 
 1. Go to **IAM** under **Security, Identity & Compliance**.
 2. Click **Roles** in the left pane.
@@ -39,14 +39,14 @@ Great, now our instances can access the Parameter Store, but they still can't re
 3. Select the **aws-elasticbeanstalk-service-role** role.
 4. Click **Attach**.
 
-Ok so our instances have full access to all the parameters in the Parameter Store now. We need to restart the server in our prod environment because the values from the Parameter Store are read when the app starts.
+Ok, so our instances have full access to all the parameters in the Parameter Store now. We need to restart the server in our prod environment because the values from the Parameter Store are read when the app starts.
 
 1. Go to **Elastic Beanstalk** under **Compute**.
 2. Click the **Conduit-prod** card under the **Conduit** application.
 3. Click **Action** on the right.
 4. Click **Restart App Server(s)**.
 
-When the restart finish the API should be working. You can navigate to the prod environment URL, append `/api` to get the default Django Rest-Framework page describing the API. Try also to navigate to the front end and inspect some of the requests to confirm that you are using the right environment.
+When the restart finishes the API should be working. You can navigate to the prod environment URL, append `/api` to get the default Django Rest-Framework page describing the API. Try also to navigate to the front end and inspect some of the requests to confirm that you are using the right environment.
 
 ---
 **Extra mil:**

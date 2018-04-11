@@ -11,6 +11,6 @@ The more valuable feature of Beanstalk is the ability to setup and terminate env
 
 What is the big pain point?
 
-- We mention [earlier](/workshop/beanstalk/introduction.md) that let Beanstalk manage your RDS instances is **not** recommended for production environments. This is because in order to handle your environment configuration Beanstalk need to handle the life time of your instances like if it were stateless entities. A database is the opposite of that.
+- We mentioned [earlier](/workshop/beanstalk/introduction.md) that letting Beanstalk manage your RDS instances is **not** recommended for production environments. This is because in order to handle your environment configuration Beanstalk needs to handle the life time of your instances like if they were stateless entities. A database is the opposite of that.
 
-Try create a new environment with an internal RDS called **Conduit-staging**.
+Try creating a new environment with an internal RDS called **Conduit-staging**.

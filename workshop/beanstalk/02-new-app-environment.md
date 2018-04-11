@@ -22,13 +22,13 @@ Now we have a new application without any environment so we are going to add a n
 9. We could terminate the process now and we will have a working environment with an ELB and ASG properly set up. But we need to configure other details to like use our VPC and the RDS instance. So instead we are going to click **Configure more options**.
 10. Choose **Custom configuration** under **Configuration presets**. Look how the options change for every preset.
 
-This is an important step, here we can control almost all the aspects regarding how our instances are going to be provisioned and how to configure their environment and behavior (ELB and ASG). Do you remember how much details we need to take into account to setup these parameters by hand? This is one of the stronger points in use Beanstalk.
+This is an important step, here we can control almost all the aspects regarding how our instances are going to be provisioned and how to configure their environment and behavior (ELB and ASG). Do you remember how much details we need to take into account to setup these parameters by hand? This is one of the stronger points in using Beanstalk.
 
 Take a moment to investigate this screen, don't make any change but look around. This dashboard is going to be available to make changes to the environment when we finish.
 
 1. Now go to the **Security** card and click **Modify**
 2. Click on **Choose a key pair** on the **Virtual machine permissions** and select the key pairs you created during the workshop.
-3. Click **Save**. If you pay attention you will notice that we are leaving the **IAM instance role** in the default value instead of using the **_ApiRol_** we create before to provisioning our instances. That's because we need an extra set of permissions already put together in a default role created by Beanstalk for this purpose.
+3. Click **Save**. If you pay attention you will notice that we are leaving the **IAM instance role** in the default value instead of using the **_ApiRol_** we created before for provisioning our instances. That's because we need an extra set of permissions that Beanstalk already puts together in a default role.
 
 Now we are going to setup our environment to use the VPC we have in place.
 
@@ -41,16 +41,16 @@ Now we are going to setup our environment to use the VPC we have in place.
 7. Click **Save**
 8. Click **Create environment**
 
-Now the setup of the environment is running. When it finishes we are going to have a full working load balancer with an auto scaling group that start instances with our app in the VPC we setup earlier.
+Now the setup of the environment is running. When it finishes, we are going to have a full working load balancer with an auto scaling group that starts instances in the VPC we have setup earlier.
 
-When the setup finish you will land on the environment dashboard. At the top is the URL associated with the load balancer, next to the **All Applications** > **Conduit** > **Conduit-prod**. Try clicking that URL and append the `/api`. You should get an error now because we still need to push some buttons but the API is there.
+When the setup finishes you will land on the environment dashboard. At the top is the URL associated with the load balancer, next to the **All Applications** > **Conduit** > **Conduit-prod**. Try clicking that URL and append the `/api`. You should get an error now because we still need to push some buttons but the API is there.
 
-If for some reason the deploy fails take a look at [this troubleshooting](/workshop/beanstalk/troubleshooting.md). If you fill comfortable with the command line there is a CLI tool to interact with Elastic Beanstalk that is much more comfortable to use than the AWS console for maintenance tasks. Check [here](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html) for more.
+If for some reason the deploy fails take a look at [this troubleshooting](/workshop/beanstalk/troubleshooting.md). If you feel comfortable with the command line there is a CLI tool to interact with Elastic Beanstalk that is much more comfortable to use than the AWS console for maintenance tasks. Check [here](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html) for more.
 
 ---
 **Extra mil:**
 
-- Once the setup finish take a look at how Beanstalk did the setup for the ELB and ASG. Is it different than the one we do? how?
+- Once the setup finishes, take a look at how Beanstalk did the setup for the ELB and ASG. Is it different from the one we did? how?
 - You should have your bastion instance running (if not take a look on [how to run one](/workshop/vpc-subnets-bastion/07-bastion.md)) so why not try to log to the new instance? Tip: the username for Amazon Linux is `ec2-user`
 
 ---
