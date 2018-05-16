@@ -64,7 +64,7 @@ We are ready to launch our first EC2 instance. We will create a standard EC2 ins
 ---
 **Extra mile:**
 
-- Try `pin`ging your EC2 instance. Extra points if you get it to work!
+- Try `ping`ing your EC2 instance. Extra points if you get it to work!
 - Connect to the new instance via SSH. The username is _ubuntu_, and try the `-i` flag to use the `.pem` file.
 
 ---
