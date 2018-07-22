@@ -1,6 +1,6 @@
 # Beanstalk
 
-[Elastic Benstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html) is an AWS service that allows us to deploy a web app without having to worry about what combination of AWS services might be needed. All we have to do is describe what we need and let Beanstalk do the rest (create security groups, setup a load balancer, etc).
+[Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html) is an AWS service that allows us to deploy a web app without having to worry about what combination of AWS services might be needed. All we have to do is describe what we need and let Beanstalk do the rest (create security groups, setup a load balancer, etc).
 
 Beanstalk also have some nice tools that aren't available in other AWS services that really add value other than the automatic setup, those are:
 
