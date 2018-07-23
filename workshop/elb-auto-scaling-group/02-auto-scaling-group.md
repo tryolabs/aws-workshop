@@ -1,4 +1,4 @@
-# Create Auto Scaling Group
+# Auto Scaling Group 생성
 
 Production applications need to be ready to tolerate a growing number of users at the same time. For example, if you get published in a popular blog, you may receive many more users that you had expected in a short period of time, and your application may crash because it's not able to sustain all the incoming traffic.
 
