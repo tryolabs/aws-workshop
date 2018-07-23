@@ -1,4 +1,5 @@
 # Create a Load Balancer
+# Load Balancer 만들기
 
 Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, and IP addresses. When you are running applications in production, you typically will use multiple instances so if one fails, your application can still work. The Load Balancer will get the traffic, and will forward it to the instances that serve your app. You can more about this [here](https://aws.amazon.com/elasticloadbalancing/).
 
