@@ -11,4 +11,4 @@
 또한 2개의 인스턴스가 과부화되면 더 많은 인스턴스 추가를 위해 새로운 규칙을 만들 것이다. (ex: 마지막 5분 동안 cpu 사용량 80%), 우리는 원하는 어떤 규칙도 추가할 수 있다.
 
 ---
-**Next:** [Create a Load Balancer](/workshop/elb-auto-scaling-group/01-load-balancer.md)
+**Next:** [Load Balancer 생성](/workshop/elb-auto-scaling-group/01-load-balancer.md)
