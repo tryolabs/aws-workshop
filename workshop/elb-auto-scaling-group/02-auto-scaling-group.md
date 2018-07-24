@@ -1,12 +1,15 @@
 # Auto Scaling Group 생성
 
 Production applications need to be ready to tolerate a growing number of users at the same time. For example, if you get published in a popular blog, you may receive many more users that you had expected in a short period of time, and your application may crash because it's not able to sustain all the incoming traffic.
+
 Production 응용프로그램은 일시에 증가하는 사용자를 결딜 준비가 되어있어야 한다. 예를 들어, 인기있는 블로그가 배포하면 단시간에 예상했던 것보다 많은 사용자의 요청을 받게 될 것이다. 그러면 우리의 응용프로그램은 모든 트래픽 요청을 감당할 수 없어 중단 될 것이다.
 
 Amazon provides [Auto Scaling Groups](https://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroup.html) as way to build a more robust application which can handle increasing loads. Using these, you can setup rules (scaling policies) so more instances serving your application
+
 Amazon은 증가하는 로드를 감당할 수 있는 더욱 강력한 응용프로그램을 만드는 방법으로 [Auto Scaling Groups](https://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroup.html)를 제공한다.
 
 To create an Auto Scaling Group, first we need to create a [Launch Configuration](http://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html), which is basically a template that specifies properties of the instances that will be launched.
+
 Auto Scaling Group를 만들려면, 우선 시작될 인스턴스의 속성을 기술한 기본적인 템플릿인 [시작 구성](http://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html)을 만들어야 한다.
 
 ## Create Launch Configuration
