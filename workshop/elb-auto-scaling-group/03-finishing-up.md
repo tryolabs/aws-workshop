@@ -1,4 +1,5 @@
 # Finishing up
+# 마무리
 
 Now, we have two instances on EC2, an ELB to distribute the traffic across them, and an Auto Scaling Group to have redundancy and scale in an automatic way if throughput needs to increase.
 
