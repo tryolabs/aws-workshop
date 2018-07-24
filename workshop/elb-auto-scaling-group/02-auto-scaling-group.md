@@ -1,19 +1,30 @@
 # Auto Scaling Group 생성
 
 Production applications need to be ready to tolerate a growing number of users at the same time. For example, if you get published in a popular blog, you may receive many more users that you had expected in a short period of time, and your application may crash because it's not able to sustain all the incoming traffic.
+Production 응용프로그램은 일시에 증가하는 사용자를 결딜 준비가 되어있어야 한다. 예를 들어, 인기있는 블로그가 배포하면 단시간에 예상했던 것보다 많은 사용자의 요청을 받게 될 것이다. 그러면 우리의 응용프로그램은 모든 트래픽 요청을 감당할 수 없어 중단 될 것이다.
 
 Amazon provides [Auto Scaling Groups](https://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroup.html) as way to build a more robust application which can handle increasing loads. Using these, you can setup rules (scaling policies) so more instances serving your application
+Amazon은 증가하는 로드를 감당할 수 있는 더욱 강력한 응용프로그램을 만드는 방법으로 [Auto Scaling Groups](https://docs.aws.amazon.com/autoscaling/latest/userguide/AutoScalingGroup.html)를 제공한다.
 
 To create an Auto Scaling Group, first we need to create a [Launch Configuration](http://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html), which is basically a template that specifies properties of the instances that will be launched.
+Auto Scaling Group를 만들려면, 우선 시작될 인스턴스의 속성을 기술한 기본적인 템플릿인 [시작 구성](http://docs.aws.amazon.com/autoscaling/latest/userguide/LaunchConfiguration.html)을 만들어야 한다.
 
 ## Create Launch Configuration
+## 시작 구성 만들기
 1. Go to **EC2** under **Compute** section.
+1. **컴퓨팅** 섹션의 **EC2** 로 이동.
 2. On left menu select **Launch Configuration** under **AUTO SCALING**.
+2. 왼쪽 메뉴에서 **AUTO SCALING** 섹션의 **시작 구성** 선택.
 3. Click **Create launch configuration**.
+3. **시작 구성 생성** 클릭.
 4. Look for Ubuntu Server (make sure it say Free tier eligible) and click Select.
+4. Ubuntu Server (프리 티어로 사용할 수 있는지 확인하십시요) 를 찾고 선택 클릭
 5. Select `t2.micro` and then click on **Next: Configure Details**.
+5. `t2.micro` 를 선택하고 **다음: 세부 정보 구성** 클릭.
 6. As name put: `aws-workshop-auto-scaling-group`.
+6. 이름: `aws-workshop-auto-scaling-group` 입력.
 7. As **IAM Role** select: `ApiRole`.
+7. **IAM 역활** 에서 선택: `ApiRole`.
 8. On **Advanced Settings**, there you have to select **As text** in **User data** and paste this bash script:
     ```
     #!/bin/bash
@@ -26,17 +37,39 @@ To create an Auto Scaling Group, first we need to create a [Launch Configuration
     ./install auto
     ```
     Be careful that there are NO SPACES before every line in the script.
+8. **고급 세부 정보** 에서, **사용자 데이터** 의 **텍스트** 선택하고 아래 스크립트를 붙여넣는다.
+    ```
+    #!/bin/bash
+    export LC_ALL=C.UTF-8
+    apt update
+    apt -y install ruby
+    cd /home/ubuntu
+    wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
+    chmod +x ./install
+    ./install auto
+    ```
+    스크립트의 모들 줄 앞에 공백이 없도록 주의한다.
 9. Click **Next: Add Storage**.
+9. **다음: 스토리지 추가** 클릭.
 10. Click **Next: Configure Security Group**.
+10. **다음: 보안 그룹 구성** 클릭.
 11. Click **Create new security group**.
+11. **새 보안 그룹 생성** 클릭.
 12. Security Group Name: `api-security-group`.
+12. 보안 그룹 이름: `api-security-group`.
 13. Click: **Add Rule**.
+13. 클릭: **규칙 추가**.
 14. Type: **All TCP**.
+14. 유형: **All TCP**.
 15. Source: `load-balancer-security-group` and select the one suggested.
+15. 원본: `load-balancer-security-group` 입력하거나 제한된 것을 선택.
 16. Click **Review**.
+16. **검토** 클릭.
 17. Click **Create launch configuration** and select the key pair to used to `ssh` into future instances.
+17. **시작 구성 생성** 클릭하고 추후 인스턴스의 `ssh`에 사용할 키 쌍을 선택한다.
 
 Now that we have our **Launch configuration** we can create our **Auto Scaling Group**.
+지금 우리는 **시작 구성**을 생성하였고 **Auto Scaling 그룹** 을 생성할 수 있다.
 
 ## Create Auto Scaling Group
 1. Go to **EC2** under **Compute** section.
