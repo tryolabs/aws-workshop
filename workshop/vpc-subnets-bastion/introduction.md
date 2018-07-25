@@ -20,7 +20,7 @@ So, let's get started.
 **Next:** [create a VPC](/workshop/vpc-subnets-bastion/01-create-vpc.md).
 
 
-# VPC 및 * Bastion * 인스턴스
+# VPC 와 Bastion 인스턴스
 
 이 섹션의 목적은 우리의Security 와 Redundancy를 개선시키는 것입니다. 이를 위해 [custom VPC] (https://aws.amazon.com/documentation/vpc/)를 만듭니다.
 
