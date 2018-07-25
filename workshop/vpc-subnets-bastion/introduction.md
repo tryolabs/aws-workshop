@@ -40,3 +40,5 @@ Public Subnet의 경우 [Internet Gateway] (http://docs.aws.amazon.com/AmazonVPC
 
 ---
 ** 다음 : ** [VPC 만들기] (/ workshop / vpc-subnets-bastion / 01-create-vpc.md).
+**다음:** [create a VPC](/workshop/vpc-subnets-bastion/01-create-vpc.md).
+
