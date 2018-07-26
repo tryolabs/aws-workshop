@@ -45,7 +45,7 @@ Finally, we need to associate 2 of our subnets to this route table and assign th
 우리는 이미 4개의 Subnet과 함께 VPC를 가지고 있지만, 그중 아무도 인터넷에 접속할 수 없습니다. (그들은 private 효과가 있다.). Public으로 2개를 전환하려면, 우리는 VPC용 [Internet Gateway](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html) 를 Setup하고 Gateway를 통하여 모든 외부 트래픽을 라우팅하는 Routing Table 을 create 해야 합니다. 마지막으로, 우리는 2개의 Subnet을 라우팅 테이블에 associate 하고 public IP 를 할당하면, public subnet이 됩니다.
 
 ## Internet Gateway 만들기
-1. Go to Internet Gateways on the left section.
+1. 왼쪽 메뉴에서 Go to Internet Gateways on the left section.
 2. Click Create Internet Gateway.
 3. As Name tag put: `awsworkshopIGW`.
 4. Click: Yes, Create.
