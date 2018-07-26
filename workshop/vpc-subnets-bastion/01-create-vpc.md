@@ -46,7 +46,7 @@ We are going to create our VPC with 4 subnets (2 private and 2 public).
 7. `Yes, Create` 을 Click 하세요.
 8. 반복, 위의 2번 - 7번을 반복하여 **Name tag**: `10.0.2.0-ap-northeast-2a`, **Availability Zone**: `ap-northeast-1a`, **IPv4 CIDR block**: `10.0.2.0/24`.
 9. 반복, 위의 2번 - 7번을 반복하여 **Name tag**: `10.0.3.0-ap-northeast-2b`, **Availability Zone**: `us-east-1b`, **IPv4 CIDR block**: `10.0.3.0/24`.
-10. 반복 위의 2번 - 7번을 반복하여 **Name tag**: `10.0.4.0-ap-northeast-2b`, **Availability Zone**: `ap-northeast-2b`, **IPv4 CIDR block**: `10.0.4.0/24`.
+10. 반복, 위의 2번 - 7번을 반복하여 **Name tag**: `10.0.4.0-ap-northeast-2b`, **Availability Zone**: `ap-northeast-2b`, **IPv4 CIDR block**: `10.0.4.0/24`.
 
 ---
 **다음:** [create an Internet Gateway and a public Routes table](/workshop/vpc-subnets-bastion/02-internet-gateway.md).
