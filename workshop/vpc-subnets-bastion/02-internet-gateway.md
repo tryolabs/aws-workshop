@@ -69,14 +69,14 @@ Finally, we need to associate 2 of our subnets to this route table and assign th
 14. **Save** 을 Click 하세요.
 
 ## Assign public IP to our public subnet
-1. Go to Subnets on the left section.
-2. Select the `10.0.1.0-us-east-1a`.
-3. Click on Subnet Actions.
-4. Select Modify auto-assign IP settings.
-5. Check: Enable auto-assign public IPv4 address.
-6. Click Save.
-7. Click Close.
-8. Repeat steps 2-7 with `10.0.3.0-us-east-1b`.
+1. 왼쪽 메뉴에서 **Subnets** 을 Click 하세요.
+2. `10.0.1.0-ap-northeast-1a` 을 선택하세요.
+3. **Subnet Actions** 를 Click 하세요.
+4. **auto-assign IP** 를 수정하여 설정하세요.
+5. **Enable auto-assign public IPv4 address** 를 Click 하세요.
+6. **Save** Click 하세요.
+7. **Close** Click 하세요.
+8. 반복, 위의 2번 - 7번을 반복하여 `10.0.3.0-ap-northeast-1b`.
 
 ---
-**Next:** [create a NAT Instance](/workshop/vpc-subnets-bastion/03-nat-instance.md).
+**다음:** [create a NAT Instance](/workshop/vpc-subnets-bastion/03-nat-instance.md).
