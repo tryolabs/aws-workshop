@@ -65,7 +65,7 @@ Finally, we need to associate 2 of our subnets to this route table and assign th
 10. 설정이 완료되었으면 **Save** 를 CLick 하세요.
 11. **Associations tab** 에는 Subnet을 선택하세요.
 12. **Edit** 를 Click 하세요.
-13. `10.0.1.0-ap-northeast-1a` and `10.0.3.0-ap-northeast-1b`.
+13. `10.0.1.0-ap-northeast-1a` 와 `10.0.3.0-ap-northeast-1b` 을 선택하세요.
 14. **Save** 을 Click 하세요.
 
 ## Assign public IP to our public subnet
