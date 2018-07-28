@@ -55,4 +55,4 @@
 - bastion이 런하는 인스턴스를 갖고 있을테니, 그 인스턴스에 로그인 해보십시오.  만약에 런하지 않는다면, 다음을 보십시오 [런하는 방법](/workshop/vpc-subnets-bastion/07-bastion.md)) 팁: Amazon Linux 사용자명은 `ec2-user` 입니다.
 
 ---
-**다음:** [연동 끝맺음](/workshop/beanstalk/03-finish-integration.md)
+**다음:** [연동 완성하기](/workshop/beanstalk/03-finish-integration.md)
