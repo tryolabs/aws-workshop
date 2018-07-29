@@ -55,7 +55,7 @@ AWS API, CLI, SDK 그리고 다른 개발 도구들을 위한 액세스 키 ID(*
 아직 AWS CLI가 설치되어 있지 않다면, [이곳 링크](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)를 따라 해 보세요.
 
 ---
-**Extra mile**: 프로그래밍 방식 액세스 사용자에 `ViewOnlyAccess` 권한을 부여해 보세요. AWS CLI 를 사용하여 할 수 있다면 더욱 좋겠죠.
+**추가 작업**: 프로그래밍 방식 액세스 사용자에 `ViewOnlyAccess` 권한을 부여해 보세요. AWS CLI 를 사용하여 할 수 있다면 더욱 좋겠죠.
 
 ---
 
