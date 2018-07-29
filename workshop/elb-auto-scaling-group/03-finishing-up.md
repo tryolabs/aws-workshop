@@ -17,66 +17,52 @@
 8. **닫기** 클릭한다.
 
 ## CodeDeploy 프로젝트 수정하기
-1. Go to **CodeDeploy** under **Developer Tools**.
 1. **개발자 도구** 아래의 **CodeDeploy** 로 가기.
-2. Click your application's name.
 2. 응용프로그램 이름을 클릭한다.
-3. Select your deployment group and on **Actions** select **Edit**.
 3. 배포 그룹을 선택 후 **작업** 에서 **수정** 을 클릭한다.
-4. On **Environment configuration** select your Auto Scaling Group on **Auto Scaling groups** tab.
 4. **환경구성** 에서 **Auto Scaling 그룹** 탭에서 생성한 Auto Scaling 그룹을 선택한다.
-5. Go to **Amazon EC2 instances** tab, and delete all existing Tag groups that we setup earlier.
 5. **Amazon EC2 인스턴스** 탭으로 가서 이전에 설정한 모든 태그 그룹을 삭제한다.
-6. Check **Enable load balancing**.
 6. Check **로드 밸런싱 활성화** 를 클릭한다.
-7. On **Load balancer** check **Application Load Balancer**.
 7. **로드 밸런서** 에서 **어플리케이션 로드 발랜서** 를 체크한다.
-8. Select your target group in the dropdown.
 8. 드롭다운 리스트의 타켓 그룹을 선택한다.
-9. Click **Save**.
 9. **저장** 을 클릭한다..
-10. Select your deployment group and on **Actions** click **Deploy new version**.
 10. 배포 그룹을 선택 후 **작업** 에서 **새 개정 배포** 를 클릭한다.
 **이부분이 조금 달라진 것 같습니다. 현재 GitHub 계정을 인증해야만 되게 되어있습니다.**
 11. On **Repository** type select: `My application is stored in GitHub`.
-11. **레파지토리 유형** 유형 선택: `GitHub에 어플리케이션 저장`.
-12. Repository Name: `tryolabs/aws-workshop`.
 12. Repository Name: `tryolabs/aws-workshop`.
 13. Get the last commit id and past it in the **Commit ID** field.
-14. Then click **Deploy**.
+
+11. **레파지토리 유형** 유형 선택: `GitHub에 어플리케이션 저장`.
+12. GitHub 계정: `본인의 GitHub계정` 입력 후 **GitHub 연결** 클릭 후 연결을 한다.
+13. **레파지토리 이름** 필드에 및 **Commit ID** 필드 각각 레파지토리 이름과 마지막 commit id를 입력한다.
+
 14. **배포** 를 클릭한다.
 
-## Re-run CodeBuild
 ## CodeBuild 재실행하기
-1. Go to **CodeBuild** under **Developer Tools**.
 1. **개발자 도구** 아래의 **CodeBuild** 로 가기.
-2. Click **Start build**.
 2. Click **빌드 시작** 을 클릭한다.
-3. Click **Start build**.
 3. Click **빌드 시작** 을 클릭한다.
 
-## Update RDS security group
 ## RDS 보안 그룹 수정하기
-To give access to the instances created by the auto scaling to the data base we need to update our Postgres instance security group.
+Auto Scaling으로 생성된 인스턴스에게 데이터베이스 접근 권한을 부여하려면 Postgres 인스턴스의 보안 그룹을 업데이트 하여야 한다.
 
-1. Go to **RDS** under **Database**
-2. Click **Instances** on the left
-3. Select your instance and with the radio button on the left and click **Instance actions** and select **Modify**
-4. Scroll to **Security group** under **Network & Security** section
-5. Click on the security groups drop down and select `api-security-group`. This is the group we created with the Launch Configuration for our Auto Scaling Group in the [previous section](/workshop/elb-auto-scaling-group/02-auto-scaling-group.md#create-launch-configuration-group).
+1. **데이터베이스** 아래의 **RDS** 로 가기.
+2. 왼쪽 **인스턴스** 를 클릭한다.
+3. 인스턴스를 선택 후 **인스턴스 작업** 클릭 후 **수정** 을 선택한다.
+4. **네트워크 및 보안** 섹션 아래의 **보안 그룹** 까지 스크롤한다.
+5. 보안 그룹 콤보박스를 클릭하여 `api-security-group`를 선택한다. 이 그룹은 Auto Scaling 그룹을 위해 시작 구성에서 생성한 것이다. [이전 섹션](/workshop/elb-auto-scaling-group/02-auto-scaling-group.md#create-launch-configuration-group).
 
-Now, terminate all your running instances and wait for the Auto Scaling group to start the new ones, this might take some minutes. You can follow the current state of the ASG by going to **EC2**, **Auto Scaling Groups**, select your group and check the **Activity History** and **Instances** tabs. Once the new instances were in place and `running` you should be able to get the full site working on the URL of the load balancer.
-
+이제, 모든 실행중인 인스턴스를 종료하고 Auto Scaling 그룹이 새로운 인스턴스를 시작하기를 기다립니다, 이 작업은 몇 분 정도 걸릴 수 있습니다.
+**EC2**, **Auto Scaling 그룹** 이동하여 그룹을 선택하고 **활동 기록** 과 **인스턴스** 탭을 확인하여 Auto Scaling 그룹의 상태를 확인 할 수 있습니다.
+새로운 인스턴스가 설치되고 `running` 상태과 되면 로드 밸런서의 URL로 모든 사이트를 사용할 수 있습니다.
 ---
-**Extra mile:** once you have the site running:
+**추가 사항:** 일단 사이트를 실행하면:
 
-- Can you tell which instance is getting the requests?
-- Try changing the _Desired_ and _Min_ parameters of the ASG and see what happens.
-- Force the launch of new instances by triggering a condition that would make the scale up policy activate (that is, without changing the _Desired_ value).
-  > Tip: running `yes > /dev/null &` will max out one of the CPU cores.
-
-- Try running [ab](http://httpd.apache.org/docs/2.2/programs/ab.html) (installed by default on macOS) to stress test the API. Do you see any reaction in the AWS console?
-
+- 요청받고 있는 인스턴스를 알 수 있나요?
+- Auto Scaling 그룹에서 _Desired_ 와 _Min_ 파라미터를 변경하고 무슨 일이 일어나는지 확인해 보자.
+- 확장 인스턴스 정책을 활성화하는 조건을 트리거하여 새 인스턴스의 시작을 강제 실행하십시오. (즉, _Desired_ 값을 변경하지 않고)
+  > Tip: `yes > /dev/null &` 을 실행하면 CPU코어 중 하나가 최대값이 됩니다.
+- API 스트레스 테스트를 위해 [ab](http://httpd.apache.org/docs/2.2/programs/ab.html) 를 실행하십시오. (기본적으로 macOS에 설치됨)
+AWS 콘솔에 반응이 있습니까?
 ---
-**Next:** [VPC configuration and Bastion instance](/workshop/vpc-subnets-bastion/introduction.md).
 **다음:** [VPC configuration and Bastion instance](/workshop/vpc-subnets-bastion/introduction.md).
