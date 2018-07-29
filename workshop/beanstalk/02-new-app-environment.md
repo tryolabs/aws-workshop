@@ -20,7 +20,7 @@
 6. **Application code**에 **Upload your code**를 선택한다음 **Upload**에 클릭하십시오.
 7. 여기서 로컬 또는 S3 버킷을 선택할수 있습니다. 이번 예제에서는 [예제 다운로드](/workshop/backend/beanstalk_deploy.zip)를 사용하니, **Choose file** 클릭한다음 압축파일을 선택합니다.
 8. **Version label**에 _"First version"_ 같이 알아볼수있는 이름을 쓰십시오.
-9. 여기서 프로세스를 터미네이트 하고 ELB and ASG 환경을 셑업할수있지만, VPC 와 RDS를 지정하기위해 **Configure more options**를 클릭합니다.
+9. 여기서 프로세스를 터미네이트 하고 ELB and ASG 환경을 셋업할수있지만, VPC 와 RDS를 지정하기위해 **Configure more options**를 클릭합니다.
 10. **Configuration presets**밑에 **Custom configuration**를 선택하십시오. 각 preset마다 어떻게 선택사항이 바뀌는지 보십시오. 
 
 이번은 중요한 스텝입니다. 여기서 우리는 우리의 인스턴스, 환경, 그리고 ELB 와 ASG 어떻게 규정되고 구성되는걸 조정할수 있습니다.  인스턴스, 환경, 그리고 ELB 와 ASG등에 얼만큼 신경을 써야하는 기억하십니까?  이점이 바로 Beanstalk를 사용해야하는 이유입니다.
@@ -49,9 +49,9 @@
 만약에 어떠한 이유로 배포가 실패했을경우, 다음 링크를 보십시오[문제해결](/workshop/beanstalk/troubleshooting.md). CLI가 AWS console보다 익숙한 사용자를위해, Elastic Beanstalk를 상호작용할수 있는 CLI가 있습니다. 자세한 사항은 [이쪽](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html)을 보십시오.
 
 ---
-**엑스트라 마일:**
+**추가 작업:**
 
-- 셑업이 끝나면, Beanstalk이 ELB 와 ASG를 셑업했는지 보십시오.  우리가 직접한것과 다릅니까?  어떻게 다릅니까?
+- 셋업이 끝나면, Beanstalk이 ELB 와 ASG를 셋업했는지 보십시오.  우리가 직접한것과 다릅니까?  어떻게 다릅니까?
 - bastion이 런하는 인스턴스를 갖고 있을테니, 그 인스턴스에 로그인 해보십시오.  만약에 런하지 않는다면, 다음을 보십시오 [런하는 방법](/workshop/vpc-subnets-bastion/07-bastion.md)) 팁: Amazon Linux 사용자명은 `ec2-user` 입니다.
 
 ---
