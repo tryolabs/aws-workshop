@@ -1,5 +1,5 @@
-# 청소하기
-Beanstalk를 지금의 인프라에 연동하기 위해서, 몇가지 써비스를 없애야 합니다.  현재 셋업은 네개의 컴포넌트 Elastic Load Balancer (ELB), Auto Scaling Group (ASG), Virtual Private Cloud (VPC), 그리고 Relational Database Service (RDS) 있습니다.  Beanstalk은 [VPCs](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/vpc.html) 를셋업하지 못하며, 테스팅 환경외의 RDS를 [추천하지](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.RDS.html) 않기때문에, VPC 와 RDS를 뺀 나머지 써비스 ELB and ASG를 지웁니다.
+# 제거하기
+Beanstalk를 지금의 인프라에 연동하기 위해서, 몇가지 써비스를 없애야 합니다.  현재 셑업은 네개의 컴포넌트 Elastic Load Balancer (ELB), Auto Scaling Group (ASG), Virtual Private Cloud (VPC), 그리고 Relational Database Service (RDS) 있습니다.  Beanstalk은 [VPCs](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/vpc.html) 를셑업하지 못하며, 테스팅 환경외의 RDS를 [추천하지](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.RDS.html) 않기때문에, VPC 와 RDS를 뺀 나머지 써비스 ELB and ASG를 지웁니다.
 
 ELB 없애기:
 1. AWS 콘솔에서, **Compute** 아래 **EC2** 로 가십시오
