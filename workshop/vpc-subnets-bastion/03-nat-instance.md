@@ -102,3 +102,4 @@ AWS 는 NAT: [NAT Instance](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuid
 
 ---
 **다음:** [create new Load Balancer](/workshop/vpc-subnets-bastion/04-load-balancer.md).
+
