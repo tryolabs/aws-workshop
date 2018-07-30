@@ -53,10 +53,10 @@ Finally, we need to associate 2 of our subnets to this route table and assign th
 6. Yes, Attach 를 Click 하세요.
 
 ## Route tables 만들기
-1. Go to Route Tables on the left section.
-2. Click Create Route Table.
-3. As Name tag: `awsWorkshopPublicRT`.
-4. Click Yes, Create.
+1. 왼쪽 메뉴에서 **Route Tables** 을 Click 하세요.
+2. Create Route Table 을 Click 하세요.
+3. **Name tag** 에는 `awsWorkshopPublicRT` 을 입력하거나 원하시는 것을 입력하세요.
+4. **Yes, Create** 를 Click 하세요.
 5. On the bottom section select the Routes tab.
 6. Click on Edit button.
 7. Click on Add another Route.
