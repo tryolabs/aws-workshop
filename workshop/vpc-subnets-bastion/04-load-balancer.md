@@ -41,13 +41,13 @@ Repeat the steps outlined in [this section](/workshop/elb-auto-scaling-group/03-
 
 ## Create a new Load Balancer
 1. 컴퓨터 섹션의 EC2로 이동하세요.
-2. Load Balancers fmf Click 하세요.
-3. Create Load Balancer Click 하세요.
-4. Click Create on Application Load Balancer.
-5. As Name put: `aws-workshop-load-balancer-vpc`.
-6. On Availability Zones, on VPC select `awsworkshopvpc`.
-7. Click on `us-east-1a`.
-8. Click on `10.0.1.0-us-east-1a`.
+2. Load Balancers 를 Click 하세요.
+3. Load Balancer Create 를 Click 하세요.
+4. Application Load Balancer 생성을 Click 하세요.
+5. Name 입력: `aws-workshop-load-balancer-vpc`.
+6. Availability Zones, VPC 를 선택하고 `awsworkshopvpc` 입력하거나 원하시는 것을 입력하세요.
+7. `ap-northeast-1a` Click 하세요.
+8. `10.0.1.0-ap-northeast-1a` Click 하세요.
 9. Repeat steps 7 and 8 for `us-east-1b` and `10.0.3.0-us-east-1b`.
 10. Click Next: Configure Security Settings.
 11. Click Next: Configure Security Groups.
