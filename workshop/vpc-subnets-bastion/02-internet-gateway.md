@@ -54,6 +54,7 @@ Finally, we need to associate 2 of our subnets to this route table and assign th
 
 ## Route tables 만들기
 1. 왼쪽 메뉴에서 **Route Tables** 을 Click 하세요.
+<<<<<<< HEAD
 2. Create Route Table 을 Click 하세요.
 3. **Name tag** 에는 `awsWorkshopPublicRT` 을 입력하거나 원하시는 것을 입력하세요.
 4. **Yes, Create** 를 Click 하세요.
@@ -67,16 +68,31 @@ Finally, we need to associate 2 of our subnets to this route table and assign th
 12. Click on Edit.
 13. Select `10.0.1.0-us-east-1a` and `10.0.3.0-us-east-1b`.
 14. Click Save.
+=======
+2. **Create Route Table** 을 Click 하세요.
+3. **Name tag**: `awsWorkshopPublicRT` 을 입력하거나 원하시는 것을 입력하세요.
+4. **Yes, Create** 을 Click 하세요.
+5. 화면 아래에 **Routes tab** 을 선택하세요.
+6. **Edit button** 을 Click 하세요.
+7. 추가할 **Route** 을 입력하세요.
+8. **Destination** 에서 `0.0.0.0/0` 을 입력하거나 원하시는 것을 입력하세요.
+9. **Target** 에는 **Internet Gateway** 을 선택하세요.
+10. 설정이 완료되었으면 **Save** 를 CLick 하세요.
+11. **Associations tab** 에는 Subnet을 선택하세요.
+12. **Edit** 를 Click 하세요.
+13. `10.0.1.0-ap-northeast-1a` 와 `10.0.3.0-ap-northeast-1b` 을 선택하세요.
+14. **Save** 을 Click 하세요.
+>>>>>>> 3b5a7c9246173129e929ca5e43e094b903d0d65a
 
 ## Assign public IP to our public subnet
-1. Go to Subnets on the left section.
-2. Select the `10.0.1.0-us-east-1a`.
-3. Click on Subnet Actions.
-4. Select Modify auto-assign IP settings.
-5. Check: Enable auto-assign public IPv4 address.
-6. Click Save.
-7. Click Close.
-8. Repeat steps 2-7 with `10.0.3.0-us-east-1b`.
+1. 왼쪽 메뉴에서 **Subnets** 을 Click 하세요.
+2. `10.0.1.0-ap-northeast-1a` 을 선택하세요.
+3. **Subnet Actions** 를 Click 하세요.
+4. **auto-assign IP** 를 수정하여 설정하세요.
+5. **Enable auto-assign public IPv4 address** 를 Click 하세요.
+6. **Save** Click 하세요.
+7. **Close** Click 하세요.
+8. 반복, 위의 2번 - 7번을 반복하여 `10.0.3.0-ap-northeast-1b`.
 
 ---
-**Next:** [create a NAT Instance](/workshop/vpc-subnets-bastion/03-nat-instance.md).
+**다음:** [create a NAT Instance](/workshop/vpc-subnets-bastion/03-nat-instance.md).
