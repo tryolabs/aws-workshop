@@ -53,7 +53,7 @@ Once you have this Security Group Id, start the Launch Configuration creation wi
 
 # Auto Scaling Group
 
-우리의 모든 인스턴스가 우리의 개인 서브넷에서만 시작되도록 새로운 Launch Configuration and Auto Scaling Group을 만들 것입니다.
+모든 인스턴스가 Private Subnet에서만 시작되도록 새로운 Launch Configuration and Auto Scaling Group을 만들 것입니다.
 
 ## Create a new Launch Configuration
 1. AWS Management Console 에서 Compute 의 EC2 를 Click 하세요.
@@ -62,9 +62,9 @@ Once you have this Security Group Id, start the Launch Configuration creation wi
 4. 왼쪽 메뉴에서 Launch Configuration 을 Click 하세요.
 5. 기존의 Launch Configuration 은 삭제하세요.
 
-Now, you need to create a new Launch Configuration that is almost identical to the one that you just deleted except for one thing: instead of creating a Security Group you need to choose the default one for your VPC.
+새로운 인스턴스 구성 및 자동 확장 그룹을 만들어 모든 인스턴스가 Private Subnet 에서만 시작되도록합니다. 이제 한 가지를 제외하고 방금 삭제 한 인스턴스와 거의 동일한 새 Launch Configuration 을 만들어야합니다: Security Group 을 만드는 대신 VPC에 대한 Default Security Group 을 선택해야합니다.
 
-There is no simple way to find it because your AWS account already has a default VPC with its default security group and at this stage of the Launch Configuration wizard there is no way to distinguish between your VPC's default group and the default group for the default VPC (🤔). To find the security group:
+AWS 계정에 이미 Default Security Group 이 포함 된 Default VPC가 있기 때문에이를 쉽게 찾을 수있는 방법이 없으며 Launch Configuration Wizard 의 단계에서는 VPC의 Default Group과 Default VPC의 Default Group 을 구별 할 수있는 방법이 없습니다 (🤔). Security Group 을 찾으려면 다음과 같이하십시오.
 
 1. Go to **VPC** under **Networking & Content Delivery**.
 2. Select **Security Groups** on the **Security** section on the left.
