@@ -60,7 +60,7 @@ Once you have this Security Group Id, start the Launch Configuration creation wi
 2. 왼쪽 메뉴 아래에 Auto Scaling Groups 를 Click 하세요.
 3. 기존의 Auto Scaling group 은 삭제하세요.
 4. 왼쪽 메뉴에서 Launch Configuration 을 Click 하세요.
-5. Delete existing Launch Configuration.
+5. 기존의 Launch Configuration 은 삭제하세요.
 
 Now, you need to create a new Launch Configuration that is almost identical to the one that you just deleted except for one thing: instead of creating a Security Group you need to choose the default one for your VPC.
 
