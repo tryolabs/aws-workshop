@@ -53,7 +53,7 @@ Once you have this Security Group Id, start the Launch Configuration creation wi
 
 # Auto Scaling Group
 
-W우리의 모든 인스턴스가 우리의 개인 서브넷에서만 시작되도록 새로운 Launch Configuration and Auto Scaling Group을 만들 것입니다.
+우리의 모든 인스턴스가 우리의 개인 서브넷에서만 시작되도록 새로운 Launch Configuration and Auto Scaling Group을 만들 것입니다.
 
 ## Create a new Launch Configuration
 1. AWS Management Console 에서 Compute 의 EC2 를 Click 하세요.
