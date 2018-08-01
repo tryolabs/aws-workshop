@@ -68,13 +68,13 @@ Bastion  dms Public Subnet 중 하나에 있는 일반 EC2 인스턴스로, SSH�
 15. Launch 를 Click 하세요.
 16. Key pair 를 선택하고 Launch Instances 를 Click 하세요.
 17. EC2 Dashboard 에서 Instances list 를 보고 Bastion 을 선택하고 Actions/Networking Change Security Groups 을 선택하세요.
-18. Check the default security group of your VPC. Make sure that 2 security groups are checked, the default one and the one you created during the creation of the bastion.
+18. VPC 에서 default security group 을 확인하세요. 2 개의 Security Group 이 선택되었는지 확인하세요. Default Security Group 과 1개의 Security Group 을 작성되었습니다.
 
 ## Accessing private instances through the bastion
 
-Now you have a public instance that can be accessed via SSH, but what you want is to be able to access to your private instances.
+이제 SSH를 통해 액세스 할 수 있는 Public Instance 가 있지만 원하는 것은 Private Instance 에 액세스 할 수있는 것입니다.
 
-To access the instances, you need to SSH with the PEM (key pair) that you had generated when launching the first one.
+인스턴스에 액세스하려면 첫 번째 인스턴스를 시작할 때 생성 한 PEM (키 쌍)으로 SSH를 수행해야 합니다.
 
 ### Option 1: setup SSH agent forwarding
 You can read a guide [here](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/). Even though the examples check access to GitHub, it's analogous to accessing our private instances.
