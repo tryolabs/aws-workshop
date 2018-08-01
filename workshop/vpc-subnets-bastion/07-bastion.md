@@ -46,3 +46,52 @@ Ideally, you would be using a different PEM file for the bastion and the instanc
 ---
 
 **Next:** [finish the deploy](/workshop/vpc-subnets-bastion/08-finishing-up.md).
+
+# Bastion instance
+
+Bastion  dms Public Subnet 중 하나에 있는 일반 EC2 인스턴스로, SSH를 통해 들어오는 트래픽을 허용합니다. 이 Bastion 인스턴스를 통해 Private Subnet 에 있는 모든 인스턴스로 SSH를 수행 할 수 있습니다 (Bastion 에서 들어오는 트래픽을 수락한다고 가정).
+
+## Create a Bastion Instance
+1. AWS Management Console 에서 **Compute section** 의 **EC2** 로 이동하세요.
+2. Launch Instance 를 Click 하세요.
+3. Ubuntu 서버를 찾아 (무료 티어를 사용할 수 있는지 확인하세요) 선택하여 Click 하세요.
+4. `t2.micro` 를 선택하고 이후 Next: Configure Instance Details 를 click 하세요.
+5. Network 에서, VPC 를 선택하세요.
+6. subnet 에서, 2개의 Public 중 1개를 선택하세요. 예를 들어, `10.0.1.0-ap-northeast-1a`.
+8. Next: Add Storage Click 하세요.
+9. 기본 Settings 을 하고 Next: Add Tags Click 하세요.
+10. Add Tag 를 Click 하세요.
+11. `Name` 에 Key 를 입력하고 `bastion` 을 입력하거나 원하시는 것을 입력하세요.
+12. Next: Configure Security Group Click 하세요.
+13. **Security group name** 에 원하시는 것을 입력하세요.
+14. Review and Launch 를 Click 하세요.
+15. Launch 를 Click 하세요.
+16. Key pair 를 선택하고 Launch Instances 를 Click 하세요.
+17. EC2 Dashboard 에서 Instances list 를 보고 Bastion 을 선택하고 Actions/Networking Change Security Groups 을 선택하세요.
+18. Check the default security group of your VPC. Make sure that 2 security groups are checked, the default one and the one you created during the creation of the bastion.
+
+## Accessing private instances through the bastion
+
+Now you have a public instance that can be accessed via SSH, but what you want is to be able to access to your private instances.
+
+To access the instances, you need to SSH with the PEM (key pair) that you had generated when launching the first one.
+
+### Option 1: setup SSH agent forwarding
+You can read a guide [here](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/). Even though the examples check access to GitHub, it's analogous to accessing our private instances.
+
+You can setup SSH so it's easier to access protected instances going transparently through the bastion. [Here](https://www.cyberciti.biz/faq/linux-unix-ssh-proxycommand-passing-through-one-host-gateway-server/) you have a nice guide.
+
+### Option 2: copy the PEM file from your machine to the bastion instance
+Ideally, you would be using a different PEM file for the bastion and the instances (increased security).
+
+1. Copy the file with `scp ~/.ssh/<your-pem-file>.pem ubuntu@<public-ip-of-the-bastion>:/home/ubuntu/.ssh -i ~/.ssh/<your-pem-file>.pem`.
+2. SSH into the bastion.
+2. Make sure the file permissions are correct: `chmod 400 <pem-file-name>`.
+3. SSH into the instances (from the bastion) with `ssh <private-ip-of-webserver-instance> -i <pem-file-name>`.
+
+---
+**Extra mile:** `ssh` to one of the instances in the private subnets and `tracepath` to an external host. Do the same for a instance in the public subnets. What's the difference?
+
+---
+
+**Next:** [finish the deploy](/workshop/vpc-subnets-bastion/08-finishing-up.md).
