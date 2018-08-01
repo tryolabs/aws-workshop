@@ -77,21 +77,20 @@ Bastion  dms Public Subnet 중 하나에 있는 일반 EC2 인스턴스로, SSH�
 인스턴스에 액세스하려면 첫 번째 인스턴스를 시작할 때 생성 한 PEM (키 쌍)으로 SSH를 수행해야 합니다.
 
 ### Option 1: setup SSH agent forwarding
-You can read a guide [here](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/). Even though the examples check access to GitHub, it's analogous to accessing our private instances.
+가이드 [here](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)를 읽을 수 있습니다. 예제가 GitHub에 대한 액세스를 확인하더라도 개인 인스턴스에 액세스하는 것과 유사합니다.
 
-You can setup SSH so it's easier to access protected instances going transparently through the bastion. [Here](https://www.cyberciti.biz/faq/linux-unix-ssh-proxycommand-passing-through-one-host-gateway-server/) you have a nice guide.
+Bastion 을 통해 투명하게 진행되는 보호된 인스턴스에 더 쉽게 액세스 할 수 있도록 SSH를 설정할 수 있습니다. [Here](https://www.cyberciti.biz/faq/linux-unix-ssh-proxycommand-passing-through-one-host-gateway-server/) 에 좋은 가이드가 있습니다.
 
 ### Option 2: copy the PEM file from your machine to the bastion instance
-Ideally, you would be using a different PEM file for the bastion and the instances (increased security).
+이상적으로는 Bastion 과 인스턴스에 대해 다른 PEM 파일을 사용하는 것입니다(보안 강화).
 
-1. Copy the file with `scp ~/.ssh/<your-pem-file>.pem ubuntu@<public-ip-of-the-bastion>:/home/ubuntu/.ssh -i ~/.ssh/<your-pem-file>.pem`.
-2. SSH into the bastion.
-2. Make sure the file permissions are correct: `chmod 400 <pem-file-name>`.
-3. SSH into the instances (from the bastion) with `ssh <private-ip-of-webserver-instance> -i <pem-file-name>`.
-
----
-**Extra mile:** `ssh` to one of the instances in the private subnets and `tracepath` to an external host. Do the same for a instance in the public subnets. What's the difference?
+1. `scp ~/.ssh/<your-pem-file>.pem ubuntu@<public-ip-of-the-bastion>:/home/ubuntu/.ssh -i ~/.ssh/<your-pem-file>.pem` 과 같이 Copy 하세요.
+2. Bastion 에 SSH 를 사용하게 됩니다.
+2. 다음과 같이 Permission 권한을 부여하세요: `chmod 400 <pem-file-name>`.
+3. Instances 로 SSH 를 (Bastion 으로 부터) `ssh <private-ip-of-webserver-instance> -i <pem-file-name>` 이와 같이 연결하세요.
 
 ---
+**Extra mile:** `ssh` 는 Private Subnet 의 인스턴스 중 하나에 연결하고 `tracepath`를 외부 호스트에 전달합니다. Public Subnet 의 인스턴스에 대해서도 동일하게 수행하십시오. 차이점이 뭘까요?
 
-**Next:** [finish the deploy](/workshop/vpc-subnets-bastion/08-finishing-up.md).
+---
+**다음:** [finish the deploy](/workshop/vpc-subnets-bastion/08-finishing-up.md).
