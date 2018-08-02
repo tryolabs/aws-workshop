@@ -28,11 +28,11 @@ Public Subnet의 경우 [Internet Gateway](http://docs.aws.amazon.com/AmazonVPC/
 
 애플리케이션의 인스턴스는 **private** Subnets 에 존재하는 것이라면 Public Subnets 을 통하여 인터넷 트래픽을 라우트 할 [NAT 인스턴스](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html)가 필요할 것입니다. 패키지를 다운로드하고 시스템을 업데이트 할 수 있도록 인터넷에 액세스하려면 인스턴스가 필요합니다.
 
-새로운 Launch Configuration을 만들고 Auto Scaling Group을 수정하여 올바른 Subnet의 VPC에 배치해야합니다. 또한 우리의 RDS (PostgreSQL 데이터베이스)를 VPC로 움직여서  인스턴스가 도달 할 수 있습니다.
+새로운 Launch Configuration을 만들고 Auto Scaling Group을 수정하여 올바른 Subnet의 VPC에 배치해야 합니다. 또한 RDS (PostgreSQL 데이터베이스)를 VPC 로 이동하여   인스턴스가 도달 할 수 있습니다.
 
-바깥 세상에서 SSH를 통해 인스턴스에 액세스하려면 [Bastion 인스턴스](https://aws.amazon.com/blogs/security/how-to-record-ssh-sessions-established-through-a-bastion-host/)를 추가하십시오.  Bastion은 인스턴스에 직접 액세스 할 수 있으므로 첫번쨰로 Bastion에 액세스하여접속  할 수 있습니다.
+바깥 세상에서 SSH를 통해 인스턴스에 액세스하려면 [Bastion 인스턴스](https://aws.amazon.com/blogs/security/how-to-record-ssh-sessions-established-through-a-bastion-host/)를 추가하십시오.  Bastion은 인스턴스에 직접 액세스 할 수 있으므로 첫번쨰로 Bastion에 액세스하여 접속 할 수 있습니다.
 
-마지막으로 CodeDeploy 프로젝트에 일부 변경을 가해 VPC에 배포합니다.
+마지막으로 CodeDeploy 프로젝트에 일부 변경을 하여 VPC에 배포합니다.
 
 그래서 이제 시작하겠습니다.
 
