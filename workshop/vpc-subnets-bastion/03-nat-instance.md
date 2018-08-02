@@ -53,15 +53,15 @@ The Gateway offering is newer and easier to setup than the NAT Instance, and als
 
 # NAT Instance
 
-지금까지 2개의 Public Subnet과 2개의 Private Subnet 이 있습니다. Private 에서는 Load Balancer 를 통해 액세스 할 수 있는 웹 서비 인스턴스를 배포합니다.
+지금까지 2개의 Public Subnet과 2개의 Private Subnet 을 만들었습니다. Private 에서는 Load Balancer 를 통해 액세스 할 수 있는 웹 서비 인스턴스를 배포합니다.
 
 이러한 인스턴스가 VPC 외부에서 연결할 필요가 없더라도 패키지를 다운로드하고 업데이트하려면 인터넷에 액세스 할 수 있어야합니다. 이러한 이유로 외부의 모든 아웃 바운드 트래픽을 라우팅 할 수있는 NAT가 필요합니다.
 
 AWS 는 NAT: [NAT Instance](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html) 와 [NAT Gateway](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html) 2가지 option을 제공합니다. Gateway 오퍼링은 NAT 인스턴스보다 새롭고 설치가 쉽고 자동으로 확장됩니다. 그러나이 자습서에서는 NAT 인스턴스를 저렴하게 사용할 수 있습니다 (너무 많이 청구되기를 원하지 않습니다!).
 
 ## Create Nat Instance
-1. AWS Management Console 의 Computer 에서 EC2로 이동하세요.
-2. 왼쪽 메뉴에서 Instances Click 하세요.
+1. AWS Management Console 에서 Computer 의 EC2 Dashboard 로 이동하세요.
+2. 왼쪽 메뉴에서 Instances 를 Click 하세요.
 3. Launch Instance Click 하세요.
 4. Community AMIs 를 선택하세요.
 5. NAT 를 입력하고 그 다음 Enter 를 누르세요.
@@ -69,7 +69,7 @@ AWS 는 NAT: [NAT Instance](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuid
   1. Root device type: `ebs`
   2. Virtualization type: `hvm`
   3. ENA Enabled: `No`.
-7. `t2.micro` 를 선택 그리고 Next 를 click : Configure Instance Details.
+7. `t2.micro` 를 선택하고 Next 를 click : Configure Instance Details.
 8. Network 에서, VPC를 선택하세요.
 9. subnet 에서, `10.0.1.0-ap-northeast-1a` 를 선택하세요.
 10. Next: Add Storage 를 Click 하세요.
@@ -102,7 +102,3 @@ AWS 는 NAT: [NAT Instance](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuid
 
 ---
 **다음:** [create new Load Balancer](/workshop/vpc-subnets-bastion/04-load-balancer.md).
-<<<<<<< HEAD
-
-=======
->>>>>>> f6c4bc7d450c38053fa9458250752732b0776588
