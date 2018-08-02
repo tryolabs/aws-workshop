@@ -24,8 +24,6 @@ We are going to create our VPC with 4 subnets (2 private and 2 public).
 ---
 **Next:** [create an Internet Gateway and a public Routes table](/workshop/vpc-subnets-bastion/02-internet-gateway.md).
 
----
-**Next:** [create an Internet Gateway and a public Routes table](/workshop/vpc-subnets-bastion/02-internet-gateway.md).
 =======
 1. AWS Management Console에 접속한 후 Region(예:Seoul) 을 Click 하세요. 이후 메뉴에서 Networking & Content Delivery 안의 VPC를 Click 하세요.
 2. 왼쪽 메뉴에서 `Your VPCs` 를 Click 하세요.
