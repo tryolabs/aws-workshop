@@ -74,31 +74,31 @@ AWS 는 NAT: [NAT Instance](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuid
 9. subnet 에서, `10.0.1.0-ap-northeast-1a` 를 선택하세요.
 10. Next: Add Storage 를 Click 하세요.
 11. Next: Add Tag Click 하세요.
-12. Key 에서 `Name` 과 Value `MyNat` 을 입력하세요.
+12. Key 에서 `Name` 과 Value `MyNat` 을 입력하거나 원하시는 것을 입력하세요.
 13. Next: **Configure Security Group** Click 하세요.
 14. Select: 새로운 **security group** 을 만듭니다.
 15. **Security group name** 을 `natsecuritygroup` 를 입력하거나 원하시는 것을 입력하세요.
-16. 3개의 rules: SSH, HTTP, HTTPS 을 추가하세요.
-17. Review and Launch 를 Click 하세요.
+16. 기본이 되는 3개의 rules: SSH, HTTP, HTTPS 을 추가하세요.
+17. **Review and Launch** 를 Click 하세요.
 18. Next 를 Click 하세요.
 19. Launch 를 Click 하세요.
 20. key pair 를 선택하고 Launch Instances 를 Click 하세요.
-21. View Instances Click 하세요.
+21. **View Instances** 를 Click 하세요.
 22. NAT instance 선택하세요.
 23. Actions - Networking 으로 이동하고 **Change Source/Dest. Check** 을 click 하세요.
-24. Yes, Disable Click 하세요.
-25. 다시 Actions - Networking 으로 이동하고 **Change Security Groups** click 하고 VPC에 기본으로 추가하세요.
+24. Yes, **Disable** Click 하세요.
+25. 다시 Actions - Networking 으로 이동하고 **Change Security Groups** 을 click 하고 VPC에 기본으로 추가하세요.
 
 ## Create a route for private subnets through the NAT instance
-1. Networking & Content Delivery 안에 있는 VPC로 이동.
-2. 왼쪽 메뉴에서 Route Tables 로 이동하세요.
+1. AWS Management Console에서 Networking & Content Delivery 의 VPC로 이동하세요.
+2. 왼쪽 메뉴에서 **Route Tables** 로 이동하세요.
 3. Main subnet 인 `awsworkshopvpc` 을 선택하세요.
-4. 화면 하단의 Routes tab 으로 이동하세요.
-5. Edit 를 Click 하세요.
-6. another Route 를 추가하고 Click 하세요.
+4. 화면 하단의 **Routes tab** 으로 이동하세요.
+5. **Edit** 를 Click 하세요.
+6. **another Route** 를 추가하고 Click 하세요.
 7. Destination `0.0.0.0/0` 을 입력하세요.
 8. NAT Instance 를 Target 으로 선택하세요.
-9. Save Click 하세요.
+9. **Save** 를 Click 하세요.
 
 ---
-**다음:** [create new Load Balancer](/workshop/vpc-subnets-bastion/04-load-balancer.md).
+**다음:** [Create new Load Balancer](/workshop/vpc-subnets-bastion/04-load-balancer.md).
