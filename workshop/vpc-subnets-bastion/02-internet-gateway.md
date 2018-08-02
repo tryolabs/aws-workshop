@@ -79,4 +79,4 @@ Finally, we need to associate 2 of our subnets to this route table and assign th
 8. 반복, 위의 2번 - 7번을 반복하여 `10.0.3.0-ap-northeast-1b`.
 
 ---
-**다음:** [create a NAT Instance](/workshop/vpc-subnets-bastion/03-nat-instance.md).
+**다음:** [Create a NAT Instance](/workshop/vpc-subnets-bastion/03-nat-instance.md).
