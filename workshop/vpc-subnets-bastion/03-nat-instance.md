@@ -75,8 +75,8 @@ AWS 는 NAT: [NAT Instance](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuid
 10. Next: Add Storage 를 Click 하세요.
 11. Next: Add Tag Click 하세요.
 12. Key 에서 `Name` 과 Value `MyNat` 을 입력하세요.
-13. Next: Configure Security Group Click 하세요.
-14. Select: 새로운 security group 을 만듭니다.
+13. Next: **Configure Security Group** Click 하세요.
+14. Select: 새로운 **security group** 을 만듭니다.
 15. **Security group name** 을 `natsecuritygroup` 를 입력하거나 원하시는 것을 입력하세요.
 16. 3개의 rules: SSH, HTTP, HTTPS 을 추가하세요.
 17. Review and Launch 를 Click 하세요.
