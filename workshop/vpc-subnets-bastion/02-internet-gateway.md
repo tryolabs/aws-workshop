@@ -54,21 +54,6 @@ Finally, we need to associate 2 of our subnets to this route table and assign th
 
 ## Route tables 만들기
 1. 왼쪽 메뉴에서 **Route Tables** 을 Click 하세요.
-
-2. Create Route Table 을 Click 하세요.
-3. **Name tag** 에는 `awsWorkshopPublicRT` 을 입력하거나 원하시는 것을 입력하세요.
-4. **Yes, Create** 를 Click 하세요.
-5. On the bottom section select the Routes tab.
-6. Click on Edit button.
-7. Click on Add another Route.
-8. As **Destination** put `0.0.0.0/0`.
-9. As **Target** select your Internet Gateway.
-10. Click Save.
-11. Now select Subnet Associations tab.
-12. Click on Edit.
-13. Select `10.0.1.0-us-east-1a` and `10.0.3.0-us-east-1b`.
-14. Click Save.
-=======
 2. **Create Route Table** 을 Click 하세요.
 3. **Name tag**: `awsWorkshopPublicRT` 을 입력하거나 원하시는 것을 입력하세요.
 4. **Yes, Create** 을 Click 하세요.
