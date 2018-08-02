@@ -24,7 +24,7 @@ So, let's get started.
 
 이 섹션의 목적은 우리의 Security 와 Redundancy 를 개선시키는 것에 있습니다. 이를 위해 [custom VPC](https://aws.amazon.com/documentation/vpc/)를 만듭니다.
 
-Public Subnet의 경우 [Internet Gateway](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html)를 설정하고 새로운 [Route Table](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html),Subnet의 모든 인스턴스는 인터넷에 액세스 할 수 있습니다.
+Public Subnet의 경우 [Internet Gateway](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html)를 설정하고 새로운 [Route Table](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html) 을 생성, 그래서 이 Subnet 의 모든 인스턴스는 인터넷에서 액세스 할 수 있습니다.
 
 애플리케이션의 인스턴스는 **private** subnets 에 존재하는 경로를 지정하는 [NAT 인스턴스](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html)가 필요합니다. Public Subnet 을 통한 인터넷 트래픽 패키지를 다운로드하고 시스템을 업데이트 할 수 있도록 인터넷에 액세스하려면 인스턴스가 필요합니다.
 
