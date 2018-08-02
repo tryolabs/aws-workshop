@@ -54,7 +54,7 @@ Finally, we need to associate 2 of our subnets to this route table and assign th
 
 ## Route tables 만들기
 1. 왼쪽 메뉴에서 **Route Tables** 을 Click 하세요.
-<<<<<<< HEAD
+
 2. Create Route Table 을 Click 하세요.
 3. **Name tag** 에는 `awsWorkshopPublicRT` 을 입력하거나 원하시는 것을 입력하세요.
 4. **Yes, Create** 를 Click 하세요.
@@ -82,7 +82,6 @@ Finally, we need to associate 2 of our subnets to this route table and assign th
 12. **Edit** 를 Click 하세요.
 13. `10.0.1.0-ap-northeast-1a` 와 `10.0.3.0-ap-northeast-1b` 을 선택하세요.
 14. **Save** 을 Click 하세요.
->>>>>>> 3b5a7c9246173129e929ca5e43e094b903d0d65a
 
 ## Assign public IP to our public subnet
 1. 왼쪽 메뉴에서 **Subnets** 을 Click 하세요.
