@@ -23,7 +23,11 @@ So, let's get started.
 # VPC 와 Bastion 인스턴스
 이 세션의 목적은 우리의 Security 와 Redundancy 를 개선 시키는 것에 있습니다. [custom VPC](https://aws.amazon.com/documentation/vpc/).
 
+<<<<<<< HEAD
 VPC가 있으면 Redundancy 를 이유로 서로 다른 가용 영역에서 2 개의 Private Subnet (AutoScaling Group이 웹 서버 인스턴스를 시작할 위치)을 만듭니다. 로드 밸런서에 필요한 동일한 가용 영역에 2 개의 Public Subnet을 SetUp 합니다. VPC 및 Subnet [여기](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html)에 대한 자세한 내용을 볼 수 있습니다.
+=======
+이 섹션의 목적은 우리의 Security 와 Redundancy 를 개선시키는 것입니다. 이를 위해 [custom VPC](https://aws.amazon.com/documentation/vpc/)를 만듭니다.
+>>>>>>> aad64f564a9b4a187694663ba96790de20a6a3ce
 
 Public Subnet의 경우 [Internet Gateway](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html)를 설정하고 새로운 [Route Table](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html),Subnet의 모든 인스턴스는 인터넷에 액세스 할 수 있습니다.
 
