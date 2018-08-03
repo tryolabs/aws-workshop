@@ -76,7 +76,7 @@ Finally, we need to associate 2 of our subnets to this route table and assign th
 5. **Enable auto-assign public IPv4 address** 를 Click 하세요.
 6. **Save** Click 하세요.
 7. **Close** Click 하세요.
-8. 반복, 위의 2번 - 7번을 반복하여 `10.0.3.0-ap-northeast-1b`.
+8. 반복, 위의 2번 - 7번을 반복하여 `10.0.3.0-ap-northeast-1b` 을 선택하세요.
 
 ---
 **다음:** [Create a NAT Instance](/workshop/vpc-subnets-bastion/03-nat-instance.md).
