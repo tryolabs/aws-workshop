@@ -40,8 +40,8 @@ Repeat the steps outlined in [this section](/workshop/elb-auto-scaling-group/03-
 이 시점에서 웹에서 인스턴스로 요청을 라우팅 할 수 있도록 로드밸런서를 만들어야합니다.
 
 ## Create a new Load Balancer
-1. 컴퓨터 섹션의 EC2로 이동하세요.
-2. Load Balancers 를 Click 하세요.
+1. AWS Management Console 에서 Computre 의 EC2 Dashboard 로 이동하세요.
+2. **Load Balancers** 를 Click 하세요.
 3. Load Balancer Create 를 Click 하세요.
 4. Application Load Balancer 생성을 Click 하세요.
 5. Name 입력: `aws-workshop-load-balancer-vpc` 을 입력하거나 원하는 것을 입력하세요.
@@ -67,7 +67,7 @@ Repeat the steps outlined in [this section](/workshop/elb-auto-scaling-group/03-
 25. Old Load Balancer 를 삭제하세요.
 
 ## Modify API_URL
-반복, 이 단계의 아웃라인을 반복 [this section](/workshop/elb-auto-scaling-group/03-finishing-up.md).
+반복, 이 단계를 반복하세요 [this section](/workshop/elb-auto-scaling-group/03-finishing-up.md).
 
 ---
 **다음:** [move RDS into your VPC](/workshop/vpc-subnets-bastion/05-RDS.md).
