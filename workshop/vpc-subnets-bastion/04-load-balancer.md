@@ -70,4 +70,4 @@ Repeat the steps outlined in [this section](/workshop/elb-auto-scaling-group/03-
 반복, 이 단계를 반복하세요 [this section](/workshop/elb-auto-scaling-group/03-finishing-up.md).
 
 ---
-**다음:** [move RDS into your VPC](/workshop/vpc-subnets-bastion/05-RDS.md).
+**다음:** [Move RDS into your VPC](/workshop/vpc-subnets-bastion/05-RDS.md).
