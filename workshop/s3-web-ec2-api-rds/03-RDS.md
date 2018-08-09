@@ -1,4 +1,4 @@
-# RDS
+﻿# RDS
 
 ## RDS에서 PostgreSQL 인스턴스 만들기
 1. **Database** 섹션 아래에 있는 **RDS** 로 이동하십시오.
@@ -8,8 +8,8 @@
 5. 사용자 이름과 비밀번호를 입력하고 Next를 클릭합니다 (다시 말하지만 나중에 필요합니다).
 6. **Publicly Accessible** 에 대해 No 를 선택하십시오.
 7. 이용가능한 Zone: `us-east-1a`.
-8. **VPC security groups** 에서 _Select existing VPC security groups_ 를 선택하고,[EC2 인스턴스 시작](/workshop/s3-web-ec2-api-rds/02-EC2-instances.md#launch-your-first-ec2-instance)할 때 너가 생성한 보안 그룹을 선택하십시오.
-9. db 이름을 선택하고 인스턴스 실행을 클릭합니다 (다시 말하면 나중에 데이터베이스 이름이 필요합니다).
+8. **VPC security groups** 에서 _Select existing VPC security groups_ 를 선택하고, [EC2 인스턴스 시작](/workshop/s3-web-ec2-api-rds/02-EC2-instances.md#launch-your-first-ec2-instance)할 때 너가 생성한 보안 그룹을 선택하십시오.
+9. DB 이름을 선택하고 인스턴스 실행을 클릭합니다 (다시 말하면 나중에 데이터베이스 이름이 필요합니다).
 10. 너의 DB 인스턴스 뷰를 클릭하십시오.
 
 이제 우리의 인스턴스가 생성됩니다. 이전 섹션에서 작성한 보안 그룹의 모든 인스턴스를 연결할 수 있도록 액세스를 구성합니다.
