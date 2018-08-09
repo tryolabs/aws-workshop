@@ -45,7 +45,7 @@
     ```
 
     스크립트 시작 부분에 공백을 남겨두면 작동하지 않습니다. 그래서 아무 space도 남가지마십시오!
-    만약 다른 region을 사용했다면 'wget` 행의 버킷 이름이 다를 수 있습니다( [here](https://docs.aws.amazon.com/codedeploy/latest/userguide/resource-kit.html#resource  참조). -kit-bucket-names))
+    만약 다른 region을 사용했다면 'wget` 행의 버킷 이름이 다를 수 있습니다([here](https://docs.aws.amazon.com/codedeploy/latest/userguide/resource-kit.html #resource 참조). -kit-bucket-names))
 
 7. 다음을 클릭하십시오: Add Storage.
 8. 기본 설정을 그대로두고 다음을 클릭하십시오: Add Tags.

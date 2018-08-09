@@ -53,7 +53,7 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 �
 
 ## S3 웹 사이트 버킷에 대한 full access 권한을 얻는 정책을 만듭니다.
 
-[AWS Policies] (http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html) 내에서, 너가 사용하는 모든 AWS 리소스에 대해 다른 권한을 지정할 수 있습니다. 예를 들어, 특정 S3 버킷에 대한 전체 액세스를 가능하게하는 정책을 만들 수 있습니다. 이것이 바로 우리가 할 일입니다. 앞으로 우리는 프로젝트를 프로그래밍적으로 빌드하고 그것을 S3에 저장해야합니다.
+[AWS Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html) 내에서, 너가 사용하는 모든 AWS 리소스에 대해 다른 권한을 지정할 수 있습니다. 예를 들어, 특정 S3 버킷에 대한 전체 액세스를 가능하게하는 정책을 만들 수 있습니다. 이것이 바로 우리가 할 일입니다. 앞으로 우리는 프로젝트를 프로그래밍적으로 빌드하고 그것을 S3에 저장해야합니다.
 
 1. **Security, Identity & Compliance** 에서 **IAM** 으로 이동하십시오.
 2. Policies 을 클릭하십시오.
