@@ -1,6 +1,6 @@
 ﻿# EC2 instances
 
-애플리케이션의 API는 여러 곳에서 이용됩니다.[AWS EC2](https://aws.amazon.com/ec2/). 다음 섹션에서는 [CodeDeploy] (http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) 를 사용하여 API를 만들고 배포할 것입니다.
+[AWS EC2](https://aws.amazon.com/ec2/) 애플리케이션의 API는 여러 곳에서 이용됩니다. 다음 섹션에서는 [CodeDeploy](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) 를 사용하여 API를 만들고 배포할 것입니다.
 
 먼저 EC2 인스턴스가 SSM에 액세스 할 수 있도록 role을 만듭니다:
 
@@ -45,7 +45,7 @@
     ```
 
     스크립트 시작 부분에 공백을 남겨두면 작동하지 않습니다. 그래서 아무 space도 남가지마십시오!
-    만약 다른 region을 사용했다면 'wget` 행의 버킷 이름이 다를 수 있습니다 ([here](https://docs.aws.amazon.com/codedeploy/latest/userguide/resource-kit.html#resource 참조). -kit-bucket-names))
+    만약 다른 region을 사용했다면 'wget` 행의 버킷 이름이 다를 수 있습니다( [here](https://docs.aws.amazon.com/codedeploy/latest/userguide/resource-kit.html#resource  참조). -kit-bucket-names))
 
 7. 다음을 클릭하십시오: Add Storage.
 8. 기본 설정을 그대로두고 다음을 클릭하십시오: Add Tags.

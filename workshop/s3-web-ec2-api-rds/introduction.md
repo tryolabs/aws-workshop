@@ -9,7 +9,7 @@ CodeBuild 는 우리의 레파지토리에서 소스를 가져오고, 웹페이�
 
 우리의 API를 EC2 인스턴스에 자동으로 배포하기 위해, [CodeDeploy](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) 를 사용할 것입니다. EC2 인스턴스로 repo를 가져오고 서버를 시작합니다(gunicorn). 전체 배포 프로세스는 `appspec.yml` 파일에 설명되어 있습니다.[here](/appspec.yml)
 
-마지막으로 데이터베이스는 PostgreSQL 인스턴스로 [AWS RDS] (http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)를 사용하여 호스팅됩니다.
+마지막으로 데이터베이스는 PostgreSQL 인스턴스로 [AWS RDS](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html) 를 사용하여 호스팅됩니다.
 
 요약하면, 이 섹션에서 우리는 아래 내용을 생성할 것입니다.:
 
