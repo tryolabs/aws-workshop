@@ -1,6 +1,6 @@
-# CodeDeploy
+﻿# CodeDeploy
 
-[CodeBuild] (http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html)는 모든 종류의 응용 프로그램을 EC2 인스턴스에 자동으로 배포하는 서비스입니다. 이 구성은 정말 간단하고 적응하기 쉽습니다. 배포 프로세스는 [this one] (/appspec.yml)과 같은 'appspec.yml` 파일에 설명되어 있습니다. 배포 중에 어떤 일이 발생하는지 알고 싶으면 후크 [here] (/ infrastructure/aws/codedeploy)의 구현을 확인할 수도 있습니다.
+[CodeBuild](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) 는 모든 종류의 응용 프로그램을 EC2 인스턴스에 자동으로 배포하는 서비스입니다. 이 구성은 정말 간단하고 적응하기 쉽습니다. 배포 프로세스는 [이것](/appspec.yml)과 같은 'appspec.yml` 파일에 설명되어 있습니다. 배포 중에 어떤 일이 발생하는지 알고 싶으면 hook [here](/infrastructure/aws/codedeploy) 의 구현을 확인할 수도 있습니다.
 
 먼저 다른 AWS 서비스 (예 : S3)에 액세스 할 수 있도록 CodeDeploy의 기본 역할을 만들어야 합니다.
 
@@ -40,8 +40,8 @@
 ---
 **Extra mile:** 배포가 완료되면:
 
-- [Postman] (https://www.getpostman.com/) 또는 [httpie] (https://httpie.org/)와 같은 방법으로 API를 실행 해보십시오.
+- [Postman](https://www.getpostman.com/) 또는 [httpie](https://httpie.org/) 와 같은 방법으로 API를 실행 해보십시오.
 - 배포에 어떤 영향이 있습니까? 모든 파이썬 코드는 어디에서 끝났습니까? API가 이미 RDS와 연결되어 있습니까? `ssh`에서 모든 답변을 얻으십시오.
 
 ---
-**Next:** 우리는 [첫 번째 배포를 마칠 것입니다] (/workshop/s3-web-ec2-api-rds/05-finishing-up.md), 일부 추가 파라미터만 누락되었습니다!
+**Next:** 우리는 [Finish-deploy](/workshop/s3-web-ec2-api-rds/05-finishing-up.md) 할 것입니다, 일부 추가 파라미터만 누락되었습니다!
