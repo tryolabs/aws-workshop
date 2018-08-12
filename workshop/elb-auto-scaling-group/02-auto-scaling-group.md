@@ -52,11 +52,11 @@ Auto Scaling Group를 만들려면, 우선 시작될 인스턴스의 속성을 �
 11. 선택: **조정 정책을 사용하여 이 그룹의 용량 조정**. 우리는 학습을 위해 toy 조정 정책을 구성할 것입니다. 실제의 시스템에서는 최적의 조정 정책을 구성하기 위해 일부 벤치마킹을 실행하고 응용프로그램의 병목현상을 파악해야 합니다.
 12. 조정 범위를 2에서 4개의 인스턴스로 설정한다.
 13. 지표유형: `평균 CPU 사용률` 선택 (imagine your app was compute intensive). 대상 값은 80.
-14. **인스턴스 필요 시간:** 180 초 동안 워밍업 시간(초). 더 자세한 사항은 [here](https://docs.aws.amazon.com/autoscaling/latest/userguide/as-scaling-simple-step.html#as-step-scaling-warmup).
+14. **인스턴스 필요 시간:** 180 초 동안 워밍업 시간(초). 더 자세한 사항은 [이곳](https://docs.aws.amazon.com/autoscaling/latest/userguide/as-scaling-simple-step.html#as-step-scaling-warmup)을 참고해 주세요.
 15. **다음: 알림 구성** 클릭한다.
 16. **다음: 태그 구성** 클릭한다.
 17. **검토** 클릭한다.
 18. **Auto Scaling 그룹 생성** 클릭한다.
 19. **닫기** 클릭한다.
 ---
-**Next:** 마무리, 우리는 [파라미터를 수정하고 CodeBuild를 재실행하기](/workshop/elb-auto-scaling-group/03-finishing-up.md) 하여야 한다.
+**다음:** 마무리, 우리는 [파라미터를 수정하고 CodeBuild를 재실행하기](/workshop/elb-auto-scaling-group/03-finishing-up.md) 하여야 한다.
