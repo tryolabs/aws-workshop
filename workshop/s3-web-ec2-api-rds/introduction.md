@@ -18,10 +18,10 @@ CodeBuild 는 우리의 레파지토리에서 소스를 가져오고, 웹페이�
 - API를 EC2 인스턴스에 배포하기위한 CodeDeploy 설정
 - RDS PostgreSQL 인스턴스.
 
-> **중요 :** 이 워크숍을 마친 후에는 계정에 사용중인 인스턴스를 중지할 것이므로 더 이상 청구되지 않습니다. 즉, 이번에 신규로 생성한 모든 것을 삭제해야합니다.
+> **중요:** 이 워크숍을 마친 후에는 계정에 사용중인 인스턴스를 중지할 것이므로 더 이상 청구되지 않습니다. 즉, 이번에 신규로 생성한 모든 것을 삭제해야합니다.
 >
 > AWS의 많은 자원은 [태그를 달 수 있습니다](https://aws.amazon.com/answers/account-management/aws-tagging-strategies/). 만약 태그 할 수 있는 어떤 항목이 있으면, **unique name** 으로 태그를 지정해야 합니다. 나중에, 너희들은 지울 태그된 리소스를 찾기 위해 [Tag Editor](https://aws.amazon.com/blogs/aws/resource-groups-and-tagging/) 를 사용할 수 있고, 뒤에 어떤것도 남기지 않을 것이라 확신합니다.
 
 ---
 
-**다음 :** [S3에서 정적 웹 사이트를 제공하는 방법](/workshop/s3-web-ec2-api-rds/01-serve-website-from-s3.md)을 배우십시오.
+**다음:** [S3에서 정적 웹 사이트를 제공하는 방법](/workshop/s3-web-ec2-api-rds/01-serve-website-from-s3.md)을 배우십시오.
