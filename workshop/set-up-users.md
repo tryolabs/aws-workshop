@@ -59,4 +59,4 @@ AWS API, CLI, SDK 그리고 다른 개발 도구들을 위한 액세스 키 ID(*
 
 ---
 
-**Next:** [S3, RDS and EC2](/workshop/s3-web-ec2-api-rds/introduction.md).
+**다음:** [S3, RDS and EC2](/workshop/s3-web-ec2-api-rds/introduction.md).
