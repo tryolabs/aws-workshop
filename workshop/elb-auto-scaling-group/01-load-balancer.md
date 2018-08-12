@@ -24,4 +24,4 @@ production환경의 응용프로그램을 실핼할때, 우리는 하나가 실�
 17. **닫기** 클릭한다.
 
 ---
-**Next:** [Auto Scaling Group 생성하기](/workshop/elb-auto-scaling-group/02-auto-scaling-group.md).
+**다음:** [Auto Scaling Group 생성하기](/workshop/elb-auto-scaling-group/02-auto-scaling-group.md).
