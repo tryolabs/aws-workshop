@@ -113,7 +113,7 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 �
 2. `AmazonSSMReadOnlyAccess`를 검색하고 Attach를 클릭하십시오.
 
 ---
-**도전 과제:** command line 에서`WEBSITE_BUCKET_NAME`의 값을 얻으십시오.
+**도전 과제:** CLI를 사용하여 `WEBSITE_BUCKET_NAME`의 값을 얻으십시오.
 
 ---
 
