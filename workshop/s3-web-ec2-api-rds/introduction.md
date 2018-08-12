@@ -24,4 +24,4 @@ CodeBuild 는 우리의 레파지토리에서 소스를 가져오고, 웹페이�
 
 ---
 
-** 다음 : ** [S3에서 정적 웹 사이트를 제공하는 방법](/workshop/s3-web-ec2-api-rds/01-serve-website-from-s3.md)을 배우십시오.
+**다음 :** [S3에서 정적 웹 사이트를 제공하는 방법](/workshop/s3-web-ec2-api-rds/01-serve-website-from-s3.md)을 배우십시오.
