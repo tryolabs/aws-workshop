@@ -1,3 +1,5 @@
+> 이 문서는 https://github.com/tryolabs/aws-workshop를 Fork하여 작성되었습니다.
+
 # AWS Workshop
 
 이 워크숍에서는 여러분에게 [Amazon Web Services](https://aws.amazon.com/) (AWS) 을 이용하여 인프라를 관리하는 방법을 소개하고자 합니다.
