@@ -8,8 +8,8 @@
 2. 버킷의 이름을 입력하십시오. 
 버킷 이름은 AWS의 모든 기존 계정 및 지역에서 고유해야합니다. 
 버킷을 만든 후에는 버켓의 이름을 바꿀 수 없으므로 이름을 현명하게 선택하십시오. 
-Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 더 읽어야합니다. [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules).
-3. S3 버킷의 리전을 선택해라. 너가 원하는 어떤 지역이든 선택할 수 있다, 그러나 아마존에는 다른 지역의 스토리지에 대해 [다른 가격](https://aws.amazon.com/s3/pricing/) 이 있습니다.이 경우 (별로 중요하지는 않지만) 우리는`미국 동부 (버지니아: us-east-1)`를 선택할 것입니다.
+Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. [여기](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules)에서 이에 대한 추가적인 정보를 찾으실 수 있습니다.
+3. S3 버킷의 리전을 선택하세요. 여러분이 원하는 어떤 리전이든 선택할 수 있습니다. 그러나 AWS는 [리전별로 가격이 다릅니다](https://aws.amazon.com/s3/pricing/). 이번 실습에서 우리는`미국 동부 (버지니아: us-east-1)`를 선택할 것입니다.
 4. Create를 클릭하세요. 우리는 나중에 속성을 수정할 것입니다.
 5. 일단 만들어지면, 버킷 이름을 클릭하고 속성으로 이동 한 다음 **정적 웹 사이트 호스팅을 클릭하십시오** 옵션을 확인하십시오 **이 버킷을 사용하여 웹 사이트를 호스팅하십시오**
 6. 색인 및 오류 문서는`index.html`을 넣습니다. 나중에, 우리는 **웹 사이트**에 접속하기 위해 상단에 지정된 **endpoint URL**로 이동합니다.
