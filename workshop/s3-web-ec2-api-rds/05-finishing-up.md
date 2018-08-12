@@ -24,4 +24,4 @@
 이제 S3에서 제공하는 공개 URL (under **S3**, your bucket, **Properties**, **Static website hosting**)으로 이동하면 엔드 포인트를 찾을 수 있습니다. 모든 것이 계획대로 진행되면 전체 웹 사이트를 볼 수 있습니다.
 
 ---
-**Next:** [EC2 instance with ELB and auto-scaling](/workshop/elb-auto-scaling-group/introduction.md)를 추가하십시오.
+**다음:** [EC2 instance with ELB and auto-scaling](/workshop/elb-auto-scaling-group/introduction.md)를 추가하십시오.
