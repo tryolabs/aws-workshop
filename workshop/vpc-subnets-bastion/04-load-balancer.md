@@ -2,7 +2,7 @@
 
 이 시점에서 웹에서 인스턴스로 요청을 라우팅 할 수 있도록 로드밸런서를 만들도록 하겠습니다.
 
-## Create a new Load Balancer
+## 새로운 로드밸런서 생성
 1. AWS Management Console 에서 Computre 의 EC2 Dashboard 로 이동하세요.
 2. **Load Balancers** 를 Click 하세요.
 3. Load Balancer Create 를 Click 하세요.
