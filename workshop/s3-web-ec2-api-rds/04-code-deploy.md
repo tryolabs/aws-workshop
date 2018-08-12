@@ -31,11 +31,11 @@
 3. **Connect to GitHub** 섹션에서 GitHub 계정을 입력하고 **Connect to GitHub** 를 선택하십시오.
 4. 필요한 경우 AWS에서 귀하의 GitHub 계정에 액세스하도록 허용하십시오.
 5. _account / repository_ 형식으로 저장소 이름을 입력하십시오.
-6. ** Commit ID ** 에 배포하려는 커밋 해시를 입력하십시오..
+6. **Commit ID** 에 배포하려는 커밋 해시를 입력하십시오..
 7. 아래의 **Overwrite the content** 를 선택하십시오.
 8. Deploy를 클릭하십시오.
 
-배포하는 동안 ** View instances **를 클릭 한 다음 ** View events **를 클릭하여 진행 상황을 확인하고 무슨 일이 일어나는지 확인하십시오.
+배포하는 동안 **View instances**를 클릭 한 다음 **View events**를 클릭하여 진행 상황을 확인하고 무슨 일이 일어나는지 확인하십시오.
 
 ---
 **Extra mile:** 배포가 완료되면:
@@ -44,4 +44,4 @@
 - 배포에 어떤 영향이 있습니까? 모든 파이썬 코드는 어디에서 끝났습니까? API가 이미 RDS와 연결되어 있습니까? `ssh`에서 모든 답변을 얻으십시오.
 
 ---
-**Next:** 우리는 [Finish-deploy](/workshop/s3-web-ec2-api-rds/05-finishing-up.md) 할 것입니다, 일부 추가 파라미터만 누락되었습니다!
+**다음:** 우리는 [Finish-deploy](/workshop/s3-web-ec2-api-rds/05-finishing-up.md) 할 것입니다, 일부 추가 파라미터만 누락되었습니다!
