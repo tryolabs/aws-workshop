@@ -49,4 +49,6 @@
 
 ---
 
-**다음:** AWS account를 가지고 계시면, 바로 [시작합시다](/workshop/set-up-users.md).
+**다음:** AWS 계정을 가지고 계시면, 바로 [시작합시다](/workshop/set-up-users.md).
+
+> AWS 계정을 가지고 계시지 않은 분은 실습 진행자에게 문의해 주시기 바랍니다. 
