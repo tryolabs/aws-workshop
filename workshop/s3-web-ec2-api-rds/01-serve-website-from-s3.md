@@ -24,11 +24,12 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. [여기](https://d
               "Effect": "Allow",
               "Principal": "*",
               "Action": "s3:GetObject",
-              "Resource": "arn:aws:s3:::<your-bucket-name>/*"
+              "Resource": "arn:aws:s3:::<여러분의 버킷이름>/*"
           }
       ]
   }
   ```
+> 위 예제에서 여러분의 버킷 이름을 입력할때 꺽쇠<>는 필요 없습니다.
 
 9. 저장 버튼을 누르세요.
 
@@ -60,7 +61,8 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. [여기](https://d
 3. Create Policy 를 클릭하십시오.
 4. **Import managed policy** 를 클릭하십시오.
 5. 'AmazonS3FullAccess'를 검색하고 선택하십시오 (사전 정책이지만 당신이 직접 build 할 수도 있습니다).
-6. **JSON** 탭을 클릭하여 `Resource`에 `["arn:aws:s3:::<your-bucket-name>", "arn:aws:s3:::<your-bucket-name>/*"]`을 JSON 본문에 추가합니다.
+6. **JSON** 탭을 클릭하여 JSON본문에서 `Resource`의 `"*"`부분을 `["arn:aws:s3:::<여러분의 버킷이름>", "arn:aws:s3:::<여러분의 버킷이름>/*"]`으로 대체 합니다. 
+> 위 예제에서 여러분의 버킷 이름을 입력할때 꺽쇠<>는 필요 없습니다.
 7. **Review policy** 를 클릭하십시오.
 8. 정책 이름 (예 : S3WebsiteFullAccess)을 선택하고 Create Policy 을 클릭하십시오.
 
