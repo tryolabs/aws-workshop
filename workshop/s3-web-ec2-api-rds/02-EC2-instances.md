@@ -68,4 +68,4 @@
 - SSH를 통해 새 인스턴스에 연결하십시오. 사용자 이름은 _ubuntu_이며`.pem` 파일을 사용하기 위해`-i` 플래그를 사용하십시오.
 
 ---
-**Next:** [PostgresSQL database on RDS](/workshop/s3-web-ec2-api-rds/03-RDS.md) 만들기.
+**다음:** [PostgresSQL database on RDS](/workshop/s3-web-ec2-api-rds/03-RDS.md) 만들기.
