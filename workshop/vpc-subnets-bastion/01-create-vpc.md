@@ -1,29 +1,8 @@
 # VPC
 
-We are going to create our VPC with 4 subnets (2 private and 2 public).
+지금부터 새로운 VPC를 4개의 서브넷(프라이빗2개, 퍼블릭2개)과 함깨 생성하도록 하겠습니다.
 
-## Create a VPC
-1. Go to VPC under Networking & Content Delivery.
-2. Go to Your VPCs on the left section.
-3. Click on Create VPC.
-4. As **Name** **tag** put: `awsworkshopvpc`.
-5. As **IPv4 CIDR** **block** put: `10.0.0.0/16`.
-6. Then click: Yes, Create.
-
-## Create 4 subnets
-1. Go to Subnets on the left section.
-2. Click Create Subnet.
-3. As **Name tag** put: `10.0.1.0-us-east-1a`.
-4. **Availability Zone**: `us-east-1a`.
-5. As **IPv4 CIDR** **block** put: `10.0.1.0/24`. CIDR block for any subnet will be a subset of the VPC CIDR block.
-6. Then click in Yes, Create.
-7. Repeat steps 2-6 using as **Name tag**: `10.0.2.0-us-east-1a`, **Availability Zone**: `us-east-1a` and **IPv4 CIDR block**: `10.0.2.0/24`.
-8. Repeat steps 2-6 using as **Name tag**: `10.0.3.0-us-east-1b`, **Availability Zone**: `us-east-1b` and **IPv4 CIDR block**: `10.0.3.0/24`.
-9. Repeat steps 2-6 using as **Name tag**: `10.0.4.0-us-east-1b`, **Availability Zone**: `us-east-1b` and **IPv4 CIDR block**: `10.0.4.0/24`.
-
----
-**Next:** [Create an Internet Gateway and a public Routes table](/workshop/vpc-subnets-bastion/02-internet-gateway.md).
-
+## VPC생성
 1. AWS Management Console에 접속한 후 Region(예:Seoul) 을 Click 하세요. 이후 메뉴에서 Networking & Content Delivery 안의 VPC를 Click 하세요.
 2. 왼쪽 메뉴에서 **Your VPCs** 를 Click 하세요.
 3. 화면 왼쪽 위에 **Create VPC** 를 Click 하세요.
@@ -31,7 +10,7 @@ We are going to create our VPC with 4 subnets (2 private and 2 public).
 5. **IPv4 CIDR block** 에는 `10.0.0.0/16` 를 입력하시거나 원하시는 IP 대역을 입력하세요.
 6. 오른쪽 아래에 **Yes, Create** 를 Click 하세요..
 
-## Create 4 subnets
+## 4개의 서브넷을 생성
 1. 왼쪽 메뉴에서 **Subnets** 를 Click 하세요.
 2. 화면 왼쪽 위에 **Create Subnet** 을 Click 하세요.
 3. **Name tag** 에는 `10.0.1.0-ap-northeast-1a` 를 입력하시거나 원하시는 것을 입력하세요.
