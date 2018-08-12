@@ -25,7 +25,7 @@
 만일의 경우를 대비하여
 [AWS 예산을 사용한 AWS 프리 티어 사용 알림](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-alarms.html)을 이용하여 이러한 상황을 회피할 수 있습니다.
 
-# 번역자 추가
+## AWS 관리 콘솔 언어 설정
 
 이 워크숍에서 사용하는 **AWS 관리 콘솔** 메뉴는 영문 메뉴를 기준으로 설명되어져 있습니다. 관리 콘솔의 표신 언어는 콘솔 화면 맨아래에 있는 언어 설정 버튼을 눌러서 변경 할 수 있습니다.
 
