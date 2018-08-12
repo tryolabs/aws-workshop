@@ -2,7 +2,7 @@
 
 이제 RDS를 VPC의 개인 서브넷으로 이동해야합니다. 이렇게하면 RDS가 외부 전용이 아닌 개인 서브넷에서만 액세스 할 수 있습니다.
 
-## Move RDS to your VPC
+## RDS를 여러분의 VPC로 이동시키기
 1. AWS Management Console 에서 [Amazon RDS console](https://console.aws.amazon.com/rds) 을 열고 왼쪽 메뉴에서 Subnet Groups 을 선택하세요.
 2. **Create DB Subnet Group** 을 선택하세요.
 3. Enter the subnet name: `vpcsubnetgroup` 을 입력하거나 원하시는 것을 입력하세요.
