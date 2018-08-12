@@ -26,4 +26,4 @@ ELB와 ASG를 완전히 없앤다음, 사용하던 EC2를 터미네이트 해야
 **추가 작업:** 모든 인스턴스를 종료 한 다음, 필요없는 보안 그룹은 모두 없앱니다. 이렇게 고장난 셋업을 방치해도 될까요?
 
 ---
-**다음:** [새로운앱 만들기](/workshop/beanstalk/02-new-app-environment.md)
+**다음:** [새로운 앱 만들기](/workshop/beanstalk/02-new-app-environment.md)
