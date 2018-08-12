@@ -25,7 +25,7 @@ AWS API, CLI, SDK 그리고 다른 개발 도구들을 위한 액세스 키 ID(*
 2. "Security, Identity & Compliance" 섹션에서 **IAM**으로 이동.
 3. 메뉴 Users 클릭.
 4. 버튼 "Add user" 클릭.
-5. Username에 'ConsoleUser'를 입력하고,
+5. Username에 `ConsoleUser`를 입력하고,
    **Select AWS access type** 섹션에 있는 **AWS Management Console access** 옵션을 선택한 후, 
    버튼 "Next" 클릭.
    **Require password reset** 옵션을 선택하여 다음번 로그인할 때 비밀번호를 수정하도록 합니다 (안전한 암호를 선택하십시오!).
@@ -42,10 +42,10 @@ AWS API, CLI, SDK 그리고 다른 개발 도구들을 위한 액세스 키 ID(*
 이다음으로, 프로그래밍 방식으로 액세스할 사용자를 생성합니다:
 
 1. 아래 2~4번을 반복하여 사용자를 설정합니다.
-2. Username 을 입력하고, **Select AWS access type** 섹션에서 **Programmatic access** 옵션을 선택.
+2. Username에 `ProgrammaticUser`를 입력하고, **Select AWS access type** 섹션에서 **Programmatic access** 옵션을 선택.
    "Next" 클릭.
 3. **Attach existing policies directly** 선택.
-4. `AdministratorAccess`로 검색하여 이를 선택한 후, 버튼 "Next" 클릭. 
+4. `PowerUserAccess`로 검색하여 이를 선택한 후, 버튼 "Next" 클릭. 
    물론 실제 상황에서는 더욱 제한적인 접근 권한을 가지는 정책(Policy)을 설계하고 이를 사용합니다.
 5. "Download .csv" 클릭.
 
