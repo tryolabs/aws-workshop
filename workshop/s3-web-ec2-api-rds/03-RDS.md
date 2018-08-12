@@ -20,7 +20,7 @@
 
 1. **Database** 섹션에 있는 **RDS** 로 이동하십시오.
 2. 인스턴스를 클릭하십시오.
-3. 데이터베이스의 세부 정보를 확인하고 ** Endpoint **를 복사하십시오. 이것은`DATABASE_HOST`의 값이 될 것입니다.
+3. 데이터베이스의 세부 정보를 확인하고 **Endpoint**를 복사하십시오. 이것은`DATABASE_HOST`의 값이 될 것입니다.
 4. **Compute** 섹션 아래 있는 **EC2** 로 이동하십시오..
 5. 왼쪽메뉴에서 Parameter Store를 선택하십시오.
 6. Create Parameter를 클릭하십시오.
@@ -42,4 +42,4 @@
 
 ---
 
-**Next:** [CodeDeploy project to deploy your API](/workshop/s3-web-ec2-api-rds/04-code-deploy.md) 만들기.
+**다음:** [CodeDeploy project to deploy your API](/workshop/s3-web-ec2-api-rds/04-code-deploy.md) 만들기.
