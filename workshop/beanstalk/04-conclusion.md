@@ -11,6 +11,6 @@ Beanstalk의 더 가치있는 기능은 동일한 응용 프로그램의 환경�
 
 Beanstalk 사용에 앞서 가장 큰 걸림돌은?
 
-- [앞서](/workshop/beanstalk/introduction.md) 말했듯이 Beanstalk이 프로덕션 RDS를 관리하는것 은 추천하지 **않습니다**.  이유는 환경구성을 다루기 위해서는 Beanstalk이 평생동안 인스턴스가 무상황인것처럼 해야합니다만, 데이타베이스는 그 반대입니다.
+- [앞서](/workshop/beanstalk/introduction.md) 말했듯이 Beanstalk 안에 프로덕션 RDS를 관리하는것 은 추천하지 **않습니다**. 이유는 환경구성을 위해서 Beanstalk은 인스턴스를 상태 비저장으로 다뤄야만 합니다만, 데이타베이스는 그 반대입니다.
 
 **Conduit-staging** 이라는 내부 RDS가있는 새로운 환경을 만들어보십시오.
