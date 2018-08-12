@@ -12,4 +12,4 @@
 
 ---
 
-**Next:** [Load Balancer 생성하기](/workshop/elb-auto-scaling-group/01-load-balancer.md)
+**다음:** [Load Balancer 생성하기](/workshop/elb-auto-scaling-group/01-load-balancer.md)
