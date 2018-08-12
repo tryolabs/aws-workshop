@@ -44,7 +44,7 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 �
 3. **Compute section**.에서 **EC2** 로 이동하십시오.
 4. 왼쪽 메뉴에서 **Parameter Store** 를 선택하십시오.
 5. **Create Parameter** 를 클릭하십시오.
-6. 이름으로 '/prod/codebuild/WEBSITE_BUCKET_NAME'을 입력하고 파라미터가 의미하는 바에 대한 의미있는 설명 (예. "name of the website bucket")을 입력하십시오.
+6. 이름으로 `/prod/codebuild/WEBSITE_BUCKET_NAME`을 입력하고 파라미터가 의미하는 바에 대한 의미있는 설명 (예. "name of the website bucket")을 입력하십시오.
 7. 값으로`s3://<your-bucket-name>`을 입력하십시오(꺽쇠<>는 입력할 필요가 없습니다).
 8. create parameter 를 클릭하십시오.
 
