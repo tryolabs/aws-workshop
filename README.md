@@ -1,4 +1,4 @@
-> 이 문서는 https://github.com/tryolabs/aws-workshop를 Fork하여 작성되었습니다.
+> 이 문서는 https://github.com/tryolabs/aws-workshop 를 Fork하여 작성되었습니다.
 
 # AWS Workshop
 
