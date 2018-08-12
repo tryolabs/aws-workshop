@@ -4,17 +4,17 @@
 
 우선 웹사이트를 제공할 곳에서 버킷을 만들어야 한다.
 
-1. AWS Console에서 ** Storage section ** 아래의 ** S3 **로 이동하여 버킷 생성을 클릭하십시오.
+1. AWS Console에서 **Storage section** 아래의 **S3**로 이동하여 버킷 생성을 클릭하십시오.
 2. 버킷의 이름을 입력하십시오. 
 버킷 이름은 AWS의 모든 기존 계정 및 지역에서 고유해야합니다. 
 버킷을 만든 후에는 버켓의 이름을 바꿀 수 없으므로 이름을 현명하게 선택하십시오. 
 Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 더 읽어야합니다. [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules).
 3. S3 버킷의 리전을 선택해라. 너가 원하는 어떤 지역이든 선택할 수 있다, 그러나 아마존에는 다른 지역의 스토리지에 대해 [다른 가격](https://aws.amazon.com/s3/pricing/) 이 있습니다.이 경우 (별로 중요하지는 않지만) 우리는`미국 동부 (버지니아)`를 선택할 것입니다.
 4. Create를 클릭하세요. 우리는 나중에 속성을 수정할 것입니다.
-5. 일단 만들어지면, 버킷 이름을 클릭하고 속성으로 이동 한 다음 ** 정적 웹 사이트 호스팅 **을 클릭하십시오 ** 옵션을 확인하십시오 **이 버킷을 사용하여 웹 사이트를 호스팅하십시오 **
-6. 색인 및 오류 문서는`index.html`을 넣습니다. 나중에, 우리는 ** 웹 사이트에 접속하기 위해 상단에 지정된 ** endpoint URL **로 이동합니다.
+5. 일단 만들어지면, 버킷 이름을 클릭하고 속성으로 이동 한 다음 **정적 웹 사이트 호스팅을 클릭하십시오** 옵션을 확인하십시오 **이 버킷을 사용하여 웹 사이트를 호스팅하십시오**
+6. 색인 및 오류 문서는`index.html`을 넣습니다. 나중에, 우리는 **웹 사이트**에 접속하기 위해 상단에 지정된 **endpoint URL**로 이동합니다.
 7. 저장 버튼을 클릭하세요
-8. ** 권한 **, ** 버킷 정책 **으로 이동하고, 모든 객체를 읽을 수있게 만들기 위해 다음 정책을 추가하십시오.:
+8. **권한**, **버킷 정책**으로 이동하고, 모든 객체를 읽을 수있게 만들기 위해 다음 정책을 추가하십시오.:
   ```
   {
       "Version": "2012-10-17",
@@ -42,7 +42,7 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 �
 1. **Storage** **section** 에서 **S3** 로 이동하십시오. 
 2. 버킷의 세부 정보를 보고 만들었던 버킷의 이름을 복사하십시오.
 3. **Compute section**.에서 **EC2** 로 이동하십시오.
-4. 왼쪽 메뉴에서 ** Parameter Store **를 선택하십시오.
+4. 왼쪽 메뉴에서 **Parameter Store **를 선택하십시오.
 5. **Create Parameter** 를 클릭하십시오.
 6. 이름으로 '/ prod / codebuild / WEBSITE_BUCKET_NAME`을 입력하고 파라미터가 의미하는 바에 대한 의미있는 설명 (ie. "name of the website bucket")을 입력하십시오.
 7. 값으로`s3 : // <your-bucket-name>`을 입력하십시오.
@@ -60,7 +60,7 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 �
 3. Create Policy 를 클릭하십시오.
 4. **Import managed policy** 를 클릭하십시오.
 5. 'AmazonS3FullAccess`를 검색하고 선택하십시오 (사전 정책이지만 너가 직접 build 할 수도 있습니다).
-6. ** JSON ** 탭을 클릭하고`Resource` 값을`[arn : aws : s3 ::: <your-bucket-name> ', "arn : aws : s3 ::: <your-bucket- name> / * "]`을 JSON 내용에 추가합니다.
+6. **JSON ** 탭을 클릭하고`Resource` 값을`[arn : aws : s3 ::: <your-bucket-name> ', "arn : aws : s3 ::: <your-bucket- name> / * "]`을 JSON 내용에 추가합니다.
 7. **Review policy** 를 클릭하십시오.
 8. 정책 이름 (예 : S3WebsiteFullAccess)을 선택하고 Create Policy 을 클릭하십시오.
 
@@ -113,8 +113,8 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 �
 2. `AmazonSSMReadOnlyAccess`를 검색하고 Attach를 클릭하십시오.
 
 ---
-**Extra mile:** command line 에서`WEBSITE_BUCKET_NAME`의 값을 얻으십시오.
+**도전 과제:** command line 에서`WEBSITE_BUCKET_NAME`의 값을 얻으십시오.
 
 ---
 
-**Next:** [EC2 instances](/workshop/s3-web-ec2-api-rds/02-EC2-instances.md).
+**다음:** [EC2 instances](/workshop/s3-web-ec2-api-rds/02-EC2-instances.md).
