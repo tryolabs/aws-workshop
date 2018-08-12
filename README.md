@@ -49,4 +49,4 @@
 
 ---
 
-**Next:** AWS account를 가지고 계시면, 바로 [시작합시다](/workshop/set-up-users.md).
+**다음:** AWS account를 가지고 계시면, 바로 [시작합시다](/workshop/set-up-users.md).
