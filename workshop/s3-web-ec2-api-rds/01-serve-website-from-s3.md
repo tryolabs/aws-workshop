@@ -44,11 +44,11 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 �
 3. **Compute section**.에서 **EC2** 로 이동하십시오.
 4. 왼쪽 메뉴에서 **Parameter Store **를 선택하십시오.
 5. **Create Parameter** 를 클릭하십시오.
-6. 이름으로 '/ prod / codebuild / WEBSITE_BUCKET_NAME`을 입력하고 파라미터가 의미하는 바에 대한 의미있는 설명 (ie. "name of the website bucket")을 입력하십시오.
+6. 이름으로 '/prod/codebuild/WEBSITE_BUCKET_NAME`을 입력하고 파라미터가 의미하는 바에 대한 의미있는 설명 (ie. "name of the website bucket")을 입력하십시오.
 7. 값으로`s3 : // <your-bucket-name>`을 입력하십시오.
 8. create parameter 를 클릭하십시오.
 
-이제 우리가 [여기에](/buildspec.frontend.yml) 셋팅 한 것처럼 'aws ssm get-parameter`로 버킷 이름을 검색 할 수 있습니다. 또한 [AWS SSM Agent](http://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) 를 사용하여 AWS 웹 콘솔에서 인스턴스 구성을 관리 할 수 ​​있습니다.
+이제 우리가 [여기에](/buildspec.frontend.yml) 셋팅 한 것처럼 'aws ssm get-parameter`로 버킷 이름을 검색 할 수 있습니다. 또한 [AWS SSM Agent](http://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) 를 사용하여 AWS 웹 콘솔에서 인스턴스 구성을 관리 할 수 있습니다.
 
 
 ## S3 웹 사이트 버킷에 대한 full access 권한을 얻는 정책을 만듭니다.
@@ -59,8 +59,8 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 �
 2. Policies 을 클릭하십시오.
 3. Create Policy 를 클릭하십시오.
 4. **Import managed policy** 를 클릭하십시오.
-5. 'AmazonS3FullAccess`를 검색하고 선택하십시오 (사전 정책이지만 너가 직접 build 할 수도 있습니다).
-6. **JSON ** 탭을 클릭하고`Resource` 값을`[arn : aws : s3 ::: <your-bucket-name> ', "arn : aws : s3 ::: <your-bucket- name> / * "]`을 JSON 내용에 추가합니다.
+5. 'AmazonS3FullAccess'를 검색하고 선택하십시오 (사전 정책이지만 당신이 직접 build 할 수도 있습니다).
+6. **JSON** 탭을 클릭하고`Resource`에 `[arn:aws:s3:::<your-bucket-name>', "arn:aws:s3:::<your-bucket- name>/*"]`를 JSON 내용에 추가합니다.
 7. **Review policy** 를 클릭하십시오.
 8. 정책 이름 (예 : S3WebsiteFullAccess)을 선택하고 Create Policy 을 클릭하십시오.
 
@@ -82,7 +82,7 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 �
   4. repository URL을 채우거나 Github 계정에서 하나의 repository를 선택하십시오.
 5. Environment 섹션에서:
   1. OS로 우분투를 선택하고 런타임으로 Node.js를 선택하십시오.
-  2. 버전으로`aws / codebuild / nodejs : 7.0.0`을 선택하십시오.
+  2. 버전으로`aws/codebuild/nodejs:7.0.0`을 선택하십시오.
   3. BuildSpec 이름을`buildspec.frontend.yml` (따라야할 스탭을 가지고 있는 yaml 파일)로 변경하십시오.
 6. 이슈 섹션에서 _No artifacts_을 선택하십시오.
 7. Service Role 섹션에서:
