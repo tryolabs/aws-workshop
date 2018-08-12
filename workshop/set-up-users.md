@@ -1,4 +1,4 @@
-# Set up users on AWS
+# IAM 사용자 설정하기
 
 여러분도 이미 아시겠지만, AWS에는 루트(_root_)라 불리는 특별한 계정(`루트 계정`)이 있습니다.
 이 계정은 사용자(users), 역할(roles) 그리고 결제 정보에 대한 초기 설정을 수행하는 데 사용됩니다. 
@@ -55,7 +55,7 @@ AWS API, CLI, SDK 그리고 다른 개발 도구들을 위한 액세스 키 ID(*
 아직 AWS CLI가 설치되어 있지 않다면, [이곳 링크](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)를 따라 해 보세요.
 
 ---
-**추가 작업**: 프로그래밍 방식 액세스 사용자에 `ViewOnlyAccess` 권한을 부여해 보세요. AWS CLI 를 사용하여 할 수 있다면 더욱 좋겠죠.
+**도전 과제**: 프로그래밍 방식 액세스 사용자에 `ViewOnlyAccess` 권한을 부여해 보세요. AWS CLI 를 사용하여 할 수 있다면 더욱 좋겠죠.
 
 ---
 
