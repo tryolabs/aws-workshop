@@ -44,11 +44,11 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 �
 3. **Compute section**.에서 **EC2** 로 이동하십시오.
 4. 왼쪽 메뉴에서 **Parameter Store** 를 선택하십시오.
 5. **Create Parameter** 를 클릭하십시오.
-6. 이름으로 '/prod/codebuild/WEBSITE_BUCKET_NAME`을 입력하고 파라미터가 의미하는 바에 대한 의미있는 설명 (예. "name of the website bucket")을 입력하십시오.
+6. 이름으로 '/prod/codebuild/WEBSITE_BUCKET_NAME'을 입력하고 파라미터가 의미하는 바에 대한 의미있는 설명 (예. "name of the website bucket")을 입력하십시오.
 7. 값으로`s3://<your-bucket-name>`을 입력하십시오(꺽쇠<>는 입력할 필요가 없습니다).
 8. create parameter 를 클릭하십시오.
 
-이제 우리가 [여기에](/buildspec.frontend.yml) 셋팅 한 것처럼 'aws ssm get-parameter`로 버킷 이름을 검색 할 수 있습니다. 또한 [AWS SSM Agent](http://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) 를 사용하여 AWS 웹 콘솔에서 인스턴스 구성을 관리 할 수 있습니다.
+이제 우리가 [여기에](/buildspec.frontend.yml) 셋팅 한 것처럼 'aws ssm get-parameter'로 버킷 이름을 검색 할 수 있습니다. 또한 [AWS SSM Agent](http://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) 를 사용하여 AWS 웹 콘솔에서 인스턴스 구성을 관리 할 수 있습니다.
 
 
 ## S3 웹 사이트 버킷에 대한 full access 권한을 얻는 정책을 만듭니다.
@@ -60,7 +60,7 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 �
 3. Create Policy 를 클릭하십시오.
 4. **Import managed policy** 를 클릭하십시오.
 5. 'AmazonS3FullAccess'를 검색하고 선택하십시오 (사전 정책이지만 당신이 직접 build 할 수도 있습니다).
-6. **JSON** 탭을 클릭하고`Resource`에 `[arn:aws:s3:::<your-bucket-name>', "arn:aws:s3:::<your-bucket- name>/*"]`를 JSON 내용에 추가합니다.
+6. **JSON** 탭을 클릭하여 `Resource`에 `["arn:aws:s3:::<your-bucket-name>", "arn:aws:s3:::<your-bucket-name>/*"]`을 JSON 본문에 추가합니다.
 7. **Review policy** 를 클릭하십시오.
 8. 정책 이름 (예 : S3WebsiteFullAccess)을 선택하고 Create Policy 을 클릭하십시오.
 
@@ -68,7 +68,7 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 �
 
 ## CodeBuild 안에서 프런트앤드에 빌드 및 배포하기 위해 프로젝트를 생성하십시오.
 
-앞서 언급했듯이 [AWS CodeBuild](https://aws.amazon.com/codebuild/) 는 프로젝트를 빌드하는 AWS 서비스입니다. CodeBuild에게 무엇을 할 것인지를 지시하기 위해 우리는`buildspec.frontend.yml` 파일을 만들었습니다. CodeBuild는 먼저 repository를 pull 한 다음 [해당 파일] (/ buildspec.frontend.yml)에 지정된 명령을 실행합니다. 아시다시피, 우리는 프로젝트를 새로 설치하는 데 필요한 것을 지정했습니다. 생성 된 파일은 S3에 결과 파일을 업로드하기 위해 `npm build` 와 `aws s3 sync` 를 사용하여 빌드로 끝납니다.
+앞서 언급했듯이 [AWS CodeBuild](https://aws.amazon.com/codebuild/) 는 프로젝트를 빌드하는 AWS 서비스입니다. CodeBuild에게 무엇을 할 것인지를 지시하기 위해 우리는`buildspec.frontend.yml` 파일을 만들었습니다. CodeBuild는 먼저 repository를 pull 한 다음 [해당 파일] (/buildspec.frontend.yml)에 지정된 명령을 실행합니다. 아시다시피, 우리는 프로젝트를 새로 설치하는 데 필요한 것을 지정했습니다. 생성 된 파일은 S3에 결과 파일을 업로드하기 위해 `npm build` 와 `aws s3 sync` 를 사용하여 빌드로 끝납니다.
 
 준비하기 위해 다음 단계를 따르십시오.:
 
@@ -82,11 +82,11 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 �
   4. repository URL을 채우거나 Github 계정에서 하나의 repository를 선택하십시오.
 5. Environment 섹션에서:
   1. OS로 우분투를 선택하고 런타임으로 Node.js를 선택하십시오.
-  2. 버전으로`aws/codebuild/nodejs:7.0.0`을 선택하십시오.
+  2. 버전은 `aws/codebuild/nodejs:7.0.0`을 선택하십시오.
   3. BuildSpec 이름을`buildspec.frontend.yml` (따라야할 스탭을 가지고 있는 yaml 파일)로 변경하십시오.
 6. 이슈 섹션에서 _No artifacts_을 선택하십시오.
 7. Service Role 섹션에서:
-  1. 너의 계정에서 Create a service role 를 선택하십시오.
+  1. 당신의 계정에서 Create a service role 를 선택하십시오.
   2. role의 이름을 선택하고 이름을 `codebuild-aws-workshop-service-role` 로 지정하십시오.
 8. Continue를 클릭하십시오.
 9. Save를 클릭하십시오.
