@@ -52,9 +52,11 @@ Auto Scaling으로 생성된 인스턴스에게 데이터베이스 접근 권한
 4. **네트워크 및 보안** 섹션 아래의 **보안 그룹** 까지 스크롤한다.
 5. 보안 그룹 콤보박스를 클릭하여 `api-security-group`를 선택한다. 이 그룹은 Auto Scaling 그룹을 위해 시작 구성에서 생성한 것이다. [이전 섹션](/workshop/elb-auto-scaling-group/02-auto-scaling-group.md#create-launch-configuration-group).
 
-이제, 모든 실행중인 인스턴스를 종료하고 Auto Scaling 그룹이 새로운 인스턴스를 시작하기를 기다립니다, 이 작업은 몇 분 정도 걸릴 수 있습니다.
+
+이제, 모든 실행중인 인스턴스를 종료하고 Auto Scaling 그룹이 새로운 인스턴스를 시작하기를 기다립니다. 이 작업은 몇 분 정도 걸릴 수 있습니다.
 **EC2**, **Auto Scaling 그룹** 이동하여 그룹을 선택하고 **활동 기록** 과 **인스턴스** 탭을 확인하여 Auto Scaling 그룹의 상태를 확인 할 수 있습니다.
 새로운 인스턴스가 설치되고 `running` 상태과 되면 로드 밸런서의 URL로 모든 사이트를 사용할 수 있습니다.
+
 ---
 **추가 사항:** 일단 사이트를 실행하면:
 
