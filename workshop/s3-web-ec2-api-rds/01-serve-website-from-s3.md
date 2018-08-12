@@ -68,9 +68,9 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. 이것에 대해 �
 
 ## CodeBuild 안에서 프런트앤드에 빌드 및 배포하기 위해 프로젝트를 생성하십시오.
 
-앞서 언급했듯이 [AWS CodeBuild](https://aws.amazon.com/codebuild/) 는 프로젝트를 빌드하는 AWS 서비스입니다. CodeBuild에게 무엇을 할 것인지를 지시하기 위해 우리는`buildspec.frontend.yml` 파일을 만들었습니다. CodeBuild는 먼저 repository를 pull 한 다음 [해당 파일] (/buildspec.frontend.yml)에 지정된 명령을 실행합니다. 아시다시피, 우리는 프로젝트를 새로 설치하는 데 필요한 것을 지정했습니다. 생성 된 파일은 S3에 결과 파일을 업로드하기 위해 `npm build` 와 `aws s3 sync` 를 사용하여 빌드로 끝납니다.
+앞서 언급했듯이 [AWS CodeBuild](https://aws.amazon.com/codebuild/) 는 프로젝트를 빌드하는 AWS 서비스입니다. CodeBuild에게 무엇을 할 것인지를 지시하기 위해 우리는`buildspec.frontend.yml` 파일을 만들었습니다. CodeBuild는 먼저 repository를 pull 한 다음 [해당 파일] (/buildspec.frontend.yml)에 지정된 명령을 실행합니다. 아시다시피, 우리는 프로젝트를 새로 설치하는 데 필요한 것을 지정했습니다. 생성 된 파일은 S3에 결과 파일을 업로드하기 위해 `npm build` 와 `aws s3 sync` 를 사용하여 빌드를 완료 합니다.
 
-준비하기 위해 다음 단계를 따르십시오.:
+준비하기 위해 다음 단계를 진행하세요:
 
 1. **Developer Tools** 섹션 아래 있는 **CodeBuild** 로 이동하십시오.
 2. Get Started 를 클릭하세요 (또는 다른 프로젝트가 있다면 Create Project 를 클릭하십시오).
