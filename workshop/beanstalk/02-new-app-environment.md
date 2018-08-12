@@ -49,7 +49,7 @@
 만약에 어떠한 이유로 배포가 실패했을경우, 다음 링크를 보십시오[문제해결](/workshop/beanstalk/troubleshooting.md). CLI가 AWS console보다 익숙한 사용자를위해, Elastic Beanstalk를 상호작용할수 있는 CLI가 있습니다. 자세한 사항은 [이쪽](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html)을 보십시오.
 
 ---
-**추가 작업:**
+**도전 과제:**
 
 - 셋업이 끝나면, Beanstalk이 ELB 와 ASG를 셋업했는지 보십시오.  우리가 직접한것과 다릅니까?  어떻게 다릅니까?
 - bastion이 런하는 인스턴스를 갖고 있을테니, 그 인스턴스에 로그인 해보십시오.  만약에 런하지 않는다면, 다음을 보십시오 [런하는 방법](/workshop/vpc-subnets-bastion/07-bastion.md)) 팁: Amazon Linux 사용자명은 `ec2-user` 입니다.
