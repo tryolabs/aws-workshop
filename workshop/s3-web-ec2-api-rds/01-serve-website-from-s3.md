@@ -84,8 +84,8 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. [여기](https://d
     3. 필요한 경우 AWS와 Github을 연결하십시오.
     4. repository URL을 채우거나 Github 계정에서 하나의 repository를 선택하십시오.
 5. Environment 섹션에서:
-    1. OS로 우분투를 선택하고 런타임으로 Node.js를 선택하십시오.
-    2. 버전은 `aws/codebuild/nodejs:7.0.0`을 선택하십시오.
+    1. OS는 `Ubuntu`를 선택하고 런타임은 `Node.js`를 선택하십시오.
+    2. 버전은 `aws/codebuild/nodejs:8.11.0`을 선택하십시오.
     3. BuildSpec 이름을`buildspec.frontend.yml` (따라야할 스탭을 가지고 있는 yaml 파일)로 변경하십시오.
 6. 이슈 섹션에서 _No artifacts_을 선택하십시오.
 7. Service Role 섹션에서:
