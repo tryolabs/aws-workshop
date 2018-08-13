@@ -79,8 +79,8 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. [여기](https://d
 2. Get Started 를 클릭하세요 (이미 다른 프로젝트가 있다면 Create Project 를 클릭하십시오).
 3. 프로젝트 이름(Project Name)에 `Hands-on-project` 입력하고 설명(Description)을 작성하십시오(선택).
 4. Source 섹션에서:
-    1. 소스 제공자(Source provider)로서 **Github** 를 선택하십시오.
-    2. repository 옵션을 선택하십시오.
+  1. 소스 제공자(Source provider)로서 **Github** 를 선택하십시오.
+  2. repository 옵션을 선택하십시오.
     3. 필요한 경우 AWS와 Github을 연결하십시오.
     4. repository URL을 채우거나 Github 계정에서 하나의 repository를 선택하십시오.
 5. Environment 섹션에서:
