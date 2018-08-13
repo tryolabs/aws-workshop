@@ -15,7 +15,7 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. [여기](https://d
 6. Index document와 Error document란 에는`index.html`을 넣습니다. 이후에 우리는 **웹 사이트**에 접속하기 위해 상단에 표시된 **Endpoint URL**를 사용할 것 입니다. 텍스트 에디터를 열어 Endpoint의 주소를 적어 놓으시기 바랍니다.
 > 입력란에 index.html이 미리 표시 되어 있어 마치 사전에 입력되어 있는것처럼 보이지만 반드시 손으로 입력해 주셔야만 **Save**버튼이 활성화 됩니다.
 7. Save 버튼을 클릭하세요.
-8. **권한**, **버킷 정책**으로 이동하고, 모든 객체를 읽을 수있게 만들기 위해 다음 정책을 추가하십시오:
+8. **권한(Permissions)** 탭에서 **버킷 정책(Bucket Policy)** 버튼을 클릭하고, 모든 객체를 읽을 수있게 만들기 위해 다음 정책을 추가하십시오:
   ```
   {
       "Version": "2012-10-17",
@@ -33,22 +33,22 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. [여기](https://d
 > 위 예제에서 여러분의 버킷 이름을 입력할때 꺽쇠<>는 필요 없습니다.
 
 9. 저장 버튼을 누르세요.
-
+> 버킷 내용이 공개되었다는 경고메세지가 나오지만 이번 실습에서는 신경쓰지 않아도 됩니다.
 
 ## 매개 변수 저장소에`WEBSITE_BUCKET_NAME`을 추가하십시오.
 
-모든 어플리케이션에는 각각의 배포 때마다 고유한 설정이 있어야합니다.: 디버그 사용할지 여부, 데이터베이스 서버의 주소, Third Party 에 대한 서비스를 사용을 위한 비밀 키 또는 액세스 토큰 등등. 이들 중 일부는 안전하게 저장해야합니다 (ex. keys API tokens). 많은 사람들이 이를 위해 [환경 변수](https://en.wikipedia.org/wiki/Environment_variable) 를 사용하지만, 보안적이다 라고 말할 순 없습니다.
+모든 어플리케이션에는 각각의 배포 때마다 고유한 설정이 있어야합니다: 디버그 사용할지 여부, 데이터베이스 서버의 주소, Third Party 에 대한 서비스를 사용을 위한 비밀 키 또는 액세스 토큰 등등. 이들 중 일부는 안전하게 저장해야합니다 (ex. keys API tokens). 많은 사람들이 이를 위해 [환경 변수](https://en.wikipedia.org/wiki/Environment_variable) 를 사용하지만 안전하다 라고 말할 순 없습니다.
 
 [AWS Parameters Store](http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-paramstore.html) 는 이를 위해 고안된 서비스로 우리 시스템의 변수를 저장하는 데 사용합니다. 이렇게하면 우리에게 상수를 저장하고, 나중에 다른 배포 단계동안에도 사용할 수 있습니다. 우리는 버킷 이름을 저장하여 시작합니다.
 
 1. **Storage** **section** 에서 **S3** 로 이동하십시오. 
 2. 버킷의 세부 정보를 보고 만들었던 버킷의 이름을 복사하십시오.
 3. **Compute section**.에서 **EC2** 로 이동하십시오.
-4. 왼쪽 메뉴에서 **Parameter Store** 를 선택하십시오.
+4. 왼쪽 탐색 메뉴 하단 에서 **Parameter Store** 를 선택하십시오.
 5. **Create Parameter** 를 클릭하십시오.
-6. 이름으로 `/prod/codebuild/WEBSITE_BUCKET_NAME`을 입력하고 파라미터가 의미하는 바에 대한 의미있는 설명 (예. "name of the website bucket")을 입력하십시오.
-7. 값으로`s3://<your-bucket-name>`을 입력하십시오(꺽쇠<>는 입력할 필요가 없습니다).
-8. create parameter 를 클릭하십시오.
+6. **Name**에 `/prod/codebuild/WEBSITE_BUCKET_NAME`을 입력하고 **Description**란에는 파라미터가 의미하는 바에 대한 설명 (예. "웹사이트용 버킷 이름")을 입력하십시오. **Type**란은 **String**이 선택된 그대로 두시면 됩니다.
+7. **Value**에는 `s3://<your-bucket-name>`을 입력하십시오(꺽쇠<>는 입력할 필요가 없습니다).
+8. Create Parameter 를 클릭하십시오.
 
 이제 우리가 [여기에](/buildspec.frontend.yml) 셋팅 한 것처럼 'aws ssm get-parameter'로 버킷 이름을 검색 할 수 있습니다. 또한 [AWS SSM Agent](http://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) 를 사용하여 AWS 웹 콘솔에서 인스턴스 구성을 관리 할 수 있습니다.
 
@@ -65,23 +65,23 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. [여기](https://d
 6. **JSON** 탭을 클릭하여 JSON본문에서 `Resource`의 `"*"`부분을 `["arn:aws:s3:::<여러분의 버킷이름>", "arn:aws:s3:::<여러분의 버킷이름>/*"]`으로 대체 합니다. 
 > 위 예제에서 여러분의 버킷 이름을 입력할때 꺽쇠<>는 필요 없습니다.
 7. **Review policy** 를 클릭하십시오.
-8. 정책 이름 (예 : S3WebsiteFullAccess)을 선택하고 Create Policy 을 클릭하십시오.
+8. 정책 이름(예 : S3WebsiteFullAccess)을 선택하고 Create Policy 을 클릭하십시오.
 
 이제 우리는 웹 사이트 버킷에 대한 전체 액세스 (목록 작성, 업데이트, 삭제 등)를 허용하는 정책을 가지고 있습니다. 다음 섹션에서 어떻게 사용할 수 있는지 보도록하겠습니다.
 
 ## CodeBuild 안에서 프런트앤드에 빌드 및 배포하기 위해 프로젝트를 생성하십시오.
 
-앞서 언급했듯이 [AWS CodeBuild](https://aws.amazon.com/codebuild/) 는 프로젝트를 빌드하는 AWS 서비스입니다. CodeBuild에게 무엇을 할 것인지를 지시하기 위해 우리는`buildspec.frontend.yml` 파일을 만들었습니다. CodeBuild는 먼저 repository를 pull 한 다음 [해당 파일] (/buildspec.frontend.yml)에 지정된 명령을 실행합니다. 아시다시피, 우리는 프로젝트를 새로 설치하는 데 필요한 것을 지정했습니다. 생성 된 파일은 S3에 결과 파일을 업로드하기 위해 `npm build` 와 `aws s3 sync` 를 사용하여 빌드를 완료 합니다.
+앞서 언급했듯이 [AWS CodeBuild](https://aws.amazon.com/codebuild/)는 프로젝트를 빌드하는 AWS 서비스입니다. CodeBuild에게 무엇을 할 것인지를 지시하기 위해 우리는`buildspec.frontend.yml` 파일을 만들었습니다. CodeBuild는 먼저 repository를 pull 한 다음 [해당 파일](/buildspec.frontend.yml)에 지정된 명령을 실행합니다. 아시다시피, 우리는 프로젝트를 새로 설치하는 데 필요한 것을 지정했습니다. 생성 된 파일은 S3에 결과 파일을 업로드하기 위해 `npm build` 와 `aws s3 sync` 를 사용하여 빌드를 완료 합니다.
 
 준비하기 위해 다음 단계를 진행하세요:
 
 1. **Developer Tools** 섹션 아래 있는 **CodeBuild** 로 이동하십시오.
-2. Get Started 를 클릭하세요 (또는 다른 프로젝트가 있다면 Create Project 를 클릭하십시오).
-3. 프로젝트 이름을 선택하고 설명을 작성하십시오 (optional).
+2. Get Started 를 클릭하세요 (이미 다른 프로젝트가 있다면 Create Project 를 클릭하십시오).
+3. 프로젝트 이름(Project Name)에 `Hands-on-project` 입력하고 설명(Description)을 작성하십시오(선택).
 4. Source 섹션에서:
-  1. 소스 제공자로서 **Github** 를 선택하십시오.
+  1. 소스 제공자(Source provider)로서 **Github** 를 선택하십시오.
   2. repository 옵션을 선택하십시오.
-  3. 필요한 경우 AWS와 함께 Github를 연결하십시오.
+  3. 필요한 경우 AWS와 Github을 연결하십시오.
   4. repository URL을 채우거나 Github 계정에서 하나의 repository를 선택하십시오.
 5. Environment 섹션에서:
   1. OS로 우분투를 선택하고 런타임으로 Node.js를 선택하십시오.
@@ -120,4 +120,4 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. [여기](https://d
 
 ---
 
-**다음:** [EC2 instances](/workshop/s3-web-ec2-api-rds/02-EC2-instances.md).
+**다음:** [EC2 인스턴스](/workshop/s3-web-ec2-api-rds/02-EC2-instances.md).
