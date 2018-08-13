@@ -79,18 +79,18 @@ Amazon은 DNS 호환 버킷 이름 사용을 제안합니다. [여기](https://d
 2. Get Started 를 클릭하세요 (이미 다른 프로젝트가 있다면 Create Project 를 클릭하십시오).
 3. 프로젝트 이름(Project Name)에 `Hands-on-project` 입력하고 설명(Description)을 작성하십시오(선택).
 4. Source 섹션에서:
-  1. 소스 제공자(Source provider)로서 **Github** 를 선택하십시오.
-  2. repository 옵션을 선택하십시오.
-  3. 필요한 경우 AWS와 Github을 연결하십시오.
-  4. repository URL을 채우거나 Github 계정에서 하나의 repository를 선택하십시오.
+    1. 소스 제공자(Source provider)로서 **Github** 를 선택하십시오.
+    2. repository 옵션을 선택하십시오.
+    3. 필요한 경우 AWS와 Github을 연결하십시오.
+    4. repository URL을 채우거나 Github 계정에서 하나의 repository를 선택하십시오.
 5. Environment 섹션에서:
-  1. OS로 우분투를 선택하고 런타임으로 Node.js를 선택하십시오.
-  2. 버전은 `aws/codebuild/nodejs:7.0.0`을 선택하십시오.
-  3. BuildSpec 이름을`buildspec.frontend.yml` (따라야할 스탭을 가지고 있는 yaml 파일)로 변경하십시오.
+    1. OS는 `Ubuntu`를 선택하고 런타임은 `Node.js`를 선택하십시오.
+    2. 버전은 `aws/codebuild/nodejs:8.11.0`을 선택하십시오.
+    3. BuildSpec 이름을`buildspec.frontend.yml` (따라야할 스탭을 가지고 있는 yaml 파일)로 변경하십시오.
 6. 이슈 섹션에서 _No artifacts_을 선택하십시오.
 7. Service Role 섹션에서:
-  1. 당신의 계정에서 Create a service role 를 선택하십시오.
-  2. role의 이름을 선택하고 이름을 `codebuild-aws-workshop-service-role` 로 지정하십시오.
+    1. 당신의 계정에서 Create a service role 를 선택하십시오.
+    2. role의 이름을 선택하고 이름을 `codebuild-aws-workshop-service-role` 로 지정하십시오.
 8. Continue를 클릭하십시오.
 9. Save를 클릭하십시오.
 
