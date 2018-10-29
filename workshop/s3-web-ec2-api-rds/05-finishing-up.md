@@ -1,27 +1,27 @@
-# Finishing up
+# 마무리
 
-We are almost done. We have to add some more parameters and we are ready to deploy the whole project.
+우리는 거의 끝났습니다. 더 많은 parameter 를 추가해야하며 전체 프로젝트를 배포 할 준비가 되었습니다.
 
-## Create API_URL on Parameter Store
-1. Go to **EC2** under **Compute** section.
-2. Select your instance.
-3. Copy the **Public DNS** under **Description**.
-4. On the left menu select **Parameter Store**.
-5. Click **Create Parameter**.
-6. Enter  `/prod/frontend/API_URL` as name and `http://<public dns you copied>:9000` as value.
-7. Click **Create Parameter** and close.
+## Parameter Store 에서 API_URL 만들기 
+1. **Compute** 섹션 아래에 **EC2**로 이동하십시오.
+2. 너의 인스턴스를 선택하십시오.
+3. **Description** 아래에 **Public DNS** 를 복사하십시오. 
+4. 왼쪽메뉴에 있는 **Parameter Store** 를 선택하십시오.
+5. **Create Parameter** 를 클릭하십시오.
+6. `/prod/frontend/API_URL` 을 이름으로 입력하고 `http://<public dns you copied>:9000`을 입력하십시오.
+7. **Create Parameter** 를 클릭하고 닫으십시오.
 
-This will be used by CodeBuild, so the frontend knows where the API is. You can check how [here](/buildspec.frontend.yml).
+이것은 CodeBuild에서 사용되므로 프론트 엔드는 API의 위치를 ​​알고 있습니다. [here] (/ buildspec.frontend.yml)에서 체크할 수 있습니다..
 
-## Run CodeBuild project
-1. Go to **CodeBuild** under the **Developer Tools** section.
-2. Select the project created before and click **Start Build**.
-3. Click **Start Build**.
-4. Wait.
-5. Check if all the phases run successfully.
-6. Done.
+## CodeBuild 프로젝트 실행
+1. **Developer Tools** 섹션 아래 있는 **CodeBuild** 로 이동하십시오.
+2. 이전에 생성 한 프로젝트를 선택하고 **Start Build** 를 클릭하십시오.
+3. **Start Build** 를 클릭하십시오.
+4. 잠시만 기다리십시오.
+5. 모든 단계가 성공적으로 실행되는지 확인하십시오.
+6. 끝.
 
-Now, if you go to the public URL provided by S3 (under **S3**, your bucket, **Properties**, **Static website hosting**) you will find the endpoint. If everything went as planned, you should see the complete website.
+이제 S3에서 제공하는 공개 URL (under **S3**, your bucket, **Properties**, **Static website hosting**)으로 이동하면 엔드 포인트를 찾을 수 있습니다. 모든 것이 계획대로 진행되면 전체 웹 사이트를 볼 수 있습니다.
 
 ---
-**Next:** add an extra [EC2 instance with ELB and auto-scaling](/workshop/elb-auto-scaling-group/introduction.md).
+**다음:** [EC2 instance with ELB and auto-scaling](/workshop/elb-auto-scaling-group/introduction.md)를 추가하십시오.
