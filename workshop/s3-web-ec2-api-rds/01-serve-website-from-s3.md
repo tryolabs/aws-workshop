@@ -11,7 +11,9 @@ First we need to create a bucket from where we are going to serve the website.
 5. Once created, click on the name of your bucket, go to properties, click **Static website hosting** check the option **Use this bucket to host a website**
 6. As index and error document put: `index.html`. Later, we will go to the **endpoint url** specified at the top to access our website.
 7. Click Save.
-8. Go to **Permissions**, **Bucket Policy,** and add the following policy to make every object readable:
+8. Go to **Permissions** tab.
+9. On the **Public Access Settings** section, click **Edit** , uncheck **Block new public bucket policies**, save and confirm.
+9. Then go to **Bucket Policy** section and add the following policy to make every object readable:
   ```
   {
       "Version": "2012-10-17",
@@ -27,7 +29,7 @@ First we need to create a bucket from where we are going to serve the website.
   }
   ```
 
-9. Click Save
+10. Click Save
 
 
 ## Add `WEBSITE_BUCKET_NAME` to the Parameters Store
