@@ -12,7 +12,7 @@ First we need to create a bucket from where we are going to serve the website.
 6. As index and error document put: `index.html`. Later, we will go to the **endpoint url** specified at the top to access our website.
 7. Click Save.
 8. Go to **Permissions** tab.
-9. On the **Public Access Settings** section, click **Edit** , uncheck **Block new public bucket policies**, save and confirm.
+9. On the **Public Access Settings** section, click **Edit** , uncheck both options under **Manage public bucket policies**, save and confirm.
 9. Then go to **Bucket Policy** section and add the following policy to make every object readable:
   ```
   {
