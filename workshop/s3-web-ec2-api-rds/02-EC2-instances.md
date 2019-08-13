@@ -13,7 +13,7 @@ First we will create a role to allow our EC2 instances access to SSM:
 
 We have already created entries in the Parameter Store. In the future we will need encrypted variables, like the password for our database. For this, will create an encryption key to encrypt and decrypt those values. That encryption key will be attached to our admin user and to the role we just created, so only services that are setup to assume the role can get access to the decrypted values. You can read more about SSM and secure data [here](https://aws.amazon.com/blogs/compute/managing-secrets-for-amazon-ecs-applications-using-parameter-store-and-iam-roles-for-tasks/).
 
-1. Go to the section **Encryption keys**.
+1. Go to **Key Management Service (KMS)** under **Security, Identity & Compliance**.
 2. Select **Create key**.
 3. Enter `workshopkey` as alias and a meaningful description like "this is the encryption key for the AWS workshop".
 4. Click next step and then next step again.

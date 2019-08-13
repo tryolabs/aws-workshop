@@ -16,11 +16,18 @@ Now we are ready to start using it.
 ##  Configure Code Deploy
 1. Go to **CodeDeploy** under **Developer Tools**.
 2. Click **Create application**.
-3. Enter an **Application name** and **Deployment group name**.
-4. Select **In-place deployment** on **Deployment Type** section.
-5. Select **Amazon EC2 instances** tab on **Environment configuration**.
+3. Enter an **Application name** and **EC2/On-premises** on **Compute platform** then clik **Create Application**.
+4. Click on **Create Deployment group** and enter a Deployment Grup name.
+5. On **Service role** select the role created to grant CodeDeploy access to the instances.
+6. Select **In-place** on **Deployment Type** section.
+7. Check **On-premise instances** in **Envirnment Configuration**, then on the first tag group select `environment` as Key and as Value `prod`, on the second line select `service` as Key and as Value `api`. This means that CodeDeploy will deploy our application to all the EC2 instances with those tags.
+8. On **Deployment settings** select **CodeDeployDefault.OneAtATime** in Deployment Configurations.
+9. Under **Load Balancer** unchek **Enable load balancing**
+10. Click **Create deployment group**
+
+
 6. On the first tag group select `environment` as Key and as Value `prod`, on the second line select `service` as Key and as Value `api`. This means that CodeDeploy will deploy our application to all the EC2 instances with those tags.
-7. On **Deployment configuration** select **OneAtATime**.
+
 8. On **Service role** select the role created to grant CodeDeploy access to the instances.
 9. Click Create application.
 

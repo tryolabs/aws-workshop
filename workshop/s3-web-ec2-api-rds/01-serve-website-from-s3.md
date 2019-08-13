@@ -82,7 +82,7 @@ Follow these steps to get it ready:
   4. Fill the repository URL or choose one repository from your Github account.
 5. On the Environment section:
   1. Choose Ubuntu as the OS and Standard as the Runtime.
-  2. Select  `aws/codebuild/standard:2.0` as the Image and `aws/codebuild/standard:2.0-1,12.0` as the Image Version.
+  2. Select  `aws/codebuild/standard:1.0` as the Image and latest Image Version.
 6. In the Service Role section:
   1. Select New service role.
   2. Choose a name for the Role and name it `codebuild-aws-workshop-service-role`.
