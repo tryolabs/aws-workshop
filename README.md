@@ -23,6 +23,7 @@ This workshop contains the following sections:
 3. [Load Balancer and Auto Scaling Group](/workshop/elb-auto-scaling-group/introduction.md).
 4. [VPC configuration and Bastion instance](/workshop/vpc-subnets-bastion/introduction.md). Here, you will setup your own VPC with public and private subnets, modify your Auto Scaling Group and Load Balancer to work with those and add a Bastion to access to your API instances through SSH.
 5. [Beanstalk](/workshop/beanstalk/introduction.md). Here we will learn how to use Beanstalk to setup and manage our backend (EC2 + ASG + ELB) without handcrafting every detail of the setup.
+5. [Serverless](/workshop/serverless/introduction.md). Here you will deploy a mircoservice to query posts by title. To do that you will create a [lambda](https://aws.amazon.com/lambda/?nc2=type_a) function.
 
 ---
 
