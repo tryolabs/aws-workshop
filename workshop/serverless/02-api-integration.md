@@ -17,3 +17,8 @@ Now we will modify our load balancer to add a fordwarding rule for the new targe
 3. Select your load balancer, go to the `Listeners` tab and click on `View/edit rules`.
 4. Add a new rule with condition `IF` path is `/*/search/*` `THEN` Forward to your Target Grup you created before.
 5. Clcik on **Update**
+
+--- 
+
+This is the end of this part of teh workshop. You could continue reading more about serverless architecture in the AWS ecosystem [here](https://aws.amazon.com/serverless/). 
+
