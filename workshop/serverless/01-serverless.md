@@ -11,7 +11,7 @@ You can read more about this [here](https://serverless.com).
 ## Install Serverless
 During the installation process you will be asked for your `AWS Access Key Id` and `AWS Secret Access Key` you got when you created the programmatic user. Take it at hand.
 
-1. Follow the insstallation instructions only [here](https://serverless.com/framework/docs/providers/aws/guide/quick-start/).
+1. Follow the installation instructions only [here](https://serverless.com/framework/docs/providers/aws/guide/quick-start/).
 2. If you didn't clone this repo yet, do it. If you alredy done go to `./infraestructure/aws/lambda` and take a look at the serverless yaml file [here](/infrastructure/aws/lambda/serverless.yml).
 There you could see the definition of your serverless service. Under the `functions` section you have the lambda function handler, this is the entry point for execution of your microservice. It also defines an HTTP method and path to trigger the lambda function.
 At the top of the file, there are some general parameters and there is also two IAM policies to allow access to parameters and encription keys needed by the lambda function to configure the database access.
@@ -22,7 +22,8 @@ Now you are ready to deploy your serverless. Let's go!
 1. Under the directory `./infrastructure/aws/lambda/` \
 run: \
 `serverless deploy -v` \
-This will start to make a detailed set of instructions and will automatically create all that you need to have a working lambda function in your AWS account. At the end, if all works as expected, you will have the URL to access to your serveice.
+This will start to make a detailed set of instructions and will automatically create all that you need to have a working lambda function in your AWS account. At the end, if all works as expected, you will have the URL to access to your service. \
+During the deployment, an [API gateway](https://aws.amazon.com/api-gateway/) endpoint will be created and linked as a trigger for your lambda function. Go to **API Gateway** under **Networking & Content Delivery** section. On the left panel you will have your API gateway which is called `dev-serverless-aws-workshop`. Click on it and take a look on the configuration details showed and try to find the association with your lambda. Finally, under the `Stages` section of your API gatway you will see `dev`, click on it to get the `Invoke URL`. 
 2. Now you can test your endpoint sending a GET request to you API endpoint and passing some string to the `query` request parameter. As a response you will get all the articles which has that string in their title. Now is time to go to the AWS console and take a look over the results of the serverless deployment.
 3. In the AWS console, go to **Lambda** under **Computing**
 4. Go to **Functions** at the left.
