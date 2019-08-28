@@ -1,0 +1,26 @@
+service: serverless-aws-workshop
+provider:
+  name: aws
+  runtime: python3.7
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'ssm:GetParameter'
+      Resource: '*'
+    - Effect: 'Allow'
+      Action:
+        - 'kms:Decrypt'
+      Resource: '*'
+  package:
+    include:
+      - lambda_function.py
+      - psycopg2/**
+    exclude:
+      - '**'
+functions:
+  lambda_handler:
+    handler: lambda_function.lambda_handler
+    events:
+      - http:
+          path: search
+          method: get

@@ -12,7 +12,7 @@ First we need to create a bucket from where we are going to serve the website.
 6. As index and error document put: `index.html`. Later, we will go to the **endpoint url** specified at the top to access our website.
 7. Click Save.
 8. Go to **Permissions** tab.
-9. On the **Public Access Settings** section, click **Edit** , uncheck both options under **Manage public bucket policies**, save and confirm.
+9. On the **Block public access** section, click **Edit** , uncheck **Block all public access**, save and confirm.
 9. Then go to **Bucket Policy** section and add the following policy to make every object readable:
   ```
   {
@@ -40,7 +40,7 @@ Every application needs to have some configurations that inherently will vary be
 
 1. Go to **S3** under **Storage** **section**.
 2. See details of the bucket you just created and copy its name.
-3. Go to **EC2** under **Compute section**.
+3. Go to AWS console **Systems Manager** under **Management & Governance**.
 4. On the left menu select **Parameter Store**.
 5. Click **Create Parameter**.
 6. Enter `/prod/codebuild/WEBSITE_BUCKET_NAME` as name and a meaningful description of what the parameter means (ie. "name of the website bucket").
@@ -81,15 +81,15 @@ Follow these steps to get it ready:
   3. Connect Github with AWS if neccesary.
   4. Fill the repository URL or choose one repository from your Github account.
 5. On the Environment section:
-  1. Choose Ubuntu as the OS and Node.js as the Runtime.
-  2. Select  `aws/codebuild/nodejs:7.0.0` as the Version.
-  3. Change the BuildSpec name to `buildspec.frontend.yml` (our yaml file with the steps to follow).
-6. In the Artifacts section select _No artifacts_.
-7. In the Service Role section:
-  1. Select Create a service role in your account.
+  1. Choose Ubuntu as the OS and Standard as the Runtime.
+  2. Select  `aws/codebuild/standard:1.0` as the Image and latest Image Version.
+6. In the Service Role section:
+  1. Select New service role.
   2. Choose a name for the Role and name it `codebuild-aws-workshop-service-role`.
-8. Click on Continue.
-9. Click on Save.
+7. In the BuildSpec section choose `Use a Buildspec file` and below name to `buildspec.frontend.yml` (our yaml file with the steps to follow).
+8. In the Artifacts section select _No artifacts_.
+9. Click on Continue.
+10. Click on Save.
 
 Now, we have created a CodeBuild application. We won’t be able to run it though, because we don’t have permissions to add files to our S3 bucket. That is why earlier we created the policy and also something called a "role". For everything to work, we need to attach the policy to the role.
 

@@ -2,15 +2,13 @@
 
 ## Create a PostgreSQL instance in RDS
 1. Go to **RDS** under **Database** section.
-2. Click on **Launch a DB Instance**.
-3. Click on PostgreSQL logo, tick the _"Only enable options eligible for RDS Free Usage Tier"_ checkbox at the bottom and click Next.
+2. Click on **Create Database**.
+3. Click on PostgreSQL logo, and under **Templates** section tick the _"Free Tier"_ checkbox.
 7. Enter a name on _DB Instance identifier_ (we will need it later, so don’t forget it).
 8. Enter a username and password and click Next (again, we will need these later).
-9. Select No on **Publicly Accessible**.
-10. Availability Zone: `us-east-1a`.
+9. Under **Connectivity** section verify that **Publicly Accessible** is set to No.
 11. On **VPC security groups** choose _Select existing VPC security groups_ and select the security group you create when [launching the EC2 instance](/workshop/s3-web-ec2-api-rds/02-EC2-instances.md#launch-your-first-ec2-instance).
-11. Pick a db name and click Launch Instance (again, we will need the database name later).
-12. Click View Your DB Instances.
+11. Pick a db name under **Adiotional Configuration** and click create Database (again, we will need the database name later).
 
 Now our instance is created. We configure its access, allowing every instance under the security group that was created in the previous section to connect.
 
@@ -21,8 +19,8 @@ As before, we will need some variables stored in the parameter store, including 
 1. Go to **RDS** under **Database** section.
 2. Click on Instances.
 3. See details of your db and copy the **Endpoint**. This will be the value for `DATABASE_HOST`.
-4. Go to **EC2** under **Compute** section.
-5. On the left menu select Parameter Store.
+4. Go to AWS console **Systems Manager** under **Management & Governance**.
+5. On the left menu select **Parameter Store**.
 6. Click Create Parameter.
 7. Enter  `/prod/api/DATABASE_NAME` as the name and a meaningful description like "Name of the PostgreSQL database".
 8. Enter the DB name you selected before on the value attribute.
