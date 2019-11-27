@@ -2,7 +2,7 @@
 
 > **TryoTip:** if you are using the **Tryolabs Playground AWS account**, this section does not apply. Please, read it anyway, so you have some context on what you would do with a bare new AWS account.
 
-As you might already now there is a special account in AWS called _root_. This is the account used to do the initial setup for users, roles and billing information. Is recommended to create a user with administrator priviledges for the every day use and [not use the root account](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users) to login to AWS. Additionally, you should make sure you enable [Multi Factor Authentication (MFA)](http://docs.aws.amazon.com/console/iam/security-status-activate-mfa) on your root account, and use an app like [Authy](https://authy.com/) as a second factor on your phone (Android/iOS).
+As you might already now there is a special account in AWS called _root_. This is the account used to do the initial setup for users, roles and billing information. Is recommended to create a user with administrator privileges for the every day use and [not use the root account](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users) to login to AWS. Additionally, you should make sure you enable [Multi Factor Authentication (MFA)](http://docs.aws.amazon.com/console/iam/security-status-activate-mfa) on your root account, and use an app like [Authy](https://authy.com/) as a second factor on your phone (Android/iOS).
 
 Next, we are going to use our root account to setup 2 AWS users.
 
