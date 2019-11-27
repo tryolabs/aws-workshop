@@ -17,7 +17,7 @@ Now we are ready to start using it.
 1. Go to **CodeDeploy** under **Developer Tools**.
 2. Click **Create application**.
 3. Enter an **Application name** and **EC2/On-premises** on **Compute platform** then click **Create Application**.
-4. Click on **Create Deployment group** and enter a Deployment Grup name.
+4. Click on **Create Deployment group** and enter a Deployment Group name.
 5. On **Service role** select the role created to grant CodeDeploy access to the instances.
 6. Select **In-place** on **Deployment Type** section.
 7. Check **On-premise instances** in **Environment Configuration**, then on the first tag group select `environment` as Key and as Value `prod`, on the second line select `service` as Key and as Value `api`. This means that CodeDeploy will deploy our application to all the EC2 instances with those tags.
