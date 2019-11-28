@@ -6,7 +6,7 @@ First we will create a role to allow our EC2 instances access to SSM:
 
 1. Go to **IAM** under **Security, Identity & Compliance**.
 2. Go to Role section and click Create Role.
-3. In 'Select type of trusted entity' select **AWS Service** and then **EC2**.
+3. In 'Select type of trusted entity' select **AWS Service**, then **EC2** and click next.
 4. Search for `AmazonSSMReadOnlyAccess`, select it and click next.
 5. Lets call it `ApiRole`. Click create Role.
 
