@@ -14,8 +14,9 @@ We have already created entries in the Parameter Store. In the future we will ne
 
 1. Go to **Key Management Service (KMS)** under **Security, Identity & Compliance**.
 2. Select **Create key**.
+3. Selct symmetric and click next.
 3. Enter `workshopkey` as alias and a meaningful description like "this is the encryption key for the AWS workshop".
-4. Click next step and then next step again.
+4. Click next step.
 5. Select both your AWS CLI and console users and click next.
 6. Select your EC2 Role and click next.
 7. Click Finish.
