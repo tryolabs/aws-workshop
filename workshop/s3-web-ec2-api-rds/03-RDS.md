@@ -4,13 +4,13 @@
 1. Go to **RDS** under **Database** section.
 2. Click on **Create Database**.
 3. Click on PostgreSQL logo, and under **Templates** section tick the _"Free Tier"_ checkbox.
-7. Enter a name on _DB Instance identifier_ (we will need it later, so don’t forget it).
-8. Enter a username and password and click Next (again, we will need these later).
-9. Under **Connectivity** section verify that **Publicly Accessible** is set to No.
-11. On **VPC security groups** choose _Select existing VPC security groups_ and select the security group you create when [launching the EC2 instance](/workshop/s3-web-ec2-api-rds/02-EC2-instances.md#launch-your-first-ec2-instance).
-11. Pick a db name under **Adiotional Configuration** and click create Database (again, we will need the database name later).
+4. Enter a name on _DB Instance identifier_ (we will need it later, so don’t forget it).
+5. Enter a username and password and click Next (again, we will need these later).
+6. Under **Connectivity** section verify that **Publicly Accessible** is set to No.
+7. On **VPC security groups** choose _Select existing VPC security groups_ and select the security group you created when [launching the EC2 instance](/workshop/s3-web-ec2-api-rds/02-EC2-instances.md#launch-your-first-ec2-instance).
+8. Pick a db name under **Additional Configuration** and click create Database (again, we will need the database name later).
 
-Now our instance is created. We configure its access, allowing every instance under the security group that was created in the previous section to connect.
+Now our instance is created. We configured its access, allowing every instance under the security group that was created in the previous section to connect.
 
 ## Add DB parameters on Parameters Store
 
@@ -18,7 +18,7 @@ As before, we will need some variables stored in the parameter store, including 
 
 1. Go to **RDS** under **Database** section.
 2. Click on Instances.
-3. See details of your db and copy the **Endpoint**. This will be the value for `DATABASE_HOST`.
+3. Wait for instance to create. Then see details of your db and copy the **Endpoint**. This will be the value for `DATABASE_HOST`.
 4. Go to AWS console **Systems Manager** under **Management & Governance**.
 5. On the left menu select **Parameter Store**.
 6. Click Create Parameter.

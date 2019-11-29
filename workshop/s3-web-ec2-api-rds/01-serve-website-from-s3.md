@@ -74,7 +74,7 @@ Follow these steps to get it ready:
 
 1. Go to **CodeBuild** under the **Developer Tools** section.
 2. Click on Get Started (or Create Project if you had other projects).
-3. Choose a project name and write an description (optional).
+3. Choose a project name and write a description (optional).
 4. On the Source section:
   1. Choose **Github** as the source provider.
   2. Select an option for the repository.
@@ -91,7 +91,7 @@ Follow these steps to get it ready:
 9. Click on Continue.
 10. Click on Save.
 
-Now, we have created a CodeBuild application. We won’t be able to run it though, because we don’t have permissions to add files to our S3 bucket. That is why earlier we created the policy and also something called a "role". For everything to work, we need to attach the policy to the role.
+Now, we have created a CodeBuild application. We won’t be able to run it though, because we don’t have permissions to add files to our S3 bucket. That is why earlier we created a policy and also something called a "role". For everything to work, we need to attach the policy to the role.
 
 ## Attach policies to the CodeBuild role
 
