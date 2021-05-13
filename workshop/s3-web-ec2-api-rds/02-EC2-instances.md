@@ -56,11 +56,17 @@ We are ready to launch our first EC2 instance. We will create a standard EC2 ins
 13. Make sure the _Create a new security group_ option is selected and write a descriptive name on the _Security group name:_ field. You cannot rename it later so choose the name wisely.
 14. Click Add Rule.
 15. In port range put `9000` and in Source `0.0.0.0/0`, and add a meaningful description. This will enable incoming traffic on port 9000 from every IP, so you can "contact" your instance from the outside. If you pay attention, by default we also get a rule allowing inbound traffic on port 22, which we will use for SSH'ing to the instance. Also by default, outbound traffic (that is, traffic originating from your instance) will be allowed to any destination and port, but you can restrict that later by editing the outbound rules for the security group.
-16. Add another rule with type `PostgreSQL` (port `5432` should be set automatically) and source `0.0.0.0/0`. This will allow the application to communicate with the database later on.
-17. Click Review and Launch.
-18. Click Launch.
-19. When asked to select an existing key pair, choose `create a new key pair`, name it `aws_workshop` and click download. Store it in a secure place (`~/.ssh` is good, but make sure you `chmod 400` the PEM file so only your user can read it), we will use it to SSH into the instances during the whole workshop.
-20. Click Launch Instances.
+16. Click Review and Launch.
+17. Click Launch.
+18. When asked to select an existing key pair, choose `create a new key pair`, name it `aws_workshop` and click download. Store it in a secure place (`~/.ssh` is good, but make sure you `chmod 400` the PEM file so only your user can read it), we will use it to SSH into the instances during the whole workshop.
+19. Click Launch Instances.
+
+## Add Security Group inbound rule
+1. Go to **Security Groups** under **Network & Security** (still on EC2 service).
+2. Open the Security Group you created when launching the EC2 (step 13).
+3. Click **Edit inbound rules**.
+4. Add a new rule with type `PostgreSQL` (port `5432` should be set automatically). As source select the security group itself (start typing the name and select the one suggested). Note that this rule could not be added on the previous step because the security group didn't exist at that point.
+5. Click **Save rules**.
 
 ---
 **Extra mile:**
