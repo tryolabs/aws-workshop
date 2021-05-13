@@ -36,6 +36,13 @@ To create an Auto Scaling Group, first we need to create a [Launch Configuration
 16. Click **Review**.
 17. Click **Create launch configuration** and select the key pair to used to `ssh` into future instances.
 
+## Add Security Group inbound rule
+1. Go to **Security Groups** under **Network & Security** (still on EC2 service).
+2. Open the `api-security-group` (created on the previous step).
+3. Click **Edit inbound rules**.
+4. Add a new rule with type `PostgreSQL` (port `5432` should be set automatically). As source select the `api-security-group` itself (start typing the name and select the one suggested). Note that this rule could not be added on the previous step because the security group didn't exist at that point.
+5. Click **Save rules**.
+
 Now that we have our **Launch configuration** we can create our **Auto Scaling Group**.
 
 ## Create Auto Scaling Group
