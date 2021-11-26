@@ -7,7 +7,7 @@ from conduit.settings.defaults import *
 
 
 client = boto3.client('ssm')
-PARAMETERS_PATH = '/prod/api/'
+PARAMETERS_PATH = '/sebac/prod/api/'
 
 def get_parameter(name, with_decryption=False, default=None):
     try:
