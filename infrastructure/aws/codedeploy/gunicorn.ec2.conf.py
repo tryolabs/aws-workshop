@@ -7,6 +7,7 @@ daemon = True
 loglevel = "DEBUG"
 accesslog = "/var/log/gunicorn/access.log"
 errorlog = "/var/log/gunicorn/error.log"
+pidfile = "/var/run/gunicorn.pid"
 
 keepalive = 1
 timeout = 300
