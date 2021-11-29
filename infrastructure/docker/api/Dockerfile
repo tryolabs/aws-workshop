@@ -15,7 +15,7 @@ COPY backend/Pipfile.lock /app
 
 RUN pipenv sync
 
-COPY infrastructure/docker/api/gunicorn.docker.conf /conf/gunicorn.conf
+COPY infrastructure/docker/api/gunicorn.docker.conf.py /conf/gunicorn.conf.py
 
 COPY backend /app
 
@@ -26,6 +26,6 @@ CMD [ \
   "pipenv", \
   "run", \
   "gunicorn", \
-  "--config", "/conf/gunicorn.conf", \
+  "--config", "/conf/gunicorn.conf.py", \
   "conduit.wsgi" \
-]
+  ]

@@ -1,6 +1,7 @@
 import jwt
 
 from django.conf import settings
+from django.utils.encoding import force_str
 
 from rest_framework import authentication, exceptions
 
@@ -74,9 +75,10 @@ class JWTAuthentication(authentication.BaseAuthentication):
         Try to authenticate the given credentials. If authentication is
         successful, return the user and token. If not, throw an error.
         """
+        sec = force_str(settings.SECRET_KEY, encoding="utf-8")
         try:
-            payload = jwt.decode(token, settings.SECRET_KEY)
-        except:
+            payload = jwt.decode(token, sec, algorithms=['HS256'])
+        except jwt.exceptions.DecodeError:
             msg = 'Invalid authentication. Could not decode token.'
             raise exceptions.AuthenticationFailed(msg)
 
