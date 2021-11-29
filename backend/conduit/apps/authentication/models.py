@@ -136,4 +136,10 @@ class User(AbstractBaseUser, PermissionsMixin, TimestampedModel):
             'exp': int(dt.strftime('%s'))
         }, settings.SECRET_KEY, algorithm='HS256')
 
-        return token.decode('utf-8')
+
+        # If settings.SECRET_KEY is a bytes object, then token will be a bytes that needs decoding.
+        # However, if settings.SECRET_KEY is a string (it is in this project), no decoding will be needed.
+        try:
+            return token.decode('utf-8')
+        except AttributeError:
+            return token
