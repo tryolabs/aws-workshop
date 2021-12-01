@@ -4,11 +4,11 @@ if [[ -f "$PID_FILE" ]]; then
   PID="$(cat "$PID_FILE")"
   PROC_FILE="/proc/$PID/status"
   if [[ ! -f "$PROC_FILE" ]]; then
-    echo "gunicorn is not running"
+    echo "gunicorn is not running. No PROC file found at the PID."
     rm -f "$PID_FILE"
     exit 2
   fi
 else
-  echo "gunicorn is not running"
+  echo "gunicorn is not running. No PID file found in /var/run."
   exit 2
 fi
