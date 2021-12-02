@@ -18,6 +18,25 @@ The API endpoints are described in detail [here](https://github.com/ahmed-belhad
 ## Database
 Last but not least our database will be hosted using [AWS RDS](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html), as a PostgreSQL instance.
 
+## AWS Console
+Get familiar with the AWS Console (the web interface [here](https://console.aws.amazon.com)), it's what you'll mostly use throughout the workshop.
+
+In particular, note that there's a search bar up top. Whenever the workshop instructs you to go somewhere, start by looking it up in that search bar.
+
+Next to the search bar there's a `Services` button, which shows a menu with all of AWS's offerings. Whenever a new service is introduced by the workshop, the instructions will reference a section under this `Services` menu. For example: `Compute/EC2`. 
+
+From this menu you can _favourite_ services, which will make accessing them much faster. You can't favourite services from a search result. As part of your exploration, you could try favouriting the following services:
+- EC2 under Compute.
+- S3 under Storage.
+- Systems Manager under Management & Governance.
+- Code Build under Developer Tools.
+- RDS under Database.
+- IAM under Security, Indentity & Compliance.
+
+## Repository
+You will probably have to make some changes in the code, so you should create a new branch you can push for your modifications.
+
+## Summary
 To sum up, in this section we will create:
 
 - an S3 bucket to host our static frontend.
