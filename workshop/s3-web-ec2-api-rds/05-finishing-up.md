@@ -8,10 +8,12 @@ We are almost done. We have to add some more parameters and we are ready to depl
 3. Copy the **Public DNS** under **Description**.
 4. Go to the **Parameter Store** under Systems Manager.
 5. Click **Create Parameter**.
-6. Enter  `/prod/frontend/API_URL` as name and `http://<public dns you copied>:9000` as value.
+6. Enter  `/<your-name>/prod/frontend/API_URL` as name and `http://<public dns you copied>:9000` as value.
 7. Click **Create Parameter** and close.
 
 This will be used by CodeBuild, so the frontend knows where the API is. You can check how [here](/buildspec.frontend.yml).
+
+You should _now_ go to [buildspec.frontend.yml](/buildspec.frontend.yml) and change the `API_URL_PARAMETER_NAME` to `/<your-name>/prod/frontend/API_URL`. This is necessary for the app to work correctly. Push this to your branch.
 
 ## Run CodeBuild project
 1. Go to **CodeBuild** under the **Developer Tools** section.
