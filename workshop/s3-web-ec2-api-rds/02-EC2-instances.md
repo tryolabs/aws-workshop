@@ -8,18 +8,19 @@ First we will create a role to allow our EC2 instances access to SSM:
 2. Go to Role section and click Create Role.
 3. In 'Select type of trusted entity' select **AWS Service**, then **EC2** and click _Next: Permissions_.
 4. Search for `AmazonSSMReadOnlyAccess`, select it and click next.
-5. Lets call it `ApiRole`. Click create Role.
+5. Lets call it `<YourName>ApiRole`. 
+6. Click create Role.
 
 We have already created entries in the Parameter Store. In the future we will need encrypted variables, like the password for our database. For this, will create an encryption key to encrypt and decrypt those values. That encryption key will be attached to our admin user and to the role we just created, so only services that are setup to assume the role can get access to the decrypted values. You can read more about SSM and secure data [here](https://aws.amazon.com/blogs/compute/managing-secrets-for-amazon-ecs-applications-using-parameter-store-and-iam-roles-for-tasks/).
 
 1. Go to **Key Management Service (KMS)** under **Security, Identity & Compliance**.
 2. Select **Create key**.
 3. Selct symmetric and click next.
-3. Enter `workshopkey` as alias and a meaningful description like "this is the encryption key for the AWS workshop".
+3. Enter `<your-name>-workshopkey` as alias and a meaningful description like "this is the encryption key for the AWS workshop".
 4. Click next step.
 5. Select both your AWS CLI and console users as key administrators. If you are using your Tryo Playground account, it's just 1 user that can do both.
 6. Click next.
-7. Select your EC2 Role (`ApiRole`) and click next.
+7. Select your EC2 Role (`<YourRole>ApiRole`) and click next.
 8. Click Finish.
 
 In the future, if an EC2 instance with our new role wants to access an encrypted parameter, AWS will automatically decrypt it!
@@ -37,7 +38,7 @@ We are ready to launch our first EC2 instance. We will create a standard EC2 ins
 4. Select `t2.micro`.
 5. Click on Next: Configure Instance Details. Configure the following:
 
-    1. Select our `ApiRole` on **IAM role**.
+    1. Select our `<YourRole>ApiRole` on **IAM role**.
     2. On Advanced Details, select "As text" in User data and then paste the following bash script:
         ```
         #!/bin/bash
@@ -69,14 +70,14 @@ We are ready to launch our first EC2 instance. We will create a standard EC2 ins
         If you pay attention, by default we also get a rule allowing inbound traffic on port 22, which we will use for SSH'ing to the instance.
         
         Also by default, outbound traffic (that is, traffic originating from your instance) will be allowed to any destination and port, but you can restrict that later by editing the outbound rules for the security group.
-9.  Click Review and Launch.
-10. Click Launch.
-11. When asked to select an existing key pair, choose `create a new key pair`, name it `aws_workshop` and click download. Store it in a secure place (`~/.ssh` is good, but make sure you `chmod 400` the PEM file so only your user can read it), we will use it to SSH into the instances during the whole workshop.
-12. Click Launch Instances.
+16. Click Review and Launch.
+17. Click Launch.
+18. When asked to select an existing key pair, choose `create a new key pair`, name it `<your_name>_aws_workshop` and click download. Store it in a secure place (`~/.ssh` is good, but make sure you `chmod 400` the PEM file so only your user can read it), we will use it to SSH into the instances during the whole workshop.
+19. Click Launch Instances.
 
 ## Add Security Group inbound rule
 1. Go to **Security Groups** under **Network & Security** (still on EC2 service).
-2. Open the Security Group you created when launching the EC2 (step 13).
+2. Open the Security Group you created when launching the EC2 (`<your-name>-workshop-ec2-security-group`).
 3. Click **Edit inbound rules**.
 4. Add a new rule with type `PostgreSQL` (port `5432` should be set automatically). As source select the security group itself (start typing the name and select the one suggested). Note that this rule could not be added on the previous step because the security group didn't exist at that point.
 5. Click **Save rules**.
