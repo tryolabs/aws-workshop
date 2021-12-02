@@ -1,31 +1,47 @@
 # CodeDeploy
 
-[CodeBuild](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) is a service to automate the deployment of any kind of applications to EC2 instances. The configuration is really simple and easy to adapt. The deployment process is described in an `appspec.yml` file like [this one](/appspec.yml). If you want to know what happens during the deploy, you can also check the implementation of the hooks [here](/infrastructure/aws/codedeploy).
+[CodeDeploy](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html) is a service to automate the deployment of any kind of applications to EC2 instances. The configuration is really simple and easy to adapt. The deployment process is described in an `appspec.yml` file like [this one](/appspec.yml). If you want to know what happens during the deploy, you can also check the implementation of the hooks [here](/infrastructure/aws/codedeploy).
 
 First, we need to create a default role for CodeDeploy so it can have access to other AWS services (like S3).
 
 ## Create CodeDeploy Role
 1. Go to **IAM** under **Security, Identity & Compliance**.
 2. Go to **Role** section and click **Create Role**.
-3. Select **CodeDeploy** for both service and use case and click **Next: Permissions**.
-4. Select **Next: Tags**.
-5. Select **Next: Review**.
-6. Type a name and description and click **Create Role**.
+3. Select **AWS Service** up top.
+4. Select **CodeDeploy** from the **Chose a use case** list.
+5. Select **CodeDeploy** from the **Select your use case** section that just appeared.
+6. Click **Next: Permissions**.
+7. Select **Next: Tags**.
+8. Select **Next: Review**.
+9. Type a name and description. A good name is `<YourName>CodeDeploy`.
+10. Click **Create Role**.
 
 Now we are ready to start using it.
 
 ##  Configure Code Deploy
+First, let's create an application.
 1. Go to **CodeDeploy** under **Developer Tools**.
 2. Go to **Applications** and click **Create application**.
-3. Enter an **Application name** and **EC2/On-premises** on **Compute platform** then click **Create Application**.
-4. Click on **Create Deployment group** and enter a Deployment Group name.
-5. On **Service role** select the role created to grant CodeDeploy access to the instances.
-6. Select **In-place** on **Deployment Type** section.
-7. Check **Amazon EC2 instances** in **Environment Configuration**, then on the first tag group select `environment` as Key and as Value `prod`, on the second line select `service` as Key and as Value `api`. This means that CodeDeploy will deploy our application to all the EC2 instances with those tags.
-8. On **Deployment settings** select **CodeDeployDefault.OneAtATime** in Deployment Configurations.
-9. Under **Load Balancer** uncheck **Enable load balancing**
-10. Click **Create deployment group**
+   1. Enter an **Application name**. A good name is `<your-name>-workshop`.
+   2. On **Compute platform** select **EC2/On-premises**.
+3. Click **Create Application**.
 
+An application can have many kinds of deployments (think _production_, _development_ and _staging_). To configure each one, we will create _deployment groups_. Once inside the application:
+1. Click on **Create Deployment group**.
+2. Enter a Deployment Group name. In this case we won't distinguish between _prod_ or _dev_, so just name it `<your-name>-workshop-deployment-group`.
+3. On **Service role** select the role created to grant CodeDeploy access to the instances (probably `CodeDeploy`).
+4. Select **In-place** on **Deployment Type** section.
+5. In **Environment Configuration**:
+   1. Check **Amazon EC2 instances**.
+   2. Add a tag with `environment` as Key and as Value `prod`.
+   3. Add a tag with `service` as Key and as Value `api`.
+
+    This will ensure CodeDeploy deploys the API only to the EC2 instances that are tagged with these exact tags. This is where you would chose the instances used for _prod_ or _dev_.
+6. On **Deployment settings** select **CodeDeployDefault.OneAtATime** in Deployment Configurations.
+7. Under **Load Balancer** uncheck **Enable load balancing**
+8. Click **Create deployment group**
+
+## Deploy
 Now our CodeDeploy application is ready. Let’s try our first deployment.
 
 1. On the deployment group details of the group we just made, click **Create Deployment**
@@ -33,11 +49,11 @@ Now our CodeDeploy application is ready. Let’s try our first deployment.
 3. In **Connect to GitHub** section type your GitHub account and select **Connect to GitHub**.
 4. Allow AWS to access your GitHub account, if needed.
 5. Enter your repository name in the form _account/repository_.
-6. In **Commit ID** type the commit hash that you want to deploy.
+6. In **Commit ID** type the commit hash that you want to deploy. This will be from the latest commit of your branch (with the fixes to the parameter paths done).
 7. Select **Overwrite the content** below.
 8. Click **Create Deployment**.
 
-During the deploy try **View instances** and then **View events** to follow the progress and see what's happening.
+This should leave you inside the deployment page. During the deploy try clicking **View events** next each instance in the **Deployment lifecycle events** table to follow the progress and see what's happening.
 
 ---
 **Extra mile:** once the deploy finishes:
