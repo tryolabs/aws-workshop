@@ -55,6 +55,19 @@ Now our CodeDeploy application is ready. Let’s try our first deployment.
 
 This should leave you inside the deployment page. During the deploy try clicking **View events** next each instance in the **Deployment lifecycle events** table to follow the progress and see what's happening.
 
+## Re deploying
+You might need to re deploy the project. Just in case, this is how it's done:
+
+1. Go to **CodeDeploy**.
+2. Go to **Applications**.
+3. Click your application.
+4. Click your deploment group.
+5. You can either create a new deployment from scratch or re use an old one.
+   1. If creating one from scratch, follow the steps in the previous section.
+   2. If re using a deployment, select it and click _Create Deploment_ **after** either:
+      - Clicking **Retry deployment** to retry that exact deployment.
+      - Clicking **Copy deployment** to get a configuration screen with most details from the selected deployment carried over and changing the Commit ID and click **One at a time** (and change any other settings you need to).
+
 ---
 **Extra mile:** once the deploy finishes:
 
