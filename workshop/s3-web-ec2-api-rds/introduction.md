@@ -8,7 +8,7 @@ The first step will be the frontend. Because it’s a static website, we can cre
 To automate the build, we will use [CodeBuild](https://aws.amazon.com/codebuild/), an AWS service to build projects on the go.
 CodeBuild will pull our repository, build the webpage and copy the build directory to S3. The configuration is specified on `buildspec.frontend.yml` on [the root folder of our repo](/buildspec.frontend.yml).
 
-In order to automate the deployment of our API to the EC2 instances, we will use [CodeDeploy](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html). It will pull our repo to the EC2 instances and start our server (gunicorn). The full deploy process is described in the `appspec.yml` file, [here](/appspec.yml).
+Bare in mind that the frontend isn't complete. This means that while you will be able to navigate it, none of the actions you take will have effect on the back end. For example, signing up or in doesn't currently work. However, hitting the API endpoints for signing up or in _does_ work. This is a problem with the frontend alone, so the concepts related to `aws` still apply.
 
 ## API
 The API will be deployed to EC2 instances. In order to automate the deployment, we will use [CodeDeploy](http://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html). It will pull our repo to the EC2 instances and start our server (gunicorn). The full deploy process is described in the `appspec.yml` file, [here](/appspec.yml).
