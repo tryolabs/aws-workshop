@@ -41,6 +41,16 @@ An application can have many kinds of deployments (think _production_, _developm
 7. Under **Load Balancer** uncheck **Enable load balancing**
 8. Click **Create deployment group**
 
+You can get the deployment group's ID (for access to logs) by running
+```
+aws deploy get-deployment-group \
+    --application-name <your-name>-workshop \
+    --deployment-group-name <your-name>-workshop-deployment-group \
+```
+in your computer's console and looking for the key `deploymentGroupId` in the output.
+
+You might need to add a `--profile` flag if you set up `aws` for this workshop with a profile other than `default`.
+
 ## Deploy
 Now our CodeDeploy application is ready. Let’s try our first deployment.
 
@@ -54,6 +64,8 @@ Now our CodeDeploy application is ready. Let’s try our first deployment.
 8. Click **Create Deployment**.
 
 This should leave you inside the deployment page. During the deploy try clicking **View events** next each instance in the **Deployment lifecycle events** table to follow the progress and see what's happening.
+
+Up top you'll see a string like `d-<CHARACTERS>`. That's the deploy ID that you need to access logs in the instance.
 
 ## Re deploying
 You might need to re deploy the project. Just in case, this is how it's done:

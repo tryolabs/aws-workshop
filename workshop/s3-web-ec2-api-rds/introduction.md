@@ -36,6 +36,15 @@ From this menu you can _favourite_ services, which will make accessing them much
 ## Repository
 You will probably have to make some changes in the code, so you should create a new branch you can push for your modifications.
 
+## Getting logs from EC2 instances
+We will configure EC2 instances with a security policy that allows `ssh` access to the instances. You can view logs by `ssh`ing to the instance or by using `scp`.
+
+You can view logs of _all_ deployments in the instance's `/opt/codedeploy-agent/deployment-root/deployment-logs/codedeploy-agent-deployments.log`.
+
+You can also view logs of a specific deployment in the instance's `/opt/codedeploy-agent/deployment-root/<deployment-group-ID>/<deployment-ID>/logs/scripts.log`. You will learn how to find these parameters later.
+
+More on logging [here](https://docs.aws.amazon.com/codedeploy/latest/userguide/deployments-view-logs.html#deployments-view-logs-instance-unix).
+
 ## Summary
 To sum up, in this section we will create:
 
