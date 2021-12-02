@@ -68,11 +68,13 @@ Every application needs to have some configurations that inherently will vary be
 3. In the search bar  up top, search for **Systems Manager** (it's under **Management & Governance**).
 4. On the left menu select **Parameter Store**.
 5. Click **Create Parameter**.
-6. Enter `/prod/codebuild/WEBSITE_BUCKET_NAME` as name and a meaningful description of what the parameter means (ie. "name of the website bucket").
+6. Enter `/<your-name>/prod/codebuild/WEBSITE_BUCKET_NAME` as name and a meaningful description of what the parameter means (ie. "name of the website bucket").
 7. Enter `s3://<your-bucket-name>` as value.
 8. Click create parameter.
 
 Now we can retrieve the bucket name with `aws ssm get-parameter` like we did [here](/buildspec.frontend.yml). Also, we can use [AWS SSM Agent](http://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) to manage our instances' configuration from the AWS web console.
+
+You should _now_ go to [buildspec.frontend.yml](/buildspec.frontend.yml) and change the `BUCKET_PARAMETER_NAME` to `/<your-name>/prod/codebuild/WEBSITE_BUCKET_NAME`. This is necessary for the app to work correctly. Push this to your branch.
 
 
 ## Create a policy to get full access to the S3 website bucket
@@ -86,7 +88,7 @@ With [AWS Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_polic
 5. Search and select `AmazonS3FullAccess` (this is a premade policy, but you can also build your own).
 6. Click the **JSON** tab and change the `Resource` value to `["arn:aws:s3:::<your-bucket-name>", "arn:aws:s3:::<your-bucket-name>/*"]` in the JSON content.
 7. Click **Review policy**
-8. Choose a name for the policy (eg. S3WebsiteFullAccess) and click in Create Policy.
+8. Choose a name for the policy (eg. `<YourName>S3WebsiteFullAccess`) and click in Create Policy.
 
 Now we have a policy that allows full access (list, write, update, delete, etc) to our website bucket. Let’s see how we can use it in the following section.
 
@@ -101,7 +103,7 @@ Follow these steps to get it ready:
 
 1. Go to **CodeBuild** under the **Developer Tools** section.
 2. Click on Get Started (or Create Project if you had other projects).
-3. Choose a project name and write a description (optional).
+3. Choose a project name and write a description (optional). A good name is `<your-name>-workshop`.
 4. On the Source section:
     1. Choose **Github** as the source provider.
     2. Select an option for the repository (probably _Public repository_).
@@ -113,7 +115,7 @@ Follow these steps to get it ready:
     2. Select  `aws/codebuild/standard:5.0` as the Image and latest Image Version.
 6. In the Service Role section:
     1. Select New service role.
-    1. Choose a name for the Role and name it `aws-workshop-service-rcodebuild-ole`.
+    1. Choose a name for the Role and name it `<your-name>-aws-workshop-service-rcodebuild-ole`.
 7. In the BuildSpec section:
     1. Choose `Use a Buildspec file`.
     2. Set to name to `buildspec.frontend.yml` (our yaml file with the steps to follow).
@@ -135,7 +137,7 @@ Earlier, we created a policy to allow full access to our S3 bucket and assigned 
 2. Click in Roles.
 3. You should see the role created in the CodeBuild project creation, select it.
 4. Click Attach Policies.
-5. Search for the Policy for full access to the S3 website bucket (`S3WebsiteFullAccess`) and select it.
+5. Search for the Policy for full access to the S3 website bucket (`<YourName>S3WebsiteFullAccess`) and select it.
 6. Click Attach Policy.
 
 **SSM read access**
