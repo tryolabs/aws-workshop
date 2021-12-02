@@ -47,6 +47,9 @@ To sum up, in this section we will create:
 > **Important:** after you are done with this workshop, you will ideally clean up your account, so you are not billed anymore. This means that you need to delete everything you have created.
 >
 > Many resources in AWS [can be tagged](https://aws.amazon.com/answers/account-management/aws-tagging-strategies/). If something can be tagged, then you should tag it with a **unique name**. Later, you can use the [Tag Editor](https://aws.amazon.com/blogs/aws/resource-groups-and-tagging/) to find your tagged resources to delete, and make sure you don't leave anything behind.
+>
+> A good tag/value pair to use is `<your_name>-workshop`/`True`. Whatever you chose, be consistent so that it's easy to clean up your account.
+
 
 ---
 
