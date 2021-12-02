@@ -29,7 +29,7 @@ First, let's create an application.
 An application can have many kinds of deployments (think _production_, _development_ and _staging_). To configure each one, we will create _deployment groups_. Once inside the application:
 1. Click on **Create Deployment group**.
 2. Enter a Deployment Group name. In this case we won't distinguish between _prod_ or _dev_, so just name it `<your-name>-workshop-deployment-group`.
-3. On **Service role** select the role created to grant CodeDeploy access to the instances (probably `CodeDeploy`).
+3. On **Service role** select the role created to grant CodeDeploy access to the instances (probably `<YourName>CodeDeploy`).
 4. Select **In-place** on **Deployment Type** section.
 5. In **Environment Configuration**:
    1. Check **Amazon EC2 instances**.
