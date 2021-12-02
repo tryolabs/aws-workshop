@@ -37,7 +37,9 @@ After this, we can create the user to access AWS programmatically:
 4. Search for: `AdministratorAccess`, check it and click next. Of course, in a real use case, you would design or use a policy with more restricted access.
 5. Click on Download CSV.
 
-In the downloaded file, you can find the access key id and the secret access key. You’ll need them to [configure your AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) in your computer. If you don’t have AWS CLI installed yet, you can do it following [these steps](http://docs.aws.amazon.com/cli/latest/userguide/installing.html).
+In the downloaded file, you can find the access key id and the secret access key. You’ll need them to [configure your AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) in your computer (read the _Quick Setup_ section). If you don’t have AWS CLI installed yet, you can do it following [these steps](http://docs.aws.amazon.com/cli/latest/userguide/installing.html).
+
+By default, the `aws` command uses a `default` profile. If you want, you can have multiple [named profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html).
 
 ---
 **Extra mile**: set the `ViewOnlyAccess` permissions to the user with programmatic access. Double points if you do it with the CLI.
