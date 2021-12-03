@@ -7,4 +7,4 @@ export AWS_DEFAULT_REGION
 DJANGO_SETTINGS_MODULE='conduit.settings.ec2'
 export DJANGO_SETTINGS_MODULE
 
-pipenv run gunicorn --config ../infrastructure/aws/codedeploy/gunicorn.ec2.conf conduit.wsgi
+pipenv run gunicorn --config ../infrastructure/aws/codedeploy/gunicorn.ec2.conf.py conduit.wsgi

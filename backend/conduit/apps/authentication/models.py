@@ -1,3 +1,4 @@
+from django.utils import encoding
 import jwt
 
 from datetime import datetime, timedelta
@@ -7,6 +8,7 @@ from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
 )
 from django.db import models
+from django.utils.encoding import force_str
 
 from conduit.apps.core.models import TimestampedModel
 
@@ -131,9 +133,10 @@ class User(AbstractBaseUser, PermissionsMixin, TimestampedModel):
         """
         dt = datetime.now() + timedelta(days=60)
 
+        sec = force_str(settings.SECRET_KEY, encoding="utf-8")
         token = jwt.encode({
             'id': self.pk,
             'exp': int(dt.strftime('%s'))
-        }, settings.SECRET_KEY, algorithm='HS256')
+        }, sec, algorithm='HS256')
 
-        return token.decode('utf-8')
+        return token
