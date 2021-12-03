@@ -11,7 +11,7 @@ Finally, we need to re-run CodeBuild so the new bundle on S3 points to the DNS o
 2. On left menu select **Load Balancer** under **LOAD BALANCING**.
 3. Copy the DNS name of your load balancer that appears under **Description**.
 4. On left menu, select **Parameter Store**.
-5. Click on `/prod/frontend/API_URL` and on **Actions** select **Edit Parameter**.
+5. Click on `/<your-name>/prod/frontend/API_URL` and on **Actions** select **Edit Parameter**.
 6. As Value put: `http://` + the DNS that you copied 3 steps ago.
 7. Click **Save Parameter**.
 

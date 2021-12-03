@@ -1,8 +1,10 @@
 # Set up users on AWS
 
+You will generate (or receive) credentials during this step. You should save these credentials in your password manager of choice. If you don't use one yet, take a look at [BitWarden](https://bitwarden.com/): a fully featured and open source password manager.
+
 > **TryoTip:** if you are using the **Tryolabs Playground AWS account**, this section does not apply. Please, read it anyway, so you have some context on what you would do with a bare new AWS account.
 
-As you might already now there is a special account in AWS called _root_. This is the account used to do the initial setup for users, roles and billing information. Is recommended to create a user with administrator privileges for the every day use and [not use the root account](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users) to login to AWS. Additionally, you should make sure you enable [Multi Factor Authentication (MFA)](http://docs.aws.amazon.com/console/iam/security-status-activate-mfa) on your root account, and use an app like [Authy](https://authy.com/) as a second factor on your phone (Android/iOS).
+As you might already know there is a special account in AWS called _root_. This is the account used to do the initial setup for users, roles and billing information. It is recommended to create a user with administrator privileges for every day use and to [not use the root account](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users) to login to AWS. Additionally, you should make sure you enable [Multi Factor Authentication (MFA)](http://docs.aws.amazon.com/console/iam/security-status-activate-mfa) on your root account, and use an app like [Authy](https://authy.com/) as a second factor on your phone (Android/iOS).
 
 Next, we are going to use our root account to setup 2 AWS users.
 
@@ -35,7 +37,9 @@ After this, we can create the user to access AWS programmatically:
 4. Search for: `AdministratorAccess`, check it and click next. Of course, in a real use case, you would design or use a policy with more restricted access.
 5. Click on Download CSV.
 
-In the downloaded file, you can find the access key id and the secret access key. You’ll need them to [configure your AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) in your computer. If you don’t have AWS CLI installed yet, you can do it following [these steps](http://docs.aws.amazon.com/cli/latest/userguide/installing.html).
+In the downloaded file, you can find the access key id and the secret access key. You’ll need them to [configure your AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) in your computer (read the _Quick Setup_ section). If you don’t have AWS CLI installed yet, you can do it following [these steps](http://docs.aws.amazon.com/cli/latest/userguide/installing.html).
+
+By default, the `aws` command uses a `default` profile. If you want, you can have multiple [named profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html).
 
 ---
 **Extra mile**: set the `ViewOnlyAccess` permissions to the user with programmatic access. Double points if you do it with the CLI.
