@@ -12,7 +12,7 @@ Now we need to paste the API URL in the Parameter Store read for the frontend.
 
 1. Go to **EC2** under **Compute**.
 2. Click on **Parameter Store** under **SYSTEMS MANAGER SHARED RESOURCES**.
-3. Select the parameter **/prod/frontend/API_URL**.
+3. Select the parameter **/<your-name>/prod/frontend/API_URL**.
 4. Click **Actions**, **Edit Parameter**.
 5. In the value field past the URL for the API. You may need to remove the last `/` so the URL ends in `elasticbeanstalk.com`. If you left the last path separator all the API calls will fail.
 
