@@ -13,7 +13,7 @@ WORKDIR /app
 COPY backend/Pipfile /app
 COPY backend/Pipfile.lock /app
 
-RUN pipenv install
+RUN pipenv sync
 
 COPY infrastructure/docker/api/gunicorn.docker.conf /conf/gunicorn.conf
 

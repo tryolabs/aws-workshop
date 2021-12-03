@@ -4,7 +4,7 @@ mkdir -p /var/log/django
 mkdir -p /var/www/conduit/static/
 
 cd /deploy/backend || exit 2
-pipenv install
+pipenv sync
 
 AWS_DEFAULT_REGION="$(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | jq -r .region)"
 export AWS_DEFAULT_REGION
