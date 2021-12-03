@@ -42,7 +42,7 @@ As before, we will need some variables stored in the parameter store, including 
 
 Now we have our database parameters set, and the password encrypted. Only our EC2 instances will be able to decrypt it.
 
-You should _now_ go to [ec2.py](/backend/conduit/settings/ec2.py) and change the `PARAMETERS_PATH` to `/<your-name>/prod/api./`. This is necessary for the app to work correctly. Push this to your branch.
+You should _now_ go to [ec2.py](/backend/conduit/settings/ec2.py) and change the `PARAMETERS_PATH` to `/<your-name>/prod/api./`. While you are at it, you should also visit [lambda_function.py](/infrastructure/aws/lambda/lambda_function.py) and prefix the `Name` in `db_host`, `db_name`, `db_user` and `db_pass` with `/<your-name>/` as well. This is necessary for the app to work correctly. Push this to your branch.
 
 ---
 **Extra mile:**
