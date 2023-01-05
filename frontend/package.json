@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "cross-env": "^4.0.0",
-    "react-scripts": "0.9.5"
+    "react-scripts": "5.0.1"
   },
   "dependencies": {
     "history": "^4.6.3",
